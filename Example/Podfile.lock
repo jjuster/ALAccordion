@@ -1,0 +1,14 @@
+PODS:
+  - ios-accordion (0.1.0)
+
+DEPENDENCIES:
+  - ios-accordion (from `../`)
+
+EXTERNAL SOURCES:
+  ios-accordion:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ios-accordion: ab2916b60e09cdcdd42219c2e7ce68eed5ffabc7
+
+COCOAPODS: 0.36.3
