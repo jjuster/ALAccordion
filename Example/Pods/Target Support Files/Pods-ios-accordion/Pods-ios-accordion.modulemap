@@ -1,0 +1,6 @@
+framework module Pods_ios_accordion {
+  umbrella header "Pods-ios-accordion-umbrella.h"
+
+  export *
+  module * { export * }
+}
