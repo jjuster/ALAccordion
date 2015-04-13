@@ -10,7 +10,7 @@ import UIKit
 
 import ALAccordion
 
-class ALHomeViewController: ALAccordionViewController
+class ALHomeViewController: ALAccordionController
 {
     var header: UIView!
     var footer: UIView!

@@ -7,219 +7,219 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0DECF0FE69826730AE119A12 /* ALAccordionSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D054D2631DD974144273003D /* ALAccordionSectionViewController.swift */; };
-		12CF0846806ECC3EB501FA89 /* Pods-ALAccordion Example-ALAccordion-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B7B4B207F048A4524DD31383 /* Pods-ALAccordion Example-ALAccordion-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4284CD3056F13E1A5A918857 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047FB4FE8562454DCE966EAC /* Foundation.framework */; };
-		803AC30F4E5E02D56C518173 /* Pods-ALAccordion Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 75111A35B9166F85F0BA75AB /* Pods-ALAccordion Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D430CF57B13E05C1B0AFAA24 /* ALAccordionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7324123A53AA0F3DDEB917A9 /* ALAccordionViewController.swift */; };
-		E4E034C29004620635876F92 /* Pods-ALAccordion Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4608FE2C2AB049B862D80EA5 /* Pods-ALAccordion Example-dummy.m */; };
-		EFA66291764FC22B867EA837 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047FB4FE8562454DCE966EAC /* Foundation.framework */; };
-		F0C652F2E8C14564092A1CEE /* Pods-ALAccordion Example-ALAccordion-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A4AF3EA89F643E2F302BC9 /* Pods-ALAccordion Example-ALAccordion-dummy.m */; };
-		F8F82C5DE522D6E59DD73A96 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 577D31ADDC3546BE59AB0EFC /* UIKit.framework */; };
+		043C4327D89C3CA9EE3E5101 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6F3F1495F2667C9E8E5BEA /* Foundation.framework */; };
+		06D5980A73DFC8DE727B3690 /* Pods-ALAccordion Example-ALAccordion-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D44674E729A13EB33EB3D965 /* Pods-ALAccordion Example-ALAccordion-dummy.m */; };
+		36E98A423ACDEDC21DAB18F7 /* Pods-ALAccordion Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 176BF7644857840D0114D2D8 /* Pods-ALAccordion Example-dummy.m */; };
+		4E38C8C70548A02BDE35E400 /* Pods-ALAccordion Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D7C5742104ADBE6FA52C0F9E /* Pods-ALAccordion Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		66A0A8238D807C229280F4D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6F3F1495F2667C9E8E5BEA /* Foundation.framework */; };
+		6830FBD94B5C7E2EAC383A7D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A001D396192CACE6C588091B /* UIKit.framework */; };
+		8B108B84161CC100A4EBED18 /* Pods-ALAccordion Example-ALAccordion-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E84D913106C265447DE9C70C /* Pods-ALAccordion Example-ALAccordion-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A4F06AA9DE083187909D683 /* ALAccordionSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5C85FA9EE40CC9E64888A7 /* ALAccordionSectionViewController.swift */; };
+		E4D1A852DF73323588CFC0F9 /* ALAccordionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A237F9C309F989361FF0B2FA /* ALAccordionController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		AEDA9AABE10534435CE2F1AE /* PBXContainerItemProxy */ = {
+		E814BCD5C35644CC8D7777B7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F9E13E3D0772964F0B1BC94D /* Project object */;
+			containerPortal = A7E41829EF005143A73886C7 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F2A1CA548D74DB97B12E181D;
+			remoteGlobalIDString = 1956D26C2C95CBBAEBFA4D41;
 			remoteInfo = "Pods-ALAccordion Example-ALAccordion";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		047FB4FE8562454DCE966EAC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		0887C4E5F353DF072B934725 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0B2BD3A6A58F482EB2A282EB /* Pods-ALAccordion Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ALAccordion Example.debug.xcconfig"; sourceTree = "<group>"; };
-		16A4AF3EA89F643E2F302BC9 /* Pods-ALAccordion Example-ALAccordion-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ALAccordion Example-ALAccordion-dummy.m"; sourceTree = "<group>"; };
-		39F6282A670D7FA237E8DFF6 /* Pods-ALAccordion Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ALAccordion Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		4608FE2C2AB049B862D80EA5 /* Pods-ALAccordion Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ALAccordion Example-dummy.m"; sourceTree = "<group>"; };
-		577D31ADDC3546BE59AB0EFC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		5EFF3D0E0CCC89E54C23BD8F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		66E80AC5CEB6BDC4149108E0 /* Pods-ALAccordion Example-ALAccordion.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ALAccordion Example-ALAccordion.modulemap"; sourceTree = "<group>"; };
-		7297E37B5EF91546DC820FBF /* Pods-ALAccordion Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ALAccordion Example.modulemap"; sourceTree = "<group>"; };
-		7324123A53AA0F3DDEB917A9 /* ALAccordionViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ALAccordionViewController.swift; sourceTree = "<group>"; };
-		75111A35B9166F85F0BA75AB /* Pods-ALAccordion Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ALAccordion Example-umbrella.h"; sourceTree = "<group>"; };
-		7F47FE5AA294085E311091CD /* Pods-ALAccordion Example-ALAccordion-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ALAccordion Example-ALAccordion-prefix.pch"; sourceTree = "<group>"; };
-		8159952AA452605A640A7AE2 /* Pods-ALAccordion Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ALAccordion Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		8D500CA0A8C18359D68E1D1B /* Pods-ALAccordion Example-ALAccordion.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ALAccordion Example-ALAccordion.xcconfig"; sourceTree = "<group>"; };
-		8F33B383D48CE3B2453D3350 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B7B4B207F048A4524DD31383 /* Pods-ALAccordion Example-ALAccordion-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ALAccordion Example-ALAccordion-umbrella.h"; sourceTree = "<group>"; };
-		BB3D0259B91517C2CC5D224F /* ALAccordion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ALAccordion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C6C0D928105CF34223FF1654 /* Pods-ALAccordion Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ALAccordion Example-frameworks.sh"; sourceTree = "<group>"; };
-		CBB90A39143809B6BCC7784B /* Pods-ALAccordion Example-ALAccordion-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ALAccordion Example-ALAccordion-Private.xcconfig"; sourceTree = "<group>"; };
-		D054D2631DD974144273003D /* ALAccordionSectionViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ALAccordionSectionViewController.swift; sourceTree = "<group>"; };
-		D4369CF7BBEEB8861F582BC5 /* Pods_ALAccordion_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ALAccordion_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D72CF131ECB79231717A8AC3 /* Pods-ALAccordion Example-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ALAccordion Example-environment.h"; sourceTree = "<group>"; };
-		DC543D25775BC81AFC477D93 /* Pods-ALAccordion Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ALAccordion Example-resources.sh"; sourceTree = "<group>"; };
-		F2D2848BD3F28FB4C8DA769F /* Pods-ALAccordion Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ALAccordion Example.release.xcconfig"; sourceTree = "<group>"; };
+		176BF7644857840D0114D2D8 /* Pods-ALAccordion Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ALAccordion Example-dummy.m"; sourceTree = "<group>"; };
+		17D51F9D0CB72D36D97F1BC1 /* Pods-ALAccordion Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ALAccordion Example-frameworks.sh"; sourceTree = "<group>"; };
+		19DA381B5148C988CCF2833F /* Pods-ALAccordion Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ALAccordion Example.release.xcconfig"; sourceTree = "<group>"; };
+		2B0824A123FD780B181DA206 /* ALAccordion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ALAccordion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		44D796F779EB960673044188 /* Pods-ALAccordion Example-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ALAccordion Example-environment.h"; sourceTree = "<group>"; };
+		79319D065E8858A32A3F4141 /* Pods-ALAccordion Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ALAccordion Example.debug.xcconfig"; sourceTree = "<group>"; };
+		8B76C31D9DEFD8296E446823 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		90D7C46667F660A1778D3E86 /* Pods-ALAccordion Example-ALAccordion-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ALAccordion Example-ALAccordion-prefix.pch"; sourceTree = "<group>"; };
+		9B5C85FA9EE40CC9E64888A7 /* ALAccordionSectionViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ALAccordionSectionViewController.swift; sourceTree = "<group>"; };
+		9CA5C00F254E9AB45BE1A9EC /* Pods_ALAccordion_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ALAccordion_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A001D396192CACE6C588091B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		A237F9C309F989361FF0B2FA /* ALAccordionController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ALAccordionController.swift; sourceTree = "<group>"; };
+		A83F62513348E36FA63B05B9 /* Pods-ALAccordion Example-ALAccordion.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ALAccordion Example-ALAccordion.modulemap"; sourceTree = "<group>"; };
+		CA34CEFFA1F5A7F9A1DEAE7B /* Pods-ALAccordion Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ALAccordion Example.modulemap"; sourceTree = "<group>"; };
+		CBFD001B8B78DF6401291CED /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFAC79C876504EE593E4C564 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D44674E729A13EB33EB3D965 /* Pods-ALAccordion Example-ALAccordion-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ALAccordion Example-ALAccordion-dummy.m"; sourceTree = "<group>"; };
+		D7C4366DF20B258D602D5715 /* Pods-ALAccordion Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ALAccordion Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		D7C5742104ADBE6FA52C0F9E /* Pods-ALAccordion Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ALAccordion Example-umbrella.h"; sourceTree = "<group>"; };
+		E84D913106C265447DE9C70C /* Pods-ALAccordion Example-ALAccordion-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ALAccordion Example-ALAccordion-umbrella.h"; sourceTree = "<group>"; };
+		EA6F3F1495F2667C9E8E5BEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		F1B526E895B8C4D6FBCE28B7 /* Pods-ALAccordion Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ALAccordion Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F22515FF613C9D63CC3D42CD /* Pods-ALAccordion Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ALAccordion Example-resources.sh"; sourceTree = "<group>"; };
+		FA5CBF61C793C11B00ED9E00 /* Pods-ALAccordion Example-ALAccordion.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ALAccordion Example-ALAccordion.xcconfig"; sourceTree = "<group>"; };
+		FE8549840878764853090C0E /* Pods-ALAccordion Example-ALAccordion-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ALAccordion Example-ALAccordion-Private.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		84666AC14F8D371968B4B6AE /* Frameworks */ = {
+		515AA927F0C1BEE87FAD23E4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFA66291764FC22B867EA837 /* Foundation.framework in Frameworks */,
-				F8F82C5DE522D6E59DD73A96 /* UIKit.framework in Frameworks */,
+				043C4327D89C3CA9EE3E5101 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DA6F3A8CEDF6217DC487C845 /* Frameworks */ = {
+		AB884CE705E0CC08A62DF0BE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4284CD3056F13E1A5A918857 /* Foundation.framework in Frameworks */,
+				66A0A8238D807C229280F4D2 /* Foundation.framework in Frameworks */,
+				6830FBD94B5C7E2EAC383A7D /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		521C2C702629160FB708367E = {
+		477FAADDD50CB0561F5DE3A1 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				5EFF3D0E0CCC89E54C23BD8F /* Podfile */,
-				956BDD77C9D0ABBF6881F1BB /* Development Pods */,
-				B169DD48E2D1B95CA5D1FAE4 /* Frameworks */,
-				64D0A23F9FB6AB21305A1A38 /* Products */,
-				846F6CE2A2360E737A66DBAA /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		64D0A23F9FB6AB21305A1A38 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				BB3D0259B91517C2CC5D224F /* ALAccordion.framework */,
-				D4369CF7BBEEB8861F582BC5 /* Pods_ALAccordion_Example.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		698ECED5D74D8C1ED2072310 /* ALAccordion */ = {
-			isa = PBXGroup;
-			children = (
-				69B04EC9D5D733F0D9B5D820 /* Classes */,
-			);
-			path = ALAccordion;
-			sourceTree = "<group>";
-		};
-		69B04EC9D5D733F0D9B5D820 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				D054D2631DD974144273003D /* ALAccordionSectionViewController.swift */,
-				7324123A53AA0F3DDEB917A9 /* ALAccordionViewController.swift */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		846F6CE2A2360E737A66DBAA /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				951761C0EDC8240DE5B70C84 /* Pods-ALAccordion Example */,
+				BC51550559D40EAEFE54AF9A /* Pods-ALAccordion Example */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		951761C0EDC8240DE5B70C84 /* Pods-ALAccordion Example */ = {
+		4D75FD5CC05619C06FFD2489 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				8F33B383D48CE3B2453D3350 /* Info.plist */,
-				7297E37B5EF91546DC820FBF /* Pods-ALAccordion Example.modulemap */,
-				39F6282A670D7FA237E8DFF6 /* Pods-ALAccordion Example-acknowledgements.markdown */,
-				8159952AA452605A640A7AE2 /* Pods-ALAccordion Example-acknowledgements.plist */,
-				4608FE2C2AB049B862D80EA5 /* Pods-ALAccordion Example-dummy.m */,
-				D72CF131ECB79231717A8AC3 /* Pods-ALAccordion Example-environment.h */,
-				C6C0D928105CF34223FF1654 /* Pods-ALAccordion Example-frameworks.sh */,
-				DC543D25775BC81AFC477D93 /* Pods-ALAccordion Example-resources.sh */,
-				75111A35B9166F85F0BA75AB /* Pods-ALAccordion Example-umbrella.h */,
-				0B2BD3A6A58F482EB2A282EB /* Pods-ALAccordion Example.debug.xcconfig */,
-				F2D2848BD3F28FB4C8DA769F /* Pods-ALAccordion Example.release.xcconfig */,
+				A237F9C309F989361FF0B2FA /* ALAccordionController.swift */,
+				9B5C85FA9EE40CC9E64888A7 /* ALAccordionSectionViewController.swift */,
 			);
-			name = "Pods-ALAccordion Example";
-			path = "Target Support Files/Pods-ALAccordion Example";
+			path = Classes;
 			sourceTree = "<group>";
 		};
-		956BDD77C9D0ABBF6881F1BB /* Development Pods */ = {
+		51098A3EC7960834F6EB8A4A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AC7D591DAB2D4951DB309A6B /* ALAccordion */,
+				953D82B3143C6A6BA8EF63B1 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		64DB2FB582E919959A1FDC74 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6E07F8DDF3CF88027403FAF3 /* ALAccordion */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		AC7D591DAB2D4951DB309A6B /* ALAccordion */ = {
+		6E07F8DDF3CF88027403FAF3 /* ALAccordion */ = {
 			isa = PBXGroup;
 			children = (
-				698ECED5D74D8C1ED2072310 /* ALAccordion */,
-				BB6C81B40A087081482164DF /* Support Files */,
+				B9DE9442C01814B0EB716A7E /* ALAccordion */,
+				F8C47EC917B07CF851A262E2 /* Support Files */,
 			);
 			name = ALAccordion;
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		B169DD48E2D1B95CA5D1FAE4 /* Frameworks */ = {
+		7DA4C11A38D093816039EF54 = {
 			isa = PBXGroup;
 			children = (
-				BF9C006C2554E8BD4C5F746A /* iOS */,
+				8B76C31D9DEFD8296E446823 /* Podfile */,
+				64DB2FB582E919959A1FDC74 /* Development Pods */,
+				51098A3EC7960834F6EB8A4A /* Frameworks */,
+				D1832B8C22349AAEDE3DF4AE /* Products */,
+				477FAADDD50CB0561F5DE3A1 /* Targets Support Files */,
 			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BB6C81B40A087081482164DF /* Support Files */ = {
+		953D82B3143C6A6BA8EF63B1 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				0887C4E5F353DF072B934725 /* Info.plist */,
-				66E80AC5CEB6BDC4149108E0 /* Pods-ALAccordion Example-ALAccordion.modulemap */,
-				8D500CA0A8C18359D68E1D1B /* Pods-ALAccordion Example-ALAccordion.xcconfig */,
-				CBB90A39143809B6BCC7784B /* Pods-ALAccordion Example-ALAccordion-Private.xcconfig */,
-				16A4AF3EA89F643E2F302BC9 /* Pods-ALAccordion Example-ALAccordion-dummy.m */,
-				7F47FE5AA294085E311091CD /* Pods-ALAccordion Example-ALAccordion-prefix.pch */,
-				B7B4B207F048A4524DD31383 /* Pods-ALAccordion Example-ALAccordion-umbrella.h */,
+				EA6F3F1495F2667C9E8E5BEA /* Foundation.framework */,
+				A001D396192CACE6C588091B /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		B9DE9442C01814B0EB716A7E /* ALAccordion */ = {
+			isa = PBXGroup;
+			children = (
+				4D75FD5CC05619C06FFD2489 /* Classes */,
+			);
+			path = ALAccordion;
+			sourceTree = "<group>";
+		};
+		BC51550559D40EAEFE54AF9A /* Pods-ALAccordion Example */ = {
+			isa = PBXGroup;
+			children = (
+				CBFD001B8B78DF6401291CED /* Info.plist */,
+				CA34CEFFA1F5A7F9A1DEAE7B /* Pods-ALAccordion Example.modulemap */,
+				F1B526E895B8C4D6FBCE28B7 /* Pods-ALAccordion Example-acknowledgements.markdown */,
+				D7C4366DF20B258D602D5715 /* Pods-ALAccordion Example-acknowledgements.plist */,
+				176BF7644857840D0114D2D8 /* Pods-ALAccordion Example-dummy.m */,
+				44D796F779EB960673044188 /* Pods-ALAccordion Example-environment.h */,
+				17D51F9D0CB72D36D97F1BC1 /* Pods-ALAccordion Example-frameworks.sh */,
+				F22515FF613C9D63CC3D42CD /* Pods-ALAccordion Example-resources.sh */,
+				D7C5742104ADBE6FA52C0F9E /* Pods-ALAccordion Example-umbrella.h */,
+				79319D065E8858A32A3F4141 /* Pods-ALAccordion Example.debug.xcconfig */,
+				19DA381B5148C988CCF2833F /* Pods-ALAccordion Example.release.xcconfig */,
+			);
+			name = "Pods-ALAccordion Example";
+			path = "Target Support Files/Pods-ALAccordion Example";
+			sourceTree = "<group>";
+		};
+		D1832B8C22349AAEDE3DF4AE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2B0824A123FD780B181DA206 /* ALAccordion.framework */,
+				9CA5C00F254E9AB45BE1A9EC /* Pods_ALAccordion_Example.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F8C47EC917B07CF851A262E2 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CFAC79C876504EE593E4C564 /* Info.plist */,
+				A83F62513348E36FA63B05B9 /* Pods-ALAccordion Example-ALAccordion.modulemap */,
+				FA5CBF61C793C11B00ED9E00 /* Pods-ALAccordion Example-ALAccordion.xcconfig */,
+				FE8549840878764853090C0E /* Pods-ALAccordion Example-ALAccordion-Private.xcconfig */,
+				D44674E729A13EB33EB3D965 /* Pods-ALAccordion Example-ALAccordion-dummy.m */,
+				90D7C46667F660A1778D3E86 /* Pods-ALAccordion Example-ALAccordion-prefix.pch */,
+				E84D913106C265447DE9C70C /* Pods-ALAccordion Example-ALAccordion-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/Pods-ALAccordion Example-ALAccordion";
 			sourceTree = "<group>";
 		};
-		BF9C006C2554E8BD4C5F746A /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				047FB4FE8562454DCE966EAC /* Foundation.framework */,
-				577D31ADDC3546BE59AB0EFC /* UIKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		32732F9C428BD50314A34CC1 /* Headers */ = {
+		694E8ABABCF072878B0B65FB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				803AC30F4E5E02D56C518173 /* Pods-ALAccordion Example-umbrella.h in Headers */,
+				8B108B84161CC100A4EBED18 /* Pods-ALAccordion Example-ALAccordion-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AB435C53BA54E4124596AFA9 /* Headers */ = {
+		90616AE9A032AAABF165DB2D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12CF0846806ECC3EB501FA89 /* Pods-ALAccordion Example-ALAccordion-umbrella.h in Headers */,
+				4E38C8C70548A02BDE35E400 /* Pods-ALAccordion Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		F2A1CA548D74DB97B12E181D /* Pods-ALAccordion Example-ALAccordion */ = {
+		1956D26C2C95CBBAEBFA4D41 /* Pods-ALAccordion Example-ALAccordion */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 358966613052E66596B6C80A /* Build configuration list for PBXNativeTarget "Pods-ALAccordion Example-ALAccordion" */;
+			buildConfigurationList = 8CFD155CD77AD649226BD87C /* Build configuration list for PBXNativeTarget "Pods-ALAccordion Example-ALAccordion" */;
 			buildPhases = (
-				C0D9997839F36A0A5526C220 /* Sources */,
-				84666AC14F8D371968B4B6AE /* Frameworks */,
-				AB435C53BA54E4124596AFA9 /* Headers */,
+				3E5CCC75019E98718D45F585 /* Sources */,
+				AB884CE705E0CC08A62DF0BE /* Frameworks */,
+				694E8ABABCF072878B0B65FB /* Headers */,
 			);
 			buildRules = (
 			);
@@ -227,85 +227,85 @@
 			);
 			name = "Pods-ALAccordion Example-ALAccordion";
 			productName = "Pods-ALAccordion Example-ALAccordion";
-			productReference = BB3D0259B91517C2CC5D224F /* ALAccordion.framework */;
+			productReference = 2B0824A123FD780B181DA206 /* ALAccordion.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		F3BB493BFAB344FAD99224D8 /* Pods-ALAccordion Example */ = {
+		D8805113047FA1FBE687F353 /* Pods-ALAccordion Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4433616C28D987FC8C364110 /* Build configuration list for PBXNativeTarget "Pods-ALAccordion Example" */;
+			buildConfigurationList = A3C7133FB66615AD0FA654C0 /* Build configuration list for PBXNativeTarget "Pods-ALAccordion Example" */;
 			buildPhases = (
-				F5259CE4947688223BE7C8D6 /* Sources */,
-				DA6F3A8CEDF6217DC487C845 /* Frameworks */,
-				32732F9C428BD50314A34CC1 /* Headers */,
+				E3F7DB0E774015708D4EA183 /* Sources */,
+				515AA927F0C1BEE87FAD23E4 /* Frameworks */,
+				90616AE9A032AAABF165DB2D /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				58C07B3A375E9BD31E32EDE7 /* PBXTargetDependency */,
+				8BABC3B63B1C5D22688F9FF1 /* PBXTargetDependency */,
 			);
 			name = "Pods-ALAccordion Example";
 			productName = "Pods-ALAccordion Example";
-			productReference = D4369CF7BBEEB8861F582BC5 /* Pods_ALAccordion_Example.framework */;
+			productReference = 9CA5C00F254E9AB45BE1A9EC /* Pods_ALAccordion_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		F9E13E3D0772964F0B1BC94D /* Project object */ = {
+		A7E41829EF005143A73886C7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
 			};
-			buildConfigurationList = 2469636C3D7BBB767125B223 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 85BB40EC480241989A356D94 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 521C2C702629160FB708367E;
-			productRefGroup = 64D0A23F9FB6AB21305A1A38 /* Products */;
+			mainGroup = 7DA4C11A38D093816039EF54;
+			productRefGroup = D1832B8C22349AAEDE3DF4AE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F3BB493BFAB344FAD99224D8 /* Pods-ALAccordion Example */,
-				F2A1CA548D74DB97B12E181D /* Pods-ALAccordion Example-ALAccordion */,
+				D8805113047FA1FBE687F353 /* Pods-ALAccordion Example */,
+				1956D26C2C95CBBAEBFA4D41 /* Pods-ALAccordion Example-ALAccordion */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C0D9997839F36A0A5526C220 /* Sources */ = {
+		3E5CCC75019E98718D45F585 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DECF0FE69826730AE119A12 /* ALAccordionSectionViewController.swift in Sources */,
-				D430CF57B13E05C1B0AFAA24 /* ALAccordionViewController.swift in Sources */,
-				F0C652F2E8C14564092A1CEE /* Pods-ALAccordion Example-ALAccordion-dummy.m in Sources */,
+				E4D1A852DF73323588CFC0F9 /* ALAccordionController.swift in Sources */,
+				9A4F06AA9DE083187909D683 /* ALAccordionSectionViewController.swift in Sources */,
+				06D5980A73DFC8DE727B3690 /* Pods-ALAccordion Example-ALAccordion-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F5259CE4947688223BE7C8D6 /* Sources */ = {
+		E3F7DB0E774015708D4EA183 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4E034C29004620635876F92 /* Pods-ALAccordion Example-dummy.m in Sources */,
+				36E98A423ACDEDC21DAB18F7 /* Pods-ALAccordion Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		58C07B3A375E9BD31E32EDE7 /* PBXTargetDependency */ = {
+		8BABC3B63B1C5D22688F9FF1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-ALAccordion Example-ALAccordion";
-			target = F2A1CA548D74DB97B12E181D /* Pods-ALAccordion Example-ALAccordion */;
-			targetProxy = AEDA9AABE10534435CE2F1AE /* PBXContainerItemProxy */;
+			target = 1956D26C2C95CBBAEBFA4D41 /* Pods-ALAccordion Example-ALAccordion */;
+			targetProxy = E814BCD5C35644CC8D7777B7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		23784A353E1B35F6E6C20486 /* Debug */ = {
+		14408BC72103B9D4069ED397 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -344,7 +344,37 @@
 			};
 			name = Debug;
 		};
-		310E0ECD0DB879198AE90649 /* Release */ = {
+		548872D9B7B96D6533EB23D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79319D065E8858A32A3F4141 /* Pods-ALAccordion Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ALAccordion Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-ALAccordion Example/Pods-ALAccordion Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_ALAccordion_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		95B0E2F08F20DCFAEA4FAB73 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -378,9 +408,9 @@
 			};
 			name = Release;
 		};
-		46AF555A8ED2700C83A1B1D6 /* Debug */ = {
+		B2EF39DB3405116F27400FFA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CBB90A39143809B6BCC7784B /* Pods-ALAccordion Example-ALAccordion-Private.xcconfig */;
+			baseConfigurationReference = FE8549840878764853090C0E /* Pods-ALAccordion Example-ALAccordion-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -395,68 +425,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Pods-ALAccordion Example-ALAccordion/Pods-ALAccordion Example-ALAccordion.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = ALAccordion;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		4DA71EC64EF8B689921CDDA7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0B2BD3A6A58F482EB2A282EB /* Pods-ALAccordion Example.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-ALAccordion Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-ALAccordion Example/Pods-ALAccordion Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_ALAccordion_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		8394D7FB5878A5D131874FF4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F2D2848BD3F28FB4C8DA769F /* Pods-ALAccordion Example.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-ALAccordion Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-ALAccordion Example/Pods-ALAccordion Example.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_ALAccordion_Example;
+				PRODUCT_NAME = ALAccordion;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -465,9 +435,9 @@
 			};
 			name = Release;
 		};
-		A4C59F4B9E4A03A2CD8950FC /* Release */ = {
+		DE7061FCDD6C0FCCE842C749 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CBB90A39143809B6BCC7784B /* Pods-ALAccordion Example-ALAccordion-Private.xcconfig */;
+			baseConfigurationReference = FE8549840878764853090C0E /* Pods-ALAccordion Example-ALAccordion-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -482,8 +452,38 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Pods-ALAccordion Example-ALAccordion/Pods-ALAccordion Example-ALAccordion.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = ALAccordion;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E429D04959E5171109195604 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19DA381B5148C988CCF2833F /* Pods-ALAccordion Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ALAccordion Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-ALAccordion Example/Pods-ALAccordion Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_ALAccordion_Example;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -495,34 +495,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2469636C3D7BBB767125B223 /* Build configuration list for PBXProject "Pods" */ = {
+		85BB40EC480241989A356D94 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				23784A353E1B35F6E6C20486 /* Debug */,
-				310E0ECD0DB879198AE90649 /* Release */,
+				14408BC72103B9D4069ED397 /* Debug */,
+				95B0E2F08F20DCFAEA4FAB73 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		358966613052E66596B6C80A /* Build configuration list for PBXNativeTarget "Pods-ALAccordion Example-ALAccordion" */ = {
+		8CFD155CD77AD649226BD87C /* Build configuration list for PBXNativeTarget "Pods-ALAccordion Example-ALAccordion" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				46AF555A8ED2700C83A1B1D6 /* Debug */,
-				A4C59F4B9E4A03A2CD8950FC /* Release */,
+				DE7061FCDD6C0FCCE842C749 /* Debug */,
+				B2EF39DB3405116F27400FFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4433616C28D987FC8C364110 /* Build configuration list for PBXNativeTarget "Pods-ALAccordion Example" */ = {
+		A3C7133FB66615AD0FA654C0 /* Build configuration list for PBXNativeTarget "Pods-ALAccordion Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4DA71EC64EF8B689921CDDA7 /* Debug */,
-				8394D7FB5878A5D131874FF4 /* Release */,
+				548872D9B7B96D6533EB23D4 /* Debug */,
+				E429D04959E5171109195604 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = F9E13E3D0772964F0B1BC94D /* Project object */;
+	rootObject = A7E41829EF005143A73886C7 /* Project object */;
 }

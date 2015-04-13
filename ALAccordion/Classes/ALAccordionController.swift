@@ -10,7 +10,7 @@
 
 import UIKit
 
-public class ALAccordionViewController: UIViewController
+public class ALAccordionController: UIViewController
 {
     private let ACCORDION_ANIMATION_DURATION = 0.3
 

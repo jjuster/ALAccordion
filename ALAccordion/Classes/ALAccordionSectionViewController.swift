@@ -14,7 +14,7 @@ public class ALAccordionSectionViewController: UIViewController
 {
     // MARK: - Properties
     
-    weak var accordion: ALAccordionViewController?
+    weak var accordion: ALAccordionController?
 
     private let headerContainerView = UIView()
     private let bodyContainerView = UIView()
