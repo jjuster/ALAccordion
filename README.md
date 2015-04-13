@@ -20,9 +20,10 @@ it, simply add the following line to your Podfile:
 pod "ios-accordion"
 ```
 
-## Author
+## Authors
 
 Sam Williams, sam.williams@alliants.com
+Chris Miller, chris.miller@alliants.com
 
 ## License
 

@@ -1,0 +1,6 @@
+framework module Pods_ALAccordion_Example {
+  umbrella header "Pods-ALAccordion Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

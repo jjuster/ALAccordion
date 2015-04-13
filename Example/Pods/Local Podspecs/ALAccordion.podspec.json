@@ -1,0 +1,23 @@
+{
+  "name": "ALAccordion",
+  "version": "0.1.0",
+  "summary": "An Accordion controller for iOS",
+  "description": "                       An Accordion controller for iOS, writtien in Swift.\n",
+  "homepage": "https://github.com/Alliants/ALAccordion",
+  "license": "MIT",
+  "authors": {
+    "Sam Williams": "sam.williams@alliants.com",
+    "Chris Miller": "chris.miller@alliants.com"
+  },
+  "source": {
+    "git": "https://github.com/Alliants/ALAccordion.git",
+    "tag": "0.1.0"
+  },
+  "social_media_url": "http://twitter.com/alliants",
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "source_files": "ALAccordion/**/*.swift",
+  "frameworks": "UIKit"
+}

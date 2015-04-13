@@ -1,14 +1,14 @@
 PODS:
-  - ios-accordion (0.1.0)
+  - ALAccordion (0.1.0)
 
 DEPENDENCIES:
-  - ios-accordion (from `../`)
+  - ALAccordion (from `../`)
 
 EXTERNAL SOURCES:
-  ios-accordion:
+  ALAccordion:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ios-accordion: ab2916b60e09cdcdd42219c2e7ce68eed5ffabc7
+  ALAccordion: 7e272a8264c9a061b8670eba9320de31e73f540d
 
 COCOAPODS: 0.36.3
