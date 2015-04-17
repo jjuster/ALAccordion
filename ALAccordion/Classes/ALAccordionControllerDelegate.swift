@@ -16,4 +16,7 @@ import UIKit
 
     optional func sectionWillOpen()
     optional func sectionWillClose()
+
+    optional func sectionDidOpen()
+    optional func sectionDidClose()
 }

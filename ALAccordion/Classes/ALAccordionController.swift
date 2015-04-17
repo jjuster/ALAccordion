@@ -242,6 +242,11 @@ public class ALAccordionController: UIViewController
             return
         }
 
+        let viewController = section.viewController as? ALAccordionControllerDelegate
+
+        // Tell the view controller that it's about to open
+        viewController?.sectionWillOpen?()
+
         // Open up the section to full screen
 
         // Remove previous top/bottom constraints on section and add them to the current section
@@ -265,6 +270,7 @@ public class ALAccordionController: UIViewController
 
         // Tell system to update the layout
         let duration = animated ? ACCORDION_ANIMATION_DURATION : 0
+
         UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseInOut, animations:
         {
             // Hide header & footer
@@ -282,11 +288,23 @@ public class ALAccordionController: UIViewController
             
             self.view.layoutIfNeeded()
         },
-        completion: nil)
+        completion:
+        {
+            (finished: Bool) in
+
+            // Tell the view controller that it just opened
+            viewController?.sectionDidOpen?()
+        })
     }
 
     func closeSection(section: ALAccordionSection, animated: Bool)
     {
+        let viewController = section.viewController as? ALAccordionControllerDelegate
+
+        // Tell the view controller delegate that it's about to close
+        viewController?.sectionWillClose?()
+
+
         // We need to break the top and bottom constraints (if full screen mode is enabled)
         if let top = self.sectionTopConstraint
         {
@@ -316,6 +334,12 @@ public class ALAccordionController: UIViewController
 
             self.view.layoutIfNeeded()
         },
-        completion: nil)
+        completion:
+        {
+            (finished: Bool) in
+
+            // Tell the view controller that it just closed
+            viewController?.sectionDidClose?()
+        })
     }
 }

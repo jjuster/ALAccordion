@@ -62,8 +62,10 @@ class ALSecondViewController: UIViewController, ALAccordionControllerDelegate
 
     // MARK: - ALAccordionControllerDelegate
 
-    func sectionWillOpen(animated: Bool)
+    func sectionWillOpen()
     {
+        println("Second Section Will Open")
+
         //        self.headerContainer.removeConstraint(self.dateLabelBottomConstraint)
         //
         //        // Animate the labels
@@ -78,8 +80,10 @@ class ALSecondViewController: UIViewController, ALAccordionControllerDelegate
         //        completion: nil)
     }
 
-    func sectionWillClose(animated: Bool)
+    func sectionWillClose()
     {
+        println("Second Section Will Close")
+
         //        if self.dateLabelBottomConstraint != nil
         //        {
         //            self.headerContainer.addConstraint(self.dateLabelBottomConstraint)
@@ -95,5 +99,15 @@ class ALSecondViewController: UIViewController, ALAccordionControllerDelegate
         //                return
         //            },
         //            completion: nil)
+    }
+
+    func sectionDidOpen()
+    {
+        println("Second Section Did Open")
+    }
+
+    func sectionDidClose()
+    {
+        println("Second Section Did Close")
     }
 }

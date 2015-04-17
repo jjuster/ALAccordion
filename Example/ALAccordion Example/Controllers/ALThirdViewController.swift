@@ -62,38 +62,23 @@ class ALThirdViewController: UIViewController, ALAccordionControllerDelegate
 
     // MARK: - ALAccordionControllerDelegate
 
-    func sectionWillOpen(animated: Bool)
+    func sectionWillOpen()
     {
-        //        self.headerContainer.removeConstraint(self.dateLabelBottomConstraint)
-        //
-        //        // Animate the labels
-        //        let duration = animated ? ANIMATION_DURATION : 0
-        //        UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseInOut, animations:
-        //        {
-        //            self.view.layoutIfNeeded()
-        //            self.selectDatesLabel.alpha = 1.0
-        //            self.selectedDateRangeView.alpha = 0
-        //            return
-        //        },
-        //        completion: nil)
+        println("Third Section Will Open")
     }
 
-    func sectionWillClose(animated: Bool)
+    func sectionWillClose()
     {
-        //        if self.dateLabelBottomConstraint != nil
-        //        {
-        //            self.headerContainer.addConstraint(self.dateLabelBottomConstraint)
-        //        }
-        //
-        //        // Animate the labels
-        //        let duration = animated ? ANIMATION_DURATION : 0
-        //        UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseInOut, animations:
-        //            {
-        //                self.view.layoutIfNeeded()
-        //                self.selectDatesLabel?.alpha = 0
-        //                self.selectedDateRangeView?.alpha = 1.0
-        //                return
-        //            },
-        //            completion: nil)
+        println("Third Section Will Close")
+    }
+
+    func sectionDidOpen()
+    {
+        println("Third Section Did Open")
+    }
+
+    func sectionDidClose()
+    {
+        println("Third Section Did Close")
     }
 }
