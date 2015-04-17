@@ -1,8 +1,8 @@
 //
-//  ALAccordionSectionViewController.swift
+//  ALAccordionSection.swift
 //  ALAccordion
 //
-//  Created by Sam Williams on 10/04/2015.
+//  Created by Sam Williams on 13/04/2015.
 //  Copyright (c) 2015 Alliants Ltd. All rights reserved.
 //
 //  http://alliants.com
@@ -10,32 +10,45 @@
 
 import UIKit
 
-public class ALAccordionSectionViewController: UIViewController
+class ALAccordionSection: NSObject
 {
     // MARK: - Properties
-    
+
     weak var accordion: ALAccordionController?
+    {
+        didSet
+        {
+            // Start off closed
+            accordion?.closeSection(self, animated: false)
+        }
+    }
+
+    var sectionView = UIView()
 
     private let headerContainerView = UIView()
     private let bodyContainerView = UIView()
 
-    private var openConstraint: NSLayoutConstraint!
-    private var closeConstraint: NSLayoutConstraint!
-    
-    public var open = false
+    private (set) internal var viewController: UIViewController!
 
-    // MARK: - View Methods
+    var openConstraint: NSLayoutConstraint!
+    var closeConstraint: NSLayoutConstraint!
 
-    override public func viewDidLoad()
+    private (set) internal var open = false
+
+    init(viewController: UIViewController)
     {
-        super.viewDidLoad()
+        super.init()
 
-        self.view.clipsToBounds = true
+        assert(viewController is ALAccordionControllerDelegate, "View Controller \(viewController) must conform to the protocol \(_stdlib_getDemangledTypeName(ALAccordionControllerDelegate))")
+
+        self.viewController = viewController
+
+        self.sectionView.clipsToBounds = true
 
         self.layoutViews()
 
-        // Start off closed
-        self.closeSection(animated: false)
+        self.setupHeaderView((viewController as! ALAccordionControllerDelegate).headerView)
+        self.setupBodyView(viewController.view)
     }
 
     // MARK: - Layout Methods
@@ -44,9 +57,9 @@ public class ALAccordionSectionViewController: UIViewController
     {
         // Layout the header and body views
 
-        self.view.addSubview(self.headerContainerView)
-        self.view.addSubview(self.bodyContainerView)
-        
+        self.sectionView.addSubview(self.headerContainerView)
+        self.sectionView.addSubview(self.bodyContainerView)
+
         self.headerContainerView.setTranslatesAutoresizingMaskIntoConstraints(false)
         self.bodyContainerView.setTranslatesAutoresizingMaskIntoConstraints(false)
 
@@ -68,14 +81,14 @@ public class ALAccordionSectionViewController: UIViewController
 
         let vertical = NSLayoutConstraint.constraintsWithVisualFormat("V:|[header][body]", options: nil, metrics: nil, views: views)
 
-        self.view.addConstraints(headerHorizontal + bodyHorizontal + vertical)
+        self.sectionView.addConstraints(headerHorizontal + bodyHorizontal + vertical)
 
         // Create the constraint for opening / closing section
-        self.openConstraint = NSLayoutConstraint(item: self.view, attribute: .Bottom, relatedBy: .Equal, toItem: self.bodyContainerView, attribute: .Bottom, multiplier: 1.0, constant: 0)
-        self.closeConstraint = NSLayoutConstraint(item: self.headerContainerView, attribute: .Bottom, relatedBy: .Equal, toItem: self.view, attribute: .Bottom, multiplier: 1.0, constant: 0)
+        self.openConstraint = NSLayoutConstraint(item: self.sectionView, attribute: .Bottom, relatedBy: .Equal, toItem: self.bodyContainerView, attribute: .Bottom, multiplier: 1.0, constant: 0)
+        self.closeConstraint = NSLayoutConstraint(item: self.headerContainerView, attribute: .Bottom, relatedBy: .Equal, toItem: self.sectionView, attribute: .Bottom, multiplier: 1.0, constant: 0)
     }
 
-    public func setupHeaderView(header: UIView)
+    func setupHeaderView(header: UIView)
     {
         // Add the header view to the header container view
         self.headerContainerView.addSubview(header)
@@ -94,7 +107,7 @@ public class ALAccordionSectionViewController: UIViewController
         self.headerContainerView.addConstraint(bottom)
     }
 
-    public func setupBodyView(body: UIView)
+    func setupBodyView(body: UIView)
     {
         // Add the footer view to the footer container view
         self.bodyContainerView.addSubview(body)
@@ -113,42 +126,26 @@ public class ALAccordionSectionViewController: UIViewController
         self.bodyContainerView.addConstraint(bottom)
     }
 
+
     // MARK: - Opening / closing the section
-    public func openSection(#animated: Bool)
-    {
-        // Dont open again
-        if self.open
-        {
-            return
-        }
-
-        println("Opening section \(self)")
-
-        self.open = true
-
-        self.accordion?.openSection(self, animated: animated)
-    }
-
-    public func closeSection(#animated: Bool)
-    {
-        println("Closing section \(self)")
-
-        self.open = false
-
-        self.accordion?.closeSection(self, animated: animated)
-    }
 
     func activateOpenConstraints()
     {
         // Swap open / close constraints
-        self.view.removeConstraint(self.closeConstraint)
-        self.view.addConstraint(self.openConstraint)
+        self.sectionView.removeConstraint(self.closeConstraint)
+        self.sectionView.addConstraint(self.openConstraint)
+
+        // Mark as open
+        self.open = true
     }
 
     func activateCloseConstraints()
     {
         // Swap open / close constraints
-        self.view.removeConstraint(self.openConstraint)
-        self.view.addConstraint(self.closeConstraint)
+        self.sectionView.removeConstraint(self.openConstraint)
+        self.sectionView.addConstraint(self.closeConstraint)
+
+        // Mark as closed
+        self.open = false
     }
 }

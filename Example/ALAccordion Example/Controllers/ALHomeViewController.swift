@@ -5,6 +5,8 @@
 //  Created by Sam Williams on 10/04/2015.
 //  Copyright (c) 2015 Sam Williams. All rights reserved.
 //
+//  http://alliants.com
+//
 
 import UIKit
 
@@ -41,10 +43,12 @@ class ALHomeViewController: ALAccordionController
 
     func createSections()
     {
-        let section1 = ALFirstViewController()
-        let section2 = ALSecondViewController()
-        let section3 = ALThirdViewController()
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
 
-        self.setSections(section1, section2, section3)
+        let section1ViewController = storyboard.instantiateViewControllerWithIdentifier("firstVC") as! ALFirstViewController
+        let section2ViewController = storyboard.instantiateViewControllerWithIdentifier("secondVC") as! ALSecondViewController
+        let section3ViewController = storyboard.instantiateViewControllerWithIdentifier("thirdVC") as! ALThirdViewController
+
+        self.setViewControllers(section1ViewController, section2ViewController, section3ViewController)
     }
 }

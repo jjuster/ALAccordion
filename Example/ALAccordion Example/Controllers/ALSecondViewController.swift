@@ -5,56 +5,65 @@
 //  Created by Sam Williams on 10/04/2015.
 //  Copyright (c) 2015 Sam Williams. All rights reserved.
 //
+//  http://alliants.com
+//
 
 import UIKit
 
 import ALAccordion
 
-class ALSecondViewController: ALAccordionSectionViewController
+class ALSecondViewController: UIViewController, ALAccordionControllerDelegate
 {
-    override func viewDidLoad()
+    //
+    // MARK: - Properties
+    //
+    
+    lazy var headerView: UIView =
     {
-        super.viewDidLoad()
+        let headerViews = NSBundle.mainBundle().loadNibNamed("SectionHeaderViews", owner: self, options: nil) as! [UIView]
 
-        // Do any additional setup after loading the view.
-
-        self.createHeaderBodyViews()
-    }
-
-    func createHeaderBodyViews()
-    {
-        let views = NSBundle.mainBundle().loadNibNamed("Section2Views", owner: self, options: nil) as! [UIView]
-
-        let header = views[0]
-        let body = views[1]
-
-        self.setupHeaderView(header)
-        self.setupBodyView(body)
+        let view = headerViews[1]
 
         // Add a tap gesture recogniser to open the section
         let tapGR = UITapGestureRecognizer(target: self, action: "headerTapped:")
-        self.view.addGestureRecognizer(tapGR)
+        view.addGestureRecognizer(tapGR)
+
+        return view
+    }()
+
+
+    //
+    // MARK: - Methods
+    //
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
     }
 
     func headerTapped(recognizer: UITapGestureRecognizer)
     {
-        println("Date header tapped")
-        if (self.open)
+        // Get the section for this view controller
+        if let sectionIndex = self.accordionController?.sectionIndexForViewController(self)
         {
-            self.closeSection(animated: true)
-        }
-        else
-        {
-            self.openSection(animated: true)
+            println("Second view controller header tapped")
+
+            // If this section is open, close it - otherwise, open it
+            if self.accordionController!.openSectionIndex == sectionIndex
+            {
+                self.accordionController?.closeSectionAtIndex(sectionIndex, animated: true)
+            }
+            else
+            {
+                self.accordionController?.openSectionAtIndex(sectionIndex, animated: true)
+            }
         }
     }
 
-    // MARK: - Open 'n' close methods
-    override func openSection(#animated: Bool)
-    {
-        // Actually open the section
-        super.openSection(animated: animated)
+    // MARK: - ALAccordionControllerDelegate
 
+    func sectionWillOpen(animated: Bool)
+    {
         //        self.headerContainer.removeConstraint(self.dateLabelBottomConstraint)
         //
         //        // Animate the labels
@@ -69,11 +78,8 @@ class ALSecondViewController: ALAccordionSectionViewController
         //        completion: nil)
     }
 
-    override func closeSection(#animated: Bool)
+    func sectionWillClose(animated: Bool)
     {
-        // Actually close the section
-        super.closeSection(animated: animated)
-
         //        if self.dateLabelBottomConstraint != nil
         //        {
         //            self.headerContainer.addConstraint(self.dateLabelBottomConstraint)

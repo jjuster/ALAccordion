@@ -20,10 +20,24 @@ public class ALAccordionController: UIViewController
     private let sectionContainerView = UIView()
     private let footerContainerView = UIView()
 
-    private var sections = [ALAccordionSectionViewController]()
+    private var sections = [ALAccordionSection]()
 
     private var sectionTopConstraint: NSLayoutConstraint?
     private var sectionBottomConstraint: NSLayoutConstraint?
+
+    public var openSectionIndex: Int?
+    {
+        // Return the index of the first section that's marked as open
+        for (idx, section) in enumerate(self.sections)
+        {
+            if section.open
+            {
+                return idx
+            }
+        }
+
+        return nil
+    }
 
     // MARK: - View Methods
 
@@ -39,12 +53,16 @@ public class ALAccordionController: UIViewController
 
     // MARK: - Layout views
 
-    public func setSections(sections: ALAccordionSectionViewController...)
+    public func setViewControllers(viewControllers: UIViewController...)
     {
-        for s in sections
+        for vc in viewControllers
         {
-            s.accordion = self
-            self.sections.append(s)
+            assert(vc is ALAccordionControllerDelegate, "View Controller \(vc) must conform to the protocol \(_stdlib_getDemangledTypeName(ALAccordionControllerDelegate))")
+
+            let section = ALAccordionSection(viewController: vc)
+
+            section.accordion = self
+            self.sections.append(section)
         }
 
         self.layoutSectionViews()
@@ -63,7 +81,6 @@ public class ALAccordionController: UIViewController
         self.headerContainerView.setTranslatesAutoresizingMaskIntoConstraints(false)
         self.sectionContainerView.setTranslatesAutoresizingMaskIntoConstraints(false)
         self.footerContainerView.setTranslatesAutoresizingMaskIntoConstraints(false)
-
 
         let headerTop = NSLayoutConstraint(item: self.headerContainerView, attribute: .Top, relatedBy: .Equal, toItem: self.topLayoutGuide, attribute: .Bottom, multiplier: 1.0, constant: 0)
         headerTop.priority = 250
@@ -132,29 +149,29 @@ public class ALAccordionController: UIViewController
         for section in self.sections
         {
             // Add section to view
-            self.sectionContainerView.addSubview(section.view)
-            section.view.setTranslatesAutoresizingMaskIntoConstraints(false)
+            self.sectionContainerView.addSubview(section.sectionView)
+            section.sectionView.setTranslatesAutoresizingMaskIntoConstraints(false)
 
             // Setup constraints
-            let views = ["section": section.view]
+            let views = ["section": section.sectionView]
 
             let horizontal = NSLayoutConstraint.constraintsWithVisualFormat("H:|[section]|", options: nil, metrics: nil, views: views)
 
-            var top = NSLayoutConstraint(item: section.view, attribute: .Top, relatedBy: .Equal, toItem: previousView, attribute: previousView == self.sectionContainerView ? .Top : .Bottom, multiplier: 1.0, constant: 0)
+            var top = NSLayoutConstraint(item: section.sectionView, attribute: .Top, relatedBy: .Equal, toItem: previousView, attribute: previousView == self.sectionContainerView ? .Top : .Bottom, multiplier: 1.0, constant: 0)
 
 
             self.sectionContainerView.addConstraints(horizontal)
             self.sectionContainerView.addConstraint(top)
 
-            self.addChildViewController(section)
+            self.addChildViewController(section.viewController)
 
-            previousView = section.view
+            previousView = section.sectionView
         }
 
         // Add final bottom constraint
         let lastSection = sections.last
 
-        let bottom = NSLayoutConstraint(item: lastSection!.view, attribute: .Bottom, relatedBy: .Equal, toItem: self.sectionContainerView, attribute: .Bottom, multiplier: 1.0, constant: 0)
+        let bottom = NSLayoutConstraint(item: lastSection!.sectionView, attribute: .Bottom, relatedBy: .Equal, toItem: self.sectionContainerView, attribute: .Bottom, multiplier: 1.0, constant: 0)
         self.sectionContainerView.addConstraint(bottom)
 
         self.view.setNeedsLayout()
@@ -163,18 +180,68 @@ public class ALAccordionController: UIViewController
     // Removes all the current sections from the view
     private func removeCurrentSections()
     {
+        for childView in self.sectionContainerView.subviews as! [UIView]
+        {
+            childView.removeFromSuperview()
+        }
+
         for childVC in self.childViewControllers as! [UIViewController]
         {
-            childVC.view.removeFromSuperview()
             childVC.removeFromParentViewController()
         }
     }
 
-    // MARK: - Section callback methods
 
-    // Called by a section when it gets marked for opening
-    func openSection(section: ALAccordionSectionViewController, animated: Bool)
+    // Get the ALAccordionSection object that a given view controller is associated with
+    public func sectionIndexForViewController(viewController: UIViewController) -> Int?
     {
+        for (idx, section) in enumerate(self.sections)
+        {
+            if section.viewController == viewController
+            {
+                return idx
+            }
+        }
+
+        return nil
+    }
+
+    // MARK: - Open 'n' Close Methods
+
+    public func openSectionAtIndex(index: Int, animated: Bool)
+    {
+        assert(index >= 0 && index < self.sections.count, "Section index (\(index)) out of bounds. There are only \(self.sections.count) sections")
+
+        // Get the section at this index
+        let section = self.sections[index]
+        self.openSection(section, animated: true)
+    }
+
+    public func closeSectionAtIndex(index: Int, animated: Bool)
+    {
+        assert(index >= 0 && index < self.sections.count, "Section index (\(index)) out of bounds. There are only \(self.sections.count) sections")
+
+        // Get the section at this index
+        let section = self.sections[index]
+        self.closeSection(section, animated: animated)
+    }
+
+    public func closeAllSections(animated: Bool)
+    {
+        for section in self.sections
+        {
+            self.closeSection(section, animated: animated)
+        }
+    }
+
+    func openSection(section: ALAccordionSection, animated: Bool)
+    {
+        // Dont open again
+        if section.open == true
+        {
+            return
+        }
+
         // Open up the section to full screen
 
         // Remove previous top/bottom constraints on section and add them to the current section
@@ -191,8 +258,8 @@ public class ALAccordionController: UIViewController
         section.activateOpenConstraints()
 
         // Create the top & bottom constraints to pull the section to full screen
-        self.sectionTopConstraint = NSLayoutConstraint(item: section.view, attribute: .Top, relatedBy: .Equal, toItem: self.topLayoutGuide, attribute: .Bottom, multiplier: 1.0, constant: 0)
-        self.sectionBottomConstraint = NSLayoutConstraint(item: self.bottomLayoutGuide, attribute: .Bottom, relatedBy: .Equal, toItem: section.view, attribute: .Bottom, multiplier: 1.0, constant: 0)
+        self.sectionTopConstraint = NSLayoutConstraint(item: section.sectionView, attribute: .Top, relatedBy: .Equal, toItem: self.topLayoutGuide, attribute: .Bottom, multiplier: 1.0, constant: 0)
+        self.sectionBottomConstraint = NSLayoutConstraint(item: self.bottomLayoutGuide, attribute: .Bottom, relatedBy: .Equal, toItem: section.sectionView, attribute: .Bottom, multiplier: 1.0, constant: 0)
 
         self.view.addConstraints([self.sectionTopConstraint!, self.sectionBottomConstraint!])
 
@@ -209,17 +276,16 @@ public class ALAccordionController: UIViewController
             {
                 if s != section
                 {
-                    s.view.alpha = 0
+                    s.sectionView.alpha = 0
                 }
             }
-
+            
             self.view.layoutIfNeeded()
         },
         completion: nil)
     }
 
-    // Called by a section when it gets marked for closing
-    func closeSection(section: ALAccordionSectionViewController, animated: Bool)
+    func closeSection(section: ALAccordionSection, animated: Bool)
     {
         // We need to break the top and bottom constraints (if full screen mode is enabled)
         if let top = self.sectionTopConstraint
@@ -233,7 +299,7 @@ public class ALAccordionController: UIViewController
         }
 
         section.activateCloseConstraints()
-        
+
         // Tell system to update the layout
         let duration = animated ? ACCORDION_ANIMATION_DURATION : 0
         UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseInOut, animations:
@@ -245,7 +311,7 @@ public class ALAccordionController: UIViewController
             // Show all sections
             for s in self.sections
             {
-                s.view.alpha = 1.0
+                s.sectionView.alpha = 1.0
             }
 
             self.view.layoutIfNeeded()

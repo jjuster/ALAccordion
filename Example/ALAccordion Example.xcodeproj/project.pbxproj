@@ -8,42 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		2283B0241ADBB65F001DC8BD /* HeaderFooterViews.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2283B0231ADBB65F001DC8BD /* HeaderFooterViews.xib */; };
+		2283B0271ADC0D40001DC8BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2283B0261ADC0D40001DC8BD /* Main.storyboard */; };
 		22B7E6711AD7F23400C6A91F /* ALFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B7E6701AD7F23400C6A91F /* ALFirstViewController.swift */; };
 		22B7E6731AD7F26000C6A91F /* ALAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B7E6721AD7F26000C6A91F /* ALAppDelegate.swift */; };
 		22B7E6771AD7FEF400C6A91F /* ALHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B7E6761AD7FEF400C6A91F /* ALHomeViewController.swift */; };
 		22B7E6791AD7FF1600C6A91F /* ALSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B7E6781AD7FF1600C6A91F /* ALSecondViewController.swift */; };
 		22B7E67B1AD7FF2900C6A91F /* ALThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B7E67A1AD7FF2900C6A91F /* ALThirdViewController.swift */; };
-		22B7E67E1AD81EEA00C6A91F /* Section1Views.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22B7E67D1AD81EEA00C6A91F /* Section1Views.xib */; };
-		22B7E6801AD81F3000C6A91F /* Section2Views.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22B7E67F1AD81F3000C6A91F /* Section2Views.xib */; };
-		22B7E6821AD820CC00C6A91F /* Section3Views.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22B7E6811AD820CC00C6A91F /* Section3Views.xib */; };
+		22B7E67E1AD81EEA00C6A91F /* SectionHeaderViews.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22B7E67D1AD81EEA00C6A91F /* SectionHeaderViews.xib */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
-		6003F5A1195388D20070C39A /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6003F59F195388D20070C39A /* Main_iPhone.storyboard */; };
-		6003F5A4195388D20070C39A /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A2195388D20070C39A /* Main_iPad.storyboard */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		9AA699E49595C790D71AF402 /* Pods_ALAccordion_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C9AA2A438333D8B0F82E40 /* Pods_ALAccordion_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2283B0231ADBB65F001DC8BD /* HeaderFooterViews.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderFooterViews.xib; sourceTree = "<group>"; };
+		2283B0261ADC0D40001DC8BD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		22B7E6701AD7F23400C6A91F /* ALFirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALFirstViewController.swift; sourceTree = "<group>"; };
 		22B7E6721AD7F26000C6A91F /* ALAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALAppDelegate.swift; sourceTree = "<group>"; };
 		22B7E6761AD7FEF400C6A91F /* ALHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALHomeViewController.swift; sourceTree = "<group>"; };
 		22B7E6781AD7FF1600C6A91F /* ALSecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALSecondViewController.swift; sourceTree = "<group>"; };
 		22B7E67A1AD7FF2900C6A91F /* ALThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALThirdViewController.swift; sourceTree = "<group>"; };
-		22B7E67D1AD81EEA00C6A91F /* Section1Views.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Section1Views.xib; sourceTree = "<group>"; };
-		22B7E67F1AD81F3000C6A91F /* Section2Views.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Section2Views.xib; sourceTree = "<group>"; };
-		22B7E6811AD820CC00C6A91F /* Section3Views.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Section3Views.xib; sourceTree = "<group>"; };
+		22B7E67D1AD81EEA00C6A91F /* SectionHeaderViews.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionHeaderViews.xib; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* ALAccordion Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ALAccordion Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6003F595195388D20070C39A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6003F597195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6003F5A0195388D20070C39A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		6003F5A3195388D20070C39A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		730E48880C8AEA8184E6C07B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		AFC3854F584500447AB3F339 /* Pods-ALAccordion Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ALAccordion Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ALAccordion Example/Pods-ALAccordion Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -82,9 +76,8 @@
 		22B7E6751AD7F2E000C6A91F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2283B0261ADC0D40001DC8BD /* Main.storyboard */,
 				22B7E67C1AD81E0D00C6A91F /* Headers */,
-				6003F59F195388D20070C39A /* Main_iPhone.storyboard */,
-				6003F5A2195388D20070C39A /* Main_iPad.storyboard */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -93,9 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				2283B0231ADBB65F001DC8BD /* HeaderFooterViews.xib */,
-				22B7E67D1AD81EEA00C6A91F /* Section1Views.xib */,
-				22B7E67F1AD81F3000C6A91F /* Section2Views.xib */,
-				22B7E6811AD820CC00C6A91F /* Section3Views.xib */,
+				22B7E67D1AD81EEA00C6A91F /* SectionHeaderViews.xib */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -226,13 +217,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F5A4195388D20070C39A /* Main_iPad.storyboard in Resources */,
-				22B7E6801AD81F3000C6A91F /* Section2Views.xib in Resources */,
+				2283B0271ADC0D40001DC8BD /* Main.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
-				6003F5A1195388D20070C39A /* Main_iPhone.storyboard in Resources */,
 				2283B0241ADBB65F001DC8BD /* HeaderFooterViews.xib in Resources */,
-				22B7E6821AD820CC00C6A91F /* Section3Views.xib in Resources */,
-				22B7E67E1AD81EEA00C6A91F /* Section1Views.xib in Resources */,
+				22B7E67E1AD81EEA00C6A91F /* SectionHeaderViews.xib in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,22 +297,6 @@
 				6003F597195388D20070C39A /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		6003F59F195388D20070C39A /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6003F5A0195388D20070C39A /* Base */,
-			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		6003F5A2195388D20070C39A /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6003F5A3195388D20070C39A /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
