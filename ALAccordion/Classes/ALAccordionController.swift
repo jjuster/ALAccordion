@@ -12,9 +12,9 @@ import UIKit
 
 public class ALAccordionController: UIViewController
 {
-    private let ACCORDION_ANIMATION_DURATION = 0.3
-
     // MARK: - Properties
+
+    public var animationDuration = 0.5
 
     private let headerContainerView = UIView()
     private let sectionContainerView = UIView()
@@ -245,7 +245,7 @@ public class ALAccordionController: UIViewController
         let viewController = section.viewController as? ALAccordionControllerDelegate
 
         // Tell the view controller that it's about to open
-        viewController?.sectionWillOpen?()
+        viewController?.sectionWillOpen?(animated: animated)
 
         // Open up the section to full screen
 
@@ -269,7 +269,7 @@ public class ALAccordionController: UIViewController
         self.view.addConstraints([self.sectionTopConstraint!, self.sectionBottomConstraint!])
 
         // Tell system to update the layout
-        let duration = animated ? ACCORDION_ANIMATION_DURATION : 0
+        let duration = animated ? self.animationDuration : 0
 
         UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseInOut, animations:
         {
@@ -302,7 +302,7 @@ public class ALAccordionController: UIViewController
         let viewController = section.viewController as? ALAccordionControllerDelegate
 
         // Tell the view controller delegate that it's about to close
-        viewController?.sectionWillClose?()
+        viewController?.sectionWillClose?(animated: animated)
 
 
         // We need to break the top and bottom constraints (if full screen mode is enabled)
@@ -319,7 +319,7 @@ public class ALAccordionController: UIViewController
         section.activateCloseConstraints()
 
         // Tell system to update the layout
-        let duration = animated ? ACCORDION_ANIMATION_DURATION : 0
+        let duration = animated ? self.animationDuration : 0
         UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseInOut, animations:
         {
             // Show header & footer

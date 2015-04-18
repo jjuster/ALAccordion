@@ -14,8 +14,8 @@ import UIKit
 {
     var headerView: UIView { get }
 
-    optional func sectionWillOpen()
-    optional func sectionWillClose()
+    optional func sectionWillOpen(#animated: Bool)
+    optional func sectionWillClose(#animated: Bool)
 
     optional func sectionDidOpen()
     optional func sectionDidClose()

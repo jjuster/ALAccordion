@@ -17,18 +17,21 @@ class ALSecondViewController: UIViewController, ALAccordionControllerDelegate
     //
     // MARK: - Properties
     //
+
+    var headerBottomConstraint: NSLayoutConstraint?
     
     lazy var headerView: UIView =
     {
-        let headerViews = NSBundle.mainBundle().loadNibNamed("SectionHeaderViews", owner: self, options: nil) as! [UIView]
-
-        let view = headerViews[1]
+        let header = ALExpandingHeaderView()
+        header.backgroundColor = UIColor(red: 164.0/255.0, green: 73.0/255.0, blue: 216.0/255.0, alpha: 1.0)
+        header.titleLabel.text = "Section 2 Header"
+        header.detailLabel.text = "Dynamic Sized Header"
 
         // Add a tap gesture recogniser to open the section
         let tapGR = UITapGestureRecognizer(target: self, action: "headerTapped:")
-        view.addGestureRecognizer(tapGR)
+        header.addGestureRecognizer(tapGR)
 
-        return view
+        return header
     }()
 
 
@@ -62,43 +65,30 @@ class ALSecondViewController: UIViewController, ALAccordionControllerDelegate
 
     // MARK: - ALAccordionControllerDelegate
 
-    func sectionWillOpen()
+    func sectionWillOpen(#animated: Bool)
     {
         println("Second Section Will Open")
 
-        //        self.headerContainer.removeConstraint(self.dateLabelBottomConstraint)
-        //
-        //        // Animate the labels
-        //        let duration = animated ? ANIMATION_DURATION : 0
-        //        UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseInOut, animations:
-        //        {
-        //            self.view.layoutIfNeeded()
-        //            self.selectDatesLabel.alpha = 1.0
-        //            self.selectedDateRangeView.alpha = 0
-        //            return
-        //        },
-        //        completion: nil)
+        let duration = animated ? self.accordionController!.animationDuration : 0.0
+        UIView.animateWithDuration(0.3, delay: 0, options: .CurveEaseInOut, animations:
+        {
+            let h = self.headerView as! ALExpandingHeaderView
+            h.open()
+        },
+        completion: nil)
     }
 
-    func sectionWillClose()
+    func sectionWillClose(#animated: Bool)
     {
         println("Second Section Will Close")
 
-        //        if self.dateLabelBottomConstraint != nil
-        //        {
-        //            self.headerContainer.addConstraint(self.dateLabelBottomConstraint)
-        //        }
-        //
-        //        // Animate the labels
-        //        let duration = animated ? ANIMATION_DURATION : 0
-        //        UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseInOut, animations:
-        //            {
-        //                self.view.layoutIfNeeded()
-        //                self.selectDatesLabel?.alpha = 0
-        //                self.selectedDateRangeView?.alpha = 1.0
-        //                return
-        //            },
-        //            completion: nil)
+        let duration = animated ? accordionController!.animationDuration : 0.0
+        UIView.animateWithDuration(0.3, delay: 0, options: .CurveEaseInOut, animations:
+        {
+            let h = self.headerView as! ALExpandingHeaderView
+            h.close()
+        },
+        completion: nil)
     }
 
     func sectionDidOpen()

@@ -20,15 +20,15 @@ class ALFirstViewController: UIViewController, ALAccordionControllerDelegate
 
     lazy var headerView: UIView =
     {
-        let headerViews = NSBundle.mainBundle().loadNibNamed("SectionHeaderViews", owner: self, options: nil) as! [UIView]
-
-        let view = headerViews[0]
+        let header = ALSingleLineHeaderView()
+        header.backgroundColor = UIColor(red: 216.0/255.0, green: 71.0/255.0, blue: 69.0/255.0, alpha: 1.0)
+        header.titleLabel.text = "Section 1 Header"
 
         // Add a tap gesture recogniser to open the section
         let tapGR = UITapGestureRecognizer(target: self, action: "headerTapped:")
-        view.addGestureRecognizer(tapGR)
+        header.addGestureRecognizer(tapGR)
 
-        return view
+        return header
     }()
 
 
@@ -62,12 +62,12 @@ class ALFirstViewController: UIViewController, ALAccordionControllerDelegate
 
     // MARK: - ALAccordionControllerDelegate
 
-    func sectionWillOpen()
+    func sectionWillOpen(#animated: Bool)
     {
         println("First Section Will Open")
     }
 
-    func sectionWillClose()
+    func sectionWillClose(#animated: Bool)
     {
         println("First Section Will Close")
     }

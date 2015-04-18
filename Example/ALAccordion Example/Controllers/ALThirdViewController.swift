@@ -20,15 +20,15 @@ class ALThirdViewController: UIViewController, ALAccordionControllerDelegate
     
     lazy var headerView: UIView =
     {
-        let headerViews = NSBundle.mainBundle().loadNibNamed("SectionHeaderViews", owner: self, options: nil) as! [UIView]
-
-        let view = headerViews[2]
+        let header = ALSingleLineHeaderView()
+        header.backgroundColor = UIColor(red: 80.0/255.0, green: 216.0/255.0, blue: 129.0/255.0, alpha: 1.0)
+        header.titleLabel.text = "Section 3 Header"
 
         // Add a tap gesture recogniser to open the section
         let tapGR = UITapGestureRecognizer(target: self, action: "headerTapped:")
-        view.addGestureRecognizer(tapGR)
+        header.addGestureRecognizer(tapGR)
 
-        return view
+        return header
     }()
 
 
@@ -62,12 +62,12 @@ class ALThirdViewController: UIViewController, ALAccordionControllerDelegate
 
     // MARK: - ALAccordionControllerDelegate
 
-    func sectionWillOpen()
+    func sectionWillOpen(#animated: Bool)
     {
         println("Third Section Will Open")
     }
 
-    func sectionWillClose()
+    func sectionWillClose(#animated: Bool)
     {
         println("Third Section Will Close")
     }
