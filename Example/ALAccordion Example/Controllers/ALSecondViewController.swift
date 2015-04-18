@@ -12,7 +12,7 @@ import UIKit
 
 import ALAccordion
 
-class ALSecondViewController: UIViewController, ALAccordionControllerDelegate
+class ALSecondViewController: UIViewController, ALAccordionSectionDelegate
 {
     //
     // MARK: - Properties
@@ -70,7 +70,7 @@ class ALSecondViewController: UIViewController, ALAccordionControllerDelegate
         println("Second Section Will Open")
 
         let duration = animated ? self.accordionController!.animationDuration : 0.0
-        UIView.animateWithDuration(0.3, delay: 0, options: .CurveEaseInOut, animations:
+        UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseInOut, animations:
         {
             let h = self.headerView as! ALExpandingHeaderView
             h.open()
@@ -83,7 +83,7 @@ class ALSecondViewController: UIViewController, ALAccordionControllerDelegate
         println("Second Section Will Close")
 
         let duration = animated ? accordionController!.animationDuration : 0.0
-        UIView.animateWithDuration(0.3, delay: 0, options: .CurveEaseInOut, animations:
+        UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseInOut, animations:
         {
             let h = self.headerView as! ALExpandingHeaderView
             h.close()

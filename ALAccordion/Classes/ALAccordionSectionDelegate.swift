@@ -10,7 +10,7 @@
 
 import UIKit
 
-@objc public protocol ALAccordionControllerDelegate: class
+@objc public protocol ALAccordionSectionDelegate: class
 {
     var headerView: UIView { get }
 

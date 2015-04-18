@@ -13,9 +13,10 @@ import UIKit
 import ALAccordion
 
 class ALHomeViewController: ALAccordionController
-{
-    var header: UIView!
-    var footer: UIView!
+{ 
+    //
+    // MARK: - Methods
+    //
 
     override func viewDidLoad()
     {
@@ -29,16 +30,19 @@ class ALHomeViewController: ALAccordionController
 
     func createHeaderFooterViews()
     {
-        let views = NSBundle.mainBundle().loadNibNamed("HeaderFooterViews", owner: self, options: nil) as! [UIView]
+        // Header
+        let header = ALSingleLineHeaderView()
+        header.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
+        header.titleLabel.text = "Accordion Header"
 
-        self.header = views[0]
-        self.footer = views[1]
+        self.headerView = header
 
-        self.header.backgroundColor = UIColor.clearColor()
-        self.footer.backgroundColor = UIColor.clearColor()
+        // Footer
+        let footer = ALSingleLineHeaderView()
+        footer.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
+        footer.titleLabel.text = "Accordion Footer"
 
-        self.setupHeaderView(self.header)
-        self.setupFooterView(self.footer)
+        self.footerView = footer
     }
 
     func createSections()

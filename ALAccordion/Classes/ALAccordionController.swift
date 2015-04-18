@@ -39,6 +39,29 @@ public class ALAccordionController: UIViewController
         return nil
     }
 
+    public var headerView: UIView?
+    {
+        didSet
+        {
+            if headerView != nil
+            {
+                self.setupHeaderView(headerView!)
+            }
+        }
+    }
+
+    public var footerView: UIView?
+    {
+        didSet
+        {
+            if footerView != nil
+            {
+                self.setupFooterView(footerView!)
+            }
+        }
+    }
+
+
     // MARK: - View Methods
 
     override public func viewDidLoad()
@@ -57,7 +80,7 @@ public class ALAccordionController: UIViewController
     {
         for vc in viewControllers
         {
-            assert(vc is ALAccordionControllerDelegate, "View Controller \(vc) must conform to the protocol \(_stdlib_getDemangledTypeName(ALAccordionControllerDelegate))")
+            assert(vc is ALAccordionSectionDelegate, "View Controller \(vc) must conform to the protocol \(_stdlib_getDemangledTypeName(ALAccordionSectionDelegate))")
 
             let section = ALAccordionSection(viewController: vc)
 
@@ -105,8 +128,14 @@ public class ALAccordionController: UIViewController
         self.view.addConstraints(headerHorizontal + containerHorizontal + footerHorizontal)
     }
 
-    public func setupHeaderView(header: UIView)
+    private func setupHeaderView(header: UIView)
     {
+        // Remove any previous header
+        for v in self.headerContainerView.subviews as! [UIView]
+        {
+            v.removeFromSuperview()
+        }
+
         // Add the header view to the header container view
         self.headerContainerView.addSubview(header)
         header.setTranslatesAutoresizingMaskIntoConstraints(false)
@@ -119,8 +148,14 @@ public class ALAccordionController: UIViewController
         self.headerContainerView.addConstraints(horizontal + vertical)
     }
 
-    public func setupFooterView(footer: UIView)
+    private func setupFooterView(footer: UIView)
     {
+        // Remove any previous footer
+        for v in self.footerContainerView.subviews as! [UIView]
+        {
+            v.removeFromSuperview()
+        }
+
         // Add the footer view to the footer container view
         self.footerContainerView.addSubview(footer)
         footer.setTranslatesAutoresizingMaskIntoConstraints(false)
@@ -242,7 +277,7 @@ public class ALAccordionController: UIViewController
             return
         }
 
-        let viewController = section.viewController as? ALAccordionControllerDelegate
+        let viewController = section.viewController as? ALAccordionSectionDelegate
 
         // Tell the view controller that it's about to open
         viewController?.sectionWillOpen?(animated: animated)
@@ -299,7 +334,7 @@ public class ALAccordionController: UIViewController
 
     func closeSection(section: ALAccordionSection, animated: Bool)
     {
-        let viewController = section.viewController as? ALAccordionControllerDelegate
+        let viewController = section.viewController as? ALAccordionSectionDelegate
 
         // Tell the view controller delegate that it's about to close
         viewController?.sectionWillClose?(animated: animated)

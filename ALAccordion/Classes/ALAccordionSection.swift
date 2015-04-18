@@ -39,7 +39,7 @@ class ALAccordionSection: NSObject
     {
         super.init()
 
-        assert(viewController is ALAccordionControllerDelegate, "View Controller \(viewController) must conform to the protocol \(_stdlib_getDemangledTypeName(ALAccordionControllerDelegate))")
+        assert(viewController is ALAccordionSectionDelegate, "View Controller \(viewController) must conform to the protocol \(_stdlib_getDemangledTypeName(ALAccordionSectionDelegate))")
 
         self.viewController = viewController
 
@@ -47,7 +47,7 @@ class ALAccordionSection: NSObject
 
         self.layoutViews()
 
-        self.setupHeaderView((viewController as! ALAccordionControllerDelegate).headerView)
+        self.setupHeaderView((viewController as! ALAccordionSectionDelegate).headerView)
         self.setupBodyView(viewController.view)
     }
 

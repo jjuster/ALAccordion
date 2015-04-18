@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		22605BB01AE2294800B716DE /* ALSingleLineHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22605BAF1AE2294800B716DE /* ALSingleLineHeaderView.swift */; };
 		22605BB21AE2420100B716DE /* ALExpandingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22605BB11AE2420100B716DE /* ALExpandingHeaderView.swift */; };
-		2283B0241ADBB65F001DC8BD /* HeaderFooterViews.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2283B0231ADBB65F001DC8BD /* HeaderFooterViews.xib */; };
 		2283B0271ADC0D40001DC8BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2283B0261ADC0D40001DC8BD /* Main.storyboard */; };
 		22B7E6711AD7F23400C6A91F /* ALFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B7E6701AD7F23400C6A91F /* ALFirstViewController.swift */; };
 		22B7E6731AD7F26000C6A91F /* ALAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B7E6721AD7F26000C6A91F /* ALAppDelegate.swift */; };
@@ -27,7 +26,6 @@
 /* Begin PBXFileReference section */
 		22605BAF1AE2294800B716DE /* ALSingleLineHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALSingleLineHeaderView.swift; sourceTree = "<group>"; };
 		22605BB11AE2420100B716DE /* ALExpandingHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALExpandingHeaderView.swift; sourceTree = "<group>"; };
-		2283B0231ADBB65F001DC8BD /* HeaderFooterViews.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderFooterViews.xib; sourceTree = "<group>"; };
 		2283B0261ADC0D40001DC8BD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		22B7E6701AD7F23400C6A91F /* ALFirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALFirstViewController.swift; sourceTree = "<group>"; };
 		22B7E6721AD7F26000C6A91F /* ALAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALAppDelegate.swift; sourceTree = "<group>"; };
@@ -87,7 +85,6 @@
 		22B7E67C1AD81E0D00C6A91F /* Headers */ = {
 			isa = PBXGroup;
 			children = (
-				2283B0231ADBB65F001DC8BD /* HeaderFooterViews.xib */,
 				22605BAF1AE2294800B716DE /* ALSingleLineHeaderView.swift */,
 				22605BB11AE2420100B716DE /* ALExpandingHeaderView.swift */,
 			);
@@ -222,7 +219,6 @@
 			files = (
 				2283B0271ADC0D40001DC8BD /* Main.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
-				2283B0241ADBB65F001DC8BD /* HeaderFooterViews.xib in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

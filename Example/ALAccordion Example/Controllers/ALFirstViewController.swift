@@ -12,7 +12,7 @@ import UIKit
 
 import ALAccordion
 
-class ALFirstViewController: UIViewController, ALAccordionControllerDelegate
+class ALFirstViewController: UIViewController, ALAccordionSectionDelegate
 {
     //
     // MARK: - Properties
