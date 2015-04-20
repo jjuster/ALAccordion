@@ -14,7 +14,7 @@ public class ALAccordionController: UIViewController
 {
     // MARK: - Properties
 
-    public var animationDuration = 0.5
+    public var animationDuration = 0.3
 
     private let headerContainerView = UIView()
     private let sectionContainerView = UIView()

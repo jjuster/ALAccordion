@@ -21,8 +21,8 @@ class ALThirdViewController: UIViewController, ALAccordionSectionDelegate
     lazy var headerView: UIView =
     {
         let header = ALSingleLineHeaderView()
-        header.backgroundColor = UIColor(red: 80.0/255.0, green: 216.0/255.0, blue: 129.0/255.0, alpha: 1.0)
         header.titleLabel.text = "Section 3 Header"
+        header.topSeparator.alpha = 0
 
         // Add a tap gesture recogniser to open the section
         let tapGR = UITapGestureRecognizer(target: self, action: "headerTapped:")
@@ -39,6 +39,8 @@ class ALThirdViewController: UIViewController, ALAccordionSectionDelegate
     override func viewDidLoad()
     {
         super.viewDidLoad()
+
+        self.view.backgroundColor = UIColor.clearColor()
     }
 
     func headerTapped(recognizer: UITapGestureRecognizer)
@@ -65,11 +67,25 @@ class ALThirdViewController: UIViewController, ALAccordionSectionDelegate
     func sectionWillOpen(#animated: Bool)
     {
         println("Third Section Will Open")
+
+        let duration = animated ? self.accordionController!.animationDuration : 0.0
+        UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseInOut, animations:
+        {
+            let h = self.headerView as! ALSingleLineHeaderView
+        },
+        completion: nil)
     }
 
     func sectionWillClose(#animated: Bool)
     {
         println("Third Section Will Close")
+
+        let duration = animated ? self.accordionController!.animationDuration : 0.0
+        UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseInOut, animations:
+        {
+            let h = self.headerView as! ALSingleLineHeaderView
+        },
+        completion: nil)
     }
 
     func sectionDidOpen()

@@ -23,9 +23,9 @@ class ALSecondViewController: UIViewController, ALAccordionSectionDelegate
     lazy var headerView: UIView =
     {
         let header = ALExpandingHeaderView()
-        header.backgroundColor = UIColor(red: 164.0/255.0, green: 73.0/255.0, blue: 216.0/255.0, alpha: 1.0)
         header.titleLabel.text = "Section 2 Header"
         header.detailLabel.text = "Dynamic Sized Header"
+        header.topSeparator.alpha = 0
 
         // Add a tap gesture recogniser to open the section
         let tapGR = UITapGestureRecognizer(target: self, action: "headerTapped:")
@@ -42,6 +42,8 @@ class ALSecondViewController: UIViewController, ALAccordionSectionDelegate
     override func viewDidLoad()
     {
         super.viewDidLoad()
+
+        self.view.backgroundColor = UIColor.clearColor()
     }
 
     func headerTapped(recognizer: UITapGestureRecognizer)
