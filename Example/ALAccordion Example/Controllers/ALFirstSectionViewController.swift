@@ -61,6 +61,18 @@ class ALFirstSectionViewController: UIViewController, ALAccordionSectionDelegate
         }
     }
 
+    // MARK: - Button Handlers
+
+    @IBAction func btnClosePressed(sender: UIButton)
+    {
+        // Get the section for this view controller
+        if let sectionIndex = self.accordionController?.sectionIndexForViewController(self)
+        {
+            self.accordionController?.closeSectionAtIndex(sectionIndex, animated: true)
+        }
+    }
+
+
     // MARK: - ALAccordionControllerDelegate
 
     func sectionWillOpen(#animated: Bool)
