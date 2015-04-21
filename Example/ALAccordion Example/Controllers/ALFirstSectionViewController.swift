@@ -1,6 +1,6 @@
 //
-//  ALSecondViewController.swift
-//  ALAccordion
+//  ALFirstSectionViewController.swift
+//  ios-accordion
 //
 //  Created by Sam Williams on 10/04/2015.
 //  Copyright (c) 2015 Sam Williams. All rights reserved.
@@ -12,20 +12,16 @@ import UIKit
 
 import ALAccordion
 
-class ALSecondViewController: UIViewController, ALAccordionSectionDelegate
+class ALFirstSectionViewController: UIViewController, ALAccordionSectionDelegate
 {
     //
     // MARK: - Properties
-    //
+    // 
 
-    var headerBottomConstraint: NSLayoutConstraint?
-    
     lazy var headerView: UIView =
     {
-        let header = ALExpandingHeaderView()
-        header.titleLabel.text = "Section 2 Header"
-        header.detailLabel.text = "Dynamic Sized Header"
-        header.topSeparator.alpha = 0
+        let header = ALSingleLineHeaderView()
+        header.titleLabel.text = "Section 1 Header"
 
         // Add a tap gesture recogniser to open the section
         let tapGR = UITapGestureRecognizer(target: self, action: "headerTapped:")
@@ -38,12 +34,12 @@ class ALSecondViewController: UIViewController, ALAccordionSectionDelegate
     //
     // MARK: - Methods
     //
-    
+
     override func viewDidLoad()
     {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.clearColor()
+        self.view.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.1)
     }
 
     func headerTapped(recognizer: UITapGestureRecognizer)
@@ -51,7 +47,7 @@ class ALSecondViewController: UIViewController, ALAccordionSectionDelegate
         // Get the section for this view controller
         if let sectionIndex = self.accordionController?.sectionIndexForViewController(self)
         {
-            println("Second view controller header tapped")
+            println("First view controller header tapped")
 
             // If this section is open, close it - otherwise, open it
             if self.accordionController!.openSectionIndex == sectionIndex
@@ -69,37 +65,37 @@ class ALSecondViewController: UIViewController, ALAccordionSectionDelegate
 
     func sectionWillOpen(#animated: Bool)
     {
-        println("Second Section Will Open")
+        println("First Section Will Open")
 
         let duration = animated ? self.accordionController!.animationDuration : 0.0
         UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseInOut, animations:
         {
-            let h = self.headerView as! ALExpandingHeaderView
-            h.open()
+            let h = self.headerView as! ALSingleLineHeaderView
+            h.topSeparator.alpha = 0
         },
         completion: nil)
     }
 
     func sectionWillClose(#animated: Bool)
     {
-        println("Second Section Will Close")
+        println("First Section Will Close")
 
-        let duration = animated ? accordionController!.animationDuration : 0.0
+        let duration = animated ? self.accordionController!.animationDuration : 0.0
         UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseInOut, animations:
         {
-            let h = self.headerView as! ALExpandingHeaderView
-            h.close()
+            let h = self.headerView as! ALSingleLineHeaderView
+            h.topSeparator.alpha = 1.0
         },
         completion: nil)
     }
 
     func sectionDidOpen()
     {
-        println("Second Section Did Open")
+        println("First Section Did Open")
     }
 
     func sectionDidClose()
     {
-        println("Second Section Did Close")
+        println("First Section Did Close")
     }
 }

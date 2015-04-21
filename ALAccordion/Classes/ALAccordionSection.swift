@@ -45,10 +45,10 @@ class ALAccordionSection: NSObject
 
         self.sectionView.clipsToBounds = true
 
-        self.layoutViews()
-
         self.setupHeaderView((viewController as! ALAccordionSectionDelegate).headerView)
         self.setupBodyView(viewController.view)
+
+        self.layoutViews()
     }
 
     // MARK: - Layout Methods

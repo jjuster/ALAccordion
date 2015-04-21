@@ -1,27 +1,25 @@
 //
-//  ALThirdViewController.swift
-//  ALAccordion
+//  ALThirdSectionTableViewController.swift
+//  ALAccordion Example
 //
-//  Created by Sam Williams on 10/04/2015.
-//  Copyright (c) 2015 Sam Williams. All rights reserved.
-//
-//  http://alliants.com
+//  Created by Sam Williams on 20/04/2015.
+//  Copyright (c) 2015 Alliants Ltd. All rights reserved.
 //
 
 import UIKit
 
 import ALAccordion
 
-class ALThirdViewController: UIViewController, ALAccordionSectionDelegate
+class ALThirdSectionTableViewController: UITableViewController, ALAccordionSectionDelegate
 {
     //
     // MARK: - Properties
     //
-    
+
     lazy var headerView: UIView =
     {
         let header = ALSingleLineHeaderView()
-        header.titleLabel.text = "Section 3 Header"
+        header.titleLabel.text = "UITableViewController Example"
         header.topSeparator.alpha = 0
 
         // Add a tap gesture recogniser to open the section
@@ -30,6 +28,8 @@ class ALThirdViewController: UIViewController, ALAccordionSectionDelegate
 
         return header
     }()
+
+    let names = ["Olivia", "Melissa", "Adrian", "Barbera", "Fred", "Joyce", "Annita", "Johanne", "Walt", "Danny", "Pablo", "Kala", "Albertina", "Carmelina", "Malcolm", "Alan", "Gene", "Diane", "Merlyn", "Azzie"]
 
 
     //
@@ -40,7 +40,10 @@ class ALThirdViewController: UIViewController, ALAccordionSectionDelegate
     {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.clearColor()
+        self.view.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.1)
+
+        // Fix undesired cell animation when section first opened
+        self.view.layoutIfNeeded()
     }
 
     func headerTapped(recognizer: UITapGestureRecognizer)
@@ -67,25 +70,11 @@ class ALThirdViewController: UIViewController, ALAccordionSectionDelegate
     func sectionWillOpen(#animated: Bool)
     {
         println("Third Section Will Open")
-
-        let duration = animated ? self.accordionController!.animationDuration : 0.0
-        UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseInOut, animations:
-        {
-            let h = self.headerView as! ALSingleLineHeaderView
-        },
-        completion: nil)
     }
 
     func sectionWillClose(#animated: Bool)
     {
         println("Third Section Will Close")
-
-        let duration = animated ? self.accordionController!.animationDuration : 0.0
-        UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseInOut, animations:
-        {
-            let h = self.headerView as! ALSingleLineHeaderView
-        },
-        completion: nil)
     }
 
     func sectionDidOpen()
@@ -96,5 +85,29 @@ class ALThirdViewController: UIViewController, ALAccordionSectionDelegate
     func sectionDidClose()
     {
         println("Third Section Did Close")
+    }
+
+    // MARK: - Table view data source
+
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    {
+        // Return the number of sections.
+        return 1
+    }
+
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        // Return the number of rows in the section.
+        return self.names.count
+    }
+
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
+
+        // Configure the cell...
+        cell.textLabel?.text = self.names[indexPath.row] ?? ""
+
+        return cell
     }
 }

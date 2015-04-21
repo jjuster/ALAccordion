@@ -82,9 +82,9 @@ class ALHomeViewController: ALAccordionController
     {
         let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
 
-        let section1ViewController = storyboard.instantiateViewControllerWithIdentifier("firstVC") as! ALFirstViewController
-        let section2ViewController = storyboard.instantiateViewControllerWithIdentifier("secondVC") as! ALSecondViewController
-        let section3ViewController = storyboard.instantiateViewControllerWithIdentifier("thirdVC") as! ALThirdViewController
+        let section1ViewController = storyboard.instantiateViewControllerWithIdentifier("firstVC") as! ALFirstSectionViewController
+        let section2ViewController = storyboard.instantiateViewControllerWithIdentifier("secondVC") as! ALSecondSectionViewController
+        let section3ViewController = storyboard.instantiateViewControllerWithIdentifier("thirdVC") as! ALThirdSectionTableViewController
 
         self.setViewControllers(section1ViewController, section2ViewController, section3ViewController)
     }
