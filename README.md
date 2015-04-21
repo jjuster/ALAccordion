@@ -19,9 +19,8 @@ ALAccordion also allows an optional header and footer view that are hidden when 
 
 ## Screenshots
 
-![ALAccordion Screenshot](https://cloud.githubusercontent.com/assets/954694/7262923/4e266514-e875-11e4-8d0d-adf6f3bd1bfd.png)
-![ALAccordion Demo](https://cloud.githubusercontent.com/assets/954694/7262937/50837c3e-e875-11e4-9433-cffe85cf9851.gif)
-
+![ALAccordion Screenshot](https://cloud.githubusercontent.com/assets/954694/7263154/f78d41e4-e876-11e4-931b-8beaed97b023.png)
+![ALAccordion Demo](https://cloud.githubusercontent.com/assets/954694/7263156/fa14c554-e876-11e4-80fd-310ebad2c0c9.gif)
 
 ## Demo
 
