@@ -1,9 +1,5 @@
 # ALAccordion
 
-[![Version](https://img.shields.io/cocoapods/v/ALAccordion.svg?style=flat)](http://cocoapods.org/pods/ALAccordion)
-[![License](https://img.shields.io/cocoapods/l/ALAccordion.svg?style=flat)](http://cocoapods.org/pods/ALAccordion)
-[![Platform](https://img.shields.io/cocoapods/p/ALAccordion.svg?style=flat)](http://cocoapods.org/pods/ALAccordion)
-
 ## Overview
 
 ALAccordion is an accordion style container view for iOS that manages a set of expandable content sections. When a section opens, it consumes the full screen (see screenshots).
@@ -23,7 +19,9 @@ ALAccordion also allows an optional header and footer view that are hidden when 
 
 ## Screenshots
 
-[Insert screenshots]
+![ALAccordion Screenshot](https://cloud.githubusercontent.com/assets/954694/7262923/4e266514-e875-11e4-8d0d-adf6f3bd1bfd.png)
+![ALAccordion Demo](https://cloud.githubusercontent.com/assets/954694/7262937/50837c3e-e875-11e4-9433-cffe85cf9851.gif)
+
 
 ## Demo
 
