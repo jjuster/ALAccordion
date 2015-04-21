@@ -18,8 +18,9 @@ class ALThirdSectionTableViewController: UITableViewController, ALAccordionSecti
 
     lazy var headerView: UIView =
     {
-        let header = ALSingleLineHeaderView()
-        header.titleLabel.text = "UITableViewController Example"
+        let header = ALDoubleLineHeaderView()
+        header.titleLabel.text = "Section 3 Header"
+        header.detailLabel.text = "UITableViewController Example"
         header.topSeparator.alpha = 0
 
         // Add a tap gesture recogniser to open the section
@@ -106,6 +107,7 @@ class ALThirdSectionTableViewController: UITableViewController, ALAccordionSecti
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
 
         // Configure the cell...
+        cell.backgroundColor = UIColor.clearColor()
         cell.textLabel?.text = self.names[indexPath.row] ?? ""
 
         return cell
