@@ -116,7 +116,7 @@ override func viewDidLoad()
 }
 ```
 
-### Section View Controllers / ALAccordionSectionDelegate
+### Section View Controllers
 
 You should provide the ALAccordionController a new instance of a UIViewController for each section in your accordion. 
 
@@ -210,6 +210,7 @@ func headerTapped(recognizer: UITapGestureRecognizer)
 
 ## Notes & Limitations
 
+* When embedding a UITableViewController in a section, there is an undesired effect on the cells the first time the section opens. The avoid this, call `self.view.layoutIfNeeded()` in your `viewDidLoad` method for the section view controller.
 * Currently, ALAccordion can only display a limited number of sections and in their closed state, must not exceed the height of the device. In the future, we plan to allow scrollable headers. Feel free to send a pull request!
 
 ## License
