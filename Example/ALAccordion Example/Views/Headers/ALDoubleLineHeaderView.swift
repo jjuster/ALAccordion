@@ -5,6 +5,8 @@
 //  Created by Sam Williams on 21/04/2015.
 //  Copyright (c) 2015 Alliants Ltd. All rights reserved.
 //
+//  http://alliants.com
+//
 
 import UIKit
 
@@ -57,8 +59,9 @@ class ALDoubleLineHeaderView: UIView
     private var titleLabel_bottom: NSLayoutConstraint!
 
     //
-    // MARK: Initialisers
+    // MARK: - Initialisers
     //
+
     required init(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)

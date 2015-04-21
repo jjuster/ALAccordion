@@ -5,6 +5,8 @@
 //  Created by Sam Williams on 18/04/2015.
 //  Copyright (c) 2015 Alliants Ltd. All rights reserved.
 //
+//  http://alliants.com
+//
 
 import UIKit
 
@@ -43,7 +45,7 @@ class ALSingleLineHeaderView: UIView
     }()
 
     //
-    // MARK: Initialisers
+    // MARK: - Initialisers
     //
     required init(coder aDecoder: NSCoder)
     {

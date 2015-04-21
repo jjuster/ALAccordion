@@ -5,6 +5,8 @@
 //  Created by Sam Williams on 20/04/2015.
 //  Copyright (c) 2015 Alliants Ltd. All rights reserved.
 //
+//  http://alliants.com
+//
 
 import UIKit
 
@@ -12,10 +14,23 @@ import ALAccordion
 
 class ALThirdSectionTableViewController: UITableViewController, ALAccordionSectionDelegate
 {
+    let names = ["Olivia", "Melissa", "Adrian", "Barbera", "Fred", "Joyce", "Annita", "Johanne", "Walt", "Danny", "Pablo", "Kala", "Albertina", "Carmelina", "Malcolm", "Alan", "Gene", "Diane", "Merlyn", "Azzie"]
+
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+
+        self.view.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.1)
+
+        // Fix undesired cell animation when section first opened
+        self.view.layoutIfNeeded()
+    }
+
     //
-    // MARK: - Properties
+    // MARK: - ALAccordionControllerDelegate
     //
 
+    // The header view for this section
     lazy var headerView: UIView =
     {
         let header = ALDoubleLineHeaderView()
@@ -29,44 +44,6 @@ class ALThirdSectionTableViewController: UITableViewController, ALAccordionSecti
 
         return header
     }()
-
-    let names = ["Olivia", "Melissa", "Adrian", "Barbera", "Fred", "Joyce", "Annita", "Johanne", "Walt", "Danny", "Pablo", "Kala", "Albertina", "Carmelina", "Malcolm", "Alan", "Gene", "Diane", "Merlyn", "Azzie"]
-
-
-    //
-    // MARK: - Methods
-    //
-
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-
-        self.view.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.1)
-
-        // Fix undesired cell animation when section first opened
-        self.view.layoutIfNeeded()
-    }
-
-    func headerTapped(recognizer: UITapGestureRecognizer)
-    {
-        // Get the section for this view controller
-        if let sectionIndex = self.accordionController?.sectionIndexForViewController(self)
-        {
-            println("Third view controller header tapped")
-
-            // If this section is open, close it - otherwise, open it
-            if self.accordionController!.openSectionIndex == sectionIndex
-            {
-                self.accordionController?.closeSectionAtIndex(sectionIndex, animated: true)
-            }
-            else
-            {
-                self.accordionController?.openSectionAtIndex(sectionIndex, animated: true)
-            }
-        }
-    }
-
-    // MARK: - ALAccordionControllerDelegate
 
     func sectionWillOpen(#animated: Bool)
     {
@@ -88,7 +65,32 @@ class ALThirdSectionTableViewController: UITableViewController, ALAccordionSecti
         println("Third Section Did Close")
     }
 
+    //
+    // MARK: - Gesture Recognizer
+    //
+
+    func headerTapped(recognizer: UITapGestureRecognizer)
+    {
+        // Get the section for this view controller
+        if let sectionIndex = self.accordionController?.sectionIndexForViewController(self)
+        {
+            println("Third view controller header tapped")
+
+            // If this section is open, close it - otherwise, open it
+            if self.accordionController!.openSectionIndex == sectionIndex
+            {
+                self.accordionController?.closeSectionAtIndex(sectionIndex, animated: true)
+            }
+            else
+            {
+                self.accordionController?.openSectionAtIndex(sectionIndex, animated: true)
+            }
+        }
+    }
+
+    //
     // MARK: - Table view data source
+    //
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {

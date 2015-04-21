@@ -5,6 +5,8 @@
 //  Created by Sam Williams on 20/04/2015.
 //  Copyright (c) 2015 Alliants Ltd. All rights reserved.
 //
+//  http://alliants.com
+//
 
 import UIKit
 
@@ -45,10 +47,6 @@ class ALSeparatorView: UIView
     {
         self.backgroundColor = UIColor.clearColor()
     }
-
-    //
-    // MARK: - Methods
-    //
 
     override func drawRect(rect: CGRect)
     {

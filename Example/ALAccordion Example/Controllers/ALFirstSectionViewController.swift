@@ -1,9 +1,9 @@
 //
 //  ALFirstSectionViewController.swift
-//  ios-accordion
+//  ALAccordion Example
 //
 //  Created by Sam Williams on 10/04/2015.
-//  Copyright (c) 2015 Sam Williams. All rights reserved.
+//  Copyright (c) 2015 Alliants Ltd. All rights reserved.
 //
 //  http://alliants.com
 //
@@ -14,10 +14,18 @@ import ALAccordion
 
 class ALFirstSectionViewController: UIViewController, ALAccordionSectionDelegate
 {
-    //
-    // MARK: - Properties
-    // 
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
 
+        self.view.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.1)
+    }
+
+    //
+    // MARK: - ALAccordionControllerDelegate
+    //
+
+    // The header view for this section
     lazy var headerView: UIView =
     {
         let header = ALSingleLineHeaderView()
@@ -29,51 +37,6 @@ class ALFirstSectionViewController: UIViewController, ALAccordionSectionDelegate
 
         return header
     }()
-
-
-    //
-    // MARK: - Methods
-    //
-
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-
-        self.view.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.1)
-    }
-
-    func headerTapped(recognizer: UITapGestureRecognizer)
-    {
-        // Get the section for this view controller
-        if let sectionIndex = self.accordionController?.sectionIndexForViewController(self)
-        {
-            println("First view controller header tapped")
-
-            // If this section is open, close it - otherwise, open it
-            if self.accordionController!.openSectionIndex == sectionIndex
-            {
-                self.accordionController?.closeSectionAtIndex(sectionIndex, animated: true)
-            }
-            else
-            {
-                self.accordionController?.openSectionAtIndex(sectionIndex, animated: true)
-            }
-        }
-    }
-
-    // MARK: - Button Handlers
-
-    @IBAction func btnClosePressed(sender: UIButton)
-    {
-        // Get the section for this view controller
-        if let sectionIndex = self.accordionController?.sectionIndexForViewController(self)
-        {
-            self.accordionController?.closeSectionAtIndex(sectionIndex, animated: true)
-        }
-    }
-
-
-    // MARK: - ALAccordionControllerDelegate
 
     func sectionWillOpen(#animated: Bool)
     {
@@ -109,5 +72,41 @@ class ALFirstSectionViewController: UIViewController, ALAccordionSectionDelegate
     func sectionDidClose()
     {
         println("First Section Did Close")
+    }
+
+    //
+    // MARK: - Gesture Recognizer
+    //
+
+    func headerTapped(recognizer: UITapGestureRecognizer)
+    {
+        // Get the section index for this view controller
+        if let sectionIndex = self.accordionController?.sectionIndexForViewController(self)
+        {
+            println("First view controller header tapped")
+
+            // If this section is open, close it - otherwise, open it
+            if self.accordionController!.openSectionIndex == sectionIndex
+            {
+                self.accordionController?.closeSectionAtIndex(sectionIndex, animated: true)
+            }
+            else
+            {
+                self.accordionController?.openSectionAtIndex(sectionIndex, animated: true)
+            }
+        }
+    }
+
+    //
+    // MARK: - Button Handlers
+    //
+
+    @IBAction func btnClosePressed(sender: UIButton)
+    {
+        // Get the section for this view controller
+        if let sectionIndex = self.accordionController?.sectionIndexForViewController(self)
+        {
+            self.accordionController?.closeSectionAtIndex(sectionIndex, animated: true)
+        }
     }
 }

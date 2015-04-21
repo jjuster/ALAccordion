@@ -1,9 +1,9 @@
 //
 //  ALSecondSectionViewController.swift
-//  ALAccordion
+//  ALAccordion Example
 //
 //  Created by Sam Williams on 10/04/2015.
-//  Copyright (c) 2015 Sam Williams. All rights reserved.
+//  Copyright (c) 2015 Alliants Ltd. All rights reserved.
 //
 //  http://alliants.com
 //
@@ -14,12 +14,20 @@ import ALAccordion
 
 class ALSecondSectionViewController: UIViewController, ALAccordionSectionDelegate
 {
+    var headerBottomConstraint: NSLayoutConstraint?
+
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+
+        self.view.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.1)
+    }
+
     //
-    // MARK: - Properties
+    // MARK: - ALAccordionControllerDelegate
     //
 
-    var headerBottomConstraint: NSLayoutConstraint?
-    
+    // The header view for this section
     lazy var headerView: UIView =
     {
         let header = ALExpandingHeaderView()
@@ -32,40 +40,7 @@ class ALSecondSectionViewController: UIViewController, ALAccordionSectionDelegat
         header.addGestureRecognizer(tapGR)
 
         return header
-    }()
-
-
-    //
-    // MARK: - Methods
-    //
-    
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-
-        self.view.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.1)
-    }
-
-    func headerTapped(recognizer: UITapGestureRecognizer)
-    {
-        // Get the section for this view controller
-        if let sectionIndex = self.accordionController?.sectionIndexForViewController(self)
-        {
-            println("Second view controller header tapped")
-
-            // If this section is open, close it - otherwise, open it
-            if self.accordionController!.openSectionIndex == sectionIndex
-            {
-                self.accordionController?.closeSectionAtIndex(sectionIndex, animated: true)
-            }
-            else
-            {
-                self.accordionController?.openSectionAtIndex(sectionIndex, animated: true)
-            }
-        }
-    }
-
-    // MARK: - ALAccordionControllerDelegate
+        }()
 
     func sectionWillOpen(#animated: Bool)
     {
@@ -101,5 +76,28 @@ class ALSecondSectionViewController: UIViewController, ALAccordionSectionDelegat
     func sectionDidClose()
     {
         println("Second Section Did Close")
+    }
+
+    //
+    // MARK: - Gesture Recognizer
+    //
+
+    func headerTapped(recognizer: UITapGestureRecognizer)
+    {
+        // Get the section index for this view controller
+        if let sectionIndex = self.accordionController?.sectionIndexForViewController(self)
+        {
+            println("Second view controller header tapped")
+
+            // If this section is open, close it - otherwise, open it
+            if self.accordionController!.openSectionIndex == sectionIndex
+            {
+                self.accordionController?.closeSectionAtIndex(sectionIndex, animated: true)
+            }
+            else
+            {
+                self.accordionController?.openSectionAtIndex(sectionIndex, animated: true)
+            }
+        }
     }
 }

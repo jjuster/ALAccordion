@@ -1,9 +1,9 @@
 //
 //  ALHomeViewController.swift
-//  ALAccordion
+//  ALAccordion Example
 //
 //  Created by Sam Williams on 10/04/2015.
-//  Copyright (c) 2015 Sam Williams. All rights reserved.
+//  Copyright (c) 2015 Alliants Ltd. All rights reserved.
 //
 //  http://alliants.com
 //
@@ -14,15 +14,7 @@ import ALAccordion
 
 class ALHomeViewController: ALAccordionController
 {
-    //
-    // MARK: - Properties
-    //
-
     @IBOutlet var backgroundImageView: UIImageView!
-
-    //
-    // MARK: - Methods
-    //
 
     override func preferredStatusBarStyle() -> UIStatusBarStyle
     {
@@ -43,6 +35,8 @@ class ALHomeViewController: ALAccordionController
 
     func setupBlurredBackground()
     {
+        // Add a blur overlay on the background image
+
         let blurEffect: UIBlurEffect = UIBlurEffect(style: .Dark)
 
         let blurView = UIVisualEffectView(effect: blurEffect)
@@ -80,6 +74,8 @@ class ALHomeViewController: ALAccordionController
 
     func createSections()
     {
+        // Create some sample sections
+        
         let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
 
         let section1ViewController = storyboard.instantiateViewControllerWithIdentifier("firstVC") as! ALFirstSectionViewController
