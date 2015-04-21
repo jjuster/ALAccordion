@@ -20,7 +20,6 @@
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
-		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		9AA699E49595C790D71AF402 /* Pods_ALAccordion_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C9AA2A438333D8B0F82E40 /* Pods_ALAccordion_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -41,7 +40,6 @@
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6003F595195388D20070C39A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6003F597195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		730E48880C8AEA8184E6C07B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		AFC3854F584500447AB3F339 /* Pods-ALAccordion Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ALAccordion Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ALAccordion Example/Pods-ALAccordion Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -80,11 +78,10 @@
 		22B7E6751AD7F2E000C6A91F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2283B0261ADC0D40001DC8BD /* Main.storyboard */,
 				22B7E67C1AD81E0D00C6A91F /* Headers */,
 				22DE7A7C1AE58C62002DE938 /* ALSeparatorView.swift */,
 			);
-			name = Views;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		22B7E67C1AD81E0D00C6A91F /* Headers */ = {
@@ -94,7 +91,16 @@
 				22BA439D1AE6A7B400BFF762 /* ALDoubleLineHeaderView.swift */,
 				22605BB11AE2420100B716DE /* ALExpandingHeaderView.swift */,
 			);
-			name = Headers;
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		22BA439F1AE6FDC900BFF762 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2283B0261ADC0D40001DC8BD /* Main.storyboard */,
+				6003F5A8195388D20070C39A /* Images.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		6003F581195388D10070C39A = {
@@ -133,7 +139,7 @@
 				22B7E6721AD7F26000C6A91F /* ALAppDelegate.swift */,
 				22B7E66F1AD7F18400C6A91F /* Controllers */,
 				22B7E6751AD7F2E000C6A91F /* Views */,
-				6003F5A8195388D20070C39A /* Images.xcassets */,
+				22BA439F1AE6FDC900BFF762 /* Resources */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
 			path = "ALAccordion Example";
@@ -143,9 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				6003F595195388D20070C39A /* Info.plist */,
-				6003F596195388D20070C39A /* InfoPlist.strings */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
@@ -206,7 +211,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
 			mainGroup = 6003F581195388D10070C39A;
 			productRefGroup = 6003F58B195388D20070C39A /* Products */;
@@ -225,7 +229,6 @@
 			files = (
 				2283B0271ADC0D40001DC8BD /* Main.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
-				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,17 +300,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		6003F596195388D20070C39A /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6003F597195388D20070C39A /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		6003F5BD195388D20070C39A /* Debug */ = {
@@ -393,7 +385,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
-				INFOPLIST_FILE = "ALAccordion Example/Info.plist";
+				INFOPLIST_FILE = "ALAccordion Example/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "ALAccordion Example";
@@ -413,7 +405,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
-				INFOPLIST_FILE = "ALAccordion Example/Info.plist";
+				INFOPLIST_FILE = "ALAccordion Example/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "ALAccordion Example";

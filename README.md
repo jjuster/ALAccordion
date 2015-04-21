@@ -48,7 +48,7 @@ end
 
 ### Manual Installation
 
-Add the files in the ALAccordion directory to your project
+Add the files in the ALAccordion/Classes directory to your project
 
 ## Usage
 
