@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/Alliants/ALAccordion.git", :tag => "v#{s.version}" }
   s.social_media_url = "http://twitter.com/alliants"
 
-  s.platform         = :ios, '7.0'
+  s.platform         = :ios, '8.0'
   s.requires_arc     = true
 
   s.source_files     = "ALAccordion/**/*.swift"
