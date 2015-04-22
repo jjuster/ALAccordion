@@ -184,8 +184,6 @@ func headerTapped(recognizer: UITapGestureRecognizer)
   // Get the section for this view controller
   if let sectionIndex = self.accordionController?.sectionIndexForViewController(self)
   {
-    println("First view controller header tapped")
-
     // If this section is open, close it - otherwise, open it
     if self.accordionController!.openSectionIndex == sectionIndex
     {
@@ -198,12 +196,6 @@ func headerTapped(recognizer: UITapGestureRecognizer)
   }
 }
 ```
-
-## How to contribute?
-
-* Fork and clone this project
-* Make your changes
-* Push to your fork and do a pull request.
 
 ## Notes & Limitations
 
