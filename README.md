@@ -2,7 +2,7 @@
 
 ## Overview
 
-ALAccordion is an accordion style container view for iOS that manages a set of expandable content sections. When a section opens, it consumes the full screen (see screenshots).
+ALAccordion is an accordion style container view for iOS that manages a set of expandable/collapsable content sections. When a section opens, it consumes the full screen (see screenshots).
 
 Each section of the accordion is associated with a custom view controller that manages its own header and content views. ALAccordion relies on autolayout to provide an intrinsic content size for the header view. This makes it super easy to have custom section headers that can be modified and animated by each section.
 
