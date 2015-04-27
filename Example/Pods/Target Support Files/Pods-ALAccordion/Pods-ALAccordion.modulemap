@@ -1,6 +1,0 @@
-framework module ALAccordion {
-  umbrella header "Pods-ALAccordion-umbrella.h"
-
-  export *
-  module * { export * }
-}
