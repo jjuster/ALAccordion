@@ -1,8 +1,8 @@
 {
   "name": "ALAccordion",
   "version": "0.1.0",
-  "summary": "An Accordion controller for iOS",
-  "description": "                       An Accordion controller for iOS, writtien in Swift.\n",
+  "summary": "An accordion controller for iOS",
+  "description": "An accordion style container view for iOS that manages a set of expandable/collapsable content sections.",
   "homepage": "https://github.com/Alliants/ALAccordion",
   "license": "MIT",
   "authors": {
@@ -11,13 +11,12 @@
   },
   "source": {
     "git": "https://github.com/Alliants/ALAccordion.git",
-    "tag": "0.1.0"
+    "tag": "v0.1.0"
   },
   "social_media_url": "http://twitter.com/alliants",
   "platforms": {
     "ios": "8.0"
   },
   "requires_arc": true,
-  "source_files": "ALAccordion/**/*.swift",
-  "frameworks": "UIKit"
+  "source_files": "ALAccordion/**/*.swift"
 }

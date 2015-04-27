@@ -1,0 +1,6 @@
+framework module Nimble {
+  umbrella header "Pods-ALAccordion Tests-Nimble-umbrella.h"
+
+  export *
+  module * { export * }
+}

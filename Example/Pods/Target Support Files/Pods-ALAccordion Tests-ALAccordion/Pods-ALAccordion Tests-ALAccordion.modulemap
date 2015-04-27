@@ -1,0 +1,6 @@
+framework module ALAccordion {
+  umbrella header "Pods-ALAccordion Tests-ALAccordion-umbrella.h"
+
+  export *
+  module * { export * }
+}
