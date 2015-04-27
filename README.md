@@ -42,7 +42,7 @@ Add ALAccordion to your Podfile. **Note**: You must add the `use_frameworks!` li
 # Podfile
 target 'My Target' do
   use_frameworks!
-  Pod "ALAccordion"
+  pod "ALAccordion"
 end
 ```
 
