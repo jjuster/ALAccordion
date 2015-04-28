@@ -277,6 +277,9 @@ public class ALAccordionController: UIViewController
             return
         }
 
+        // Close all the sections first
+        self.closeAllSections(animated)
+
         let viewController = section.viewController as? ALAccordionSectionDelegate
 
         // Tell the view controller that it's about to open

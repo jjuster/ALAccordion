@@ -12,6 +12,7 @@
 		22605BB01AE2294800B716DE /* ALSingleLineHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22605BAF1AE2294800B716DE /* ALSingleLineHeaderView.swift */; };
 		22605BB21AE2420100B716DE /* ALExpandingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22605BB11AE2420100B716DE /* ALExpandingHeaderView.swift */; };
 		2283B0271ADC0D40001DC8BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2283B0261ADC0D40001DC8BD /* Main.storyboard */; };
+		22891FA71AEE9B5E00CE420B /* ALAccordionControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22891FA61AEE9B5E00CE420B /* ALAccordionControllerSpec.swift */; };
 		22B7E6711AD7F23400C6A91F /* ALFirstSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B7E6701AD7F23400C6A91F /* ALFirstSectionViewController.swift */; };
 		22B7E6731AD7F26000C6A91F /* ALAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B7E6721AD7F26000C6A91F /* ALAppDelegate.swift */; };
 		22B7E6771AD7FEF400C6A91F /* ALHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B7E6761AD7FEF400C6A91F /* ALHomeViewController.swift */; };
@@ -47,6 +48,7 @@
 		22605BAF1AE2294800B716DE /* ALSingleLineHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALSingleLineHeaderView.swift; sourceTree = "<group>"; };
 		22605BB11AE2420100B716DE /* ALExpandingHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALExpandingHeaderView.swift; sourceTree = "<group>"; };
 		2283B0261ADC0D40001DC8BD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		22891FA61AEE9B5E00CE420B /* ALAccordionControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALAccordionControllerSpec.swift; sourceTree = "<group>"; };
 		22B7E6701AD7F23400C6A91F /* ALFirstSectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALFirstSectionViewController.swift; sourceTree = "<group>"; };
 		22B7E6721AD7F26000C6A91F /* ALAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALAppDelegate.swift; sourceTree = "<group>"; };
 		22B7E6761AD7FEF400C6A91F /* ALHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALHomeViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				22295CCB1AEE2C8D006883F4 /* UIViewController+ALAccordionSpec.swift */,
+				22891FA61AEE9B5E00CE420B /* ALAccordionControllerSpec.swift */,
 			);
 			name = Specs;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22891FA71AEE9B5E00CE420B /* ALAccordionControllerSpec.swift in Sources */,
 				22295CCC1AEE2C8D006883F4 /* UIViewController+ALAccordionSpec.swift in Sources */,
 				22295CD11AEE33A7006883F4 /* ALTestSectionViewController.swift in Sources */,
 			);
