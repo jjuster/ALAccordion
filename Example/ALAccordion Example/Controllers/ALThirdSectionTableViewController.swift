@@ -45,24 +45,24 @@ class ALThirdSectionTableViewController: UITableViewController, ALAccordionSecti
         return header
     }()
 
-    func sectionWillOpen(#animated: Bool)
+    func sectionWillOpen(animated animated: Bool)
     {
-        println("Third Section Will Open")
+        print("Third Section Will Open")
     }
 
-    func sectionWillClose(#animated: Bool)
+    func sectionWillClose(animated animated: Bool)
     {
-        println("Third Section Will Close")
+        print("Third Section Will Close")
     }
 
     func sectionDidOpen()
     {
-        println("Third Section Did Open")
+        print("Third Section Did Open")
     }
 
     func sectionDidClose()
     {
-        println("Third Section Did Close")
+        print("Third Section Did Close")
     }
 
     //
@@ -74,7 +74,7 @@ class ALThirdSectionTableViewController: UITableViewController, ALAccordionSecti
         // Get the section for this view controller
         if let sectionIndex = self.accordionController?.sectionIndexForViewController(self)
         {
-            println("Third view controller header tapped")
+            print("Third view controller header tapped")
 
             // If this section is open, close it - otherwise, open it
             if self.accordionController!.openSectionIndex == sectionIndex
@@ -106,7 +106,7 @@ class ALThirdSectionTableViewController: UITableViewController, ALAccordionSecti
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) 
 
         // Configure the cell...
         cell.backgroundColor = UIColor.clearColor()

@@ -60,8 +60,8 @@ class ALAccordionSection: NSObject
         self.sectionView.addSubview(self.headerContainerView)
         self.sectionView.addSubview(self.bodyContainerView)
 
-        self.headerContainerView.setTranslatesAutoresizingMaskIntoConstraints(false)
-        self.bodyContainerView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.headerContainerView.translatesAutoresizingMaskIntoConstraints = false
+        self.bodyContainerView.translatesAutoresizingMaskIntoConstraints = false
 
         // Header should hug tightly - body loosly
         self.headerContainerView.setContentHuggingPriority(1000, forAxis: .Vertical)
@@ -76,10 +76,10 @@ class ALAccordionSection: NSObject
         // Constraints
         let views = ["header": self.headerContainerView, "body": self.bodyContainerView]
 
-        let headerHorizontal = NSLayoutConstraint.constraintsWithVisualFormat("H:|[header]|", options: nil, metrics: nil, views: views)
-        let bodyHorizontal   = NSLayoutConstraint.constraintsWithVisualFormat("H:|[body]|", options: nil, metrics: nil, views: views)
+        let headerHorizontal = NSLayoutConstraint.constraintsWithVisualFormat("H:|[header]|", options: [], metrics: nil, views: views)
+        let bodyHorizontal   = NSLayoutConstraint.constraintsWithVisualFormat("H:|[body]|", options: [], metrics: nil, views: views)
 
-        let vertical = NSLayoutConstraint.constraintsWithVisualFormat("V:|[header][body]", options: nil, metrics: nil, views: views)
+        let vertical = NSLayoutConstraint.constraintsWithVisualFormat("V:|[header][body]", options: [], metrics: nil, views: views)
 
         self.sectionView.addConstraints(headerHorizontal + bodyHorizontal + vertical)
 
@@ -92,12 +92,12 @@ class ALAccordionSection: NSObject
     {
         // Add the header view to the header container view
         self.headerContainerView.addSubview(header)
-        header.setTranslatesAutoresizingMaskIntoConstraints(false)
+        header.translatesAutoresizingMaskIntoConstraints = false
 
         // Constraints
         let views = ["header": header]
-        let horizontal = NSLayoutConstraint.constraintsWithVisualFormat("H:|[header]|", options: nil, metrics: nil, views: views)
-        let vertical   = NSLayoutConstraint.constraintsWithVisualFormat("V:|[header]", options: nil, metrics: nil, views: views)
+        let horizontal = NSLayoutConstraint.constraintsWithVisualFormat("H:|[header]|", options: [], metrics: nil, views: views)
+        let vertical   = NSLayoutConstraint.constraintsWithVisualFormat("V:|[header]", options: [], metrics: nil, views: views)
 
         // Low priority bottom view that can break if needed
         let bottom = NSLayoutConstraint(item: self.headerContainerView, attribute: .Bottom, relatedBy: .Equal, toItem: header, attribute: .Bottom, multiplier: 1.0, constant: 0)
@@ -111,12 +111,12 @@ class ALAccordionSection: NSObject
     {
         // Add the footer view to the footer container view
         self.bodyContainerView.addSubview(body)
-        body.setTranslatesAutoresizingMaskIntoConstraints(false)
+        body.translatesAutoresizingMaskIntoConstraints = false
 
         // Constraints
         let views = ["body": body]
-        let horizontal = NSLayoutConstraint.constraintsWithVisualFormat("H:|[body]|", options: nil, metrics: nil, views: views)
-        let vertical   = NSLayoutConstraint.constraintsWithVisualFormat("V:|[body]", options: nil, metrics: nil, views: views)
+        let horizontal = NSLayoutConstraint.constraintsWithVisualFormat("H:|[body]|", options: [], metrics: nil, views: views)
+        let vertical   = NSLayoutConstraint.constraintsWithVisualFormat("V:|[body]", options: [], metrics: nil, views: views)
 
         // Low priority bottom view that can break if the containing body view is a fixed height
         let bottom = NSLayoutConstraint(item: self.bodyContainerView, attribute: .Bottom, relatedBy: .Equal, toItem: body, attribute: .Bottom, multiplier: 1.0, constant: 0)

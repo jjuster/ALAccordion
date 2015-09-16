@@ -40,15 +40,15 @@ class ALHomeViewController: ALAccordionController
         let blurEffect: UIBlurEffect = UIBlurEffect(style: .Dark)
 
         let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        blurView.translatesAutoresizingMaskIntoConstraints = false
 
         self.backgroundImageView.addSubview(blurView)
 
         // Setup contraints on blurView (edge to edge)
         let views = ["blurView": blurView]
 
-        let horizontalConstrainsts = NSLayoutConstraint.constraintsWithVisualFormat("H:|[blurView]|", options: nil, metrics: nil, views: views)
-        let verticalConstrainsts   = NSLayoutConstraint.constraintsWithVisualFormat("V:|[blurView]|", options: nil, metrics: nil, views: views)
+        let horizontalConstrainsts = NSLayoutConstraint.constraintsWithVisualFormat("H:|[blurView]|", options: [], metrics: nil, views: views)
+        let verticalConstrainsts   = NSLayoutConstraint.constraintsWithVisualFormat("V:|[blurView]|", options: [], metrics: nil, views: views)
         self.backgroundImageView.addConstraints(horizontalConstrainsts + verticalConstrainsts)
 
     }

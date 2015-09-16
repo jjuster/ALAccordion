@@ -28,7 +28,7 @@ public class ALAccordionController: UIViewController
     public var openSectionIndex: Int?
     {
         // Return the index of the first section that's marked as open
-        for (idx, section) in enumerate(self.sections)
+        for (idx, section) in self.sections.enumerate()
         {
             if section.open
             {
@@ -101,9 +101,9 @@ public class ALAccordionController: UIViewController
         self.view.addSubview(self.sectionContainerView)
         self.view.addSubview(self.footerContainerView)
 
-        self.headerContainerView.setTranslatesAutoresizingMaskIntoConstraints(false)
-        self.sectionContainerView.setTranslatesAutoresizingMaskIntoConstraints(false)
-        self.footerContainerView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.headerContainerView.translatesAutoresizingMaskIntoConstraints = false
+        self.sectionContainerView.translatesAutoresizingMaskIntoConstraints = false
+        self.footerContainerView.translatesAutoresizingMaskIntoConstraints = false
 
         let headerTop = NSLayoutConstraint(item: self.headerContainerView, attribute: .Top, relatedBy: .Equal, toItem: self.topLayoutGuide, attribute: .Bottom, multiplier: 1.0, constant: 0)
         headerTop.priority = 250
@@ -114,9 +114,9 @@ public class ALAccordionController: UIViewController
 
         let views = ["header": self.headerContainerView, "container": self.sectionContainerView, "footer": self.footerContainerView]
 
-        let headerHorizontal    = NSLayoutConstraint.constraintsWithVisualFormat("H:|[header]|", options: nil, metrics: nil, views: views)
-        let containerHorizontal = NSLayoutConstraint.constraintsWithVisualFormat("H:|[container]|", options: nil, metrics: nil, views: views)
-        let footerHorizontal    = NSLayoutConstraint.constraintsWithVisualFormat("H:|[footer]|", options: nil, metrics: nil, views: views)
+        let headerHorizontal    = NSLayoutConstraint.constraintsWithVisualFormat("H:|[header]|", options: [], metrics: nil, views: views)
+        let containerHorizontal = NSLayoutConstraint.constraintsWithVisualFormat("H:|[container]|", options: [], metrics: nil, views: views)
+        let footerHorizontal    = NSLayoutConstraint.constraintsWithVisualFormat("H:|[footer]|", options: [], metrics: nil, views: views)
 
         let centerYContainer = NSLayoutConstraint(item: self.sectionContainerView, attribute: .CenterY, relatedBy: .Equal, toItem: self.view, attribute: .CenterY, multiplier: 1.0, constant: 0)
         centerYContainer.priority = 250
@@ -131,19 +131,19 @@ public class ALAccordionController: UIViewController
     private func setupHeaderView(header: UIView)
     {
         // Remove any previous header
-        for v in self.headerContainerView.subviews as! [UIView]
+        for v in self.headerContainerView.subviews 
         {
             v.removeFromSuperview()
         }
 
         // Add the header view to the header container view
         self.headerContainerView.addSubview(header)
-        header.setTranslatesAutoresizingMaskIntoConstraints(false)
+        header.translatesAutoresizingMaskIntoConstraints = false
 
         // Constraints
         let views = ["header": header]
-        let horizontal = NSLayoutConstraint.constraintsWithVisualFormat("H:|[header]|", options: nil, metrics: nil, views: views)
-        let vertical   = NSLayoutConstraint.constraintsWithVisualFormat("V:|[header]|", options: nil, metrics: nil, views: views)
+        let horizontal = NSLayoutConstraint.constraintsWithVisualFormat("H:|[header]|", options: [], metrics: nil, views: views)
+        let vertical   = NSLayoutConstraint.constraintsWithVisualFormat("V:|[header]|", options: [], metrics: nil, views: views)
 
         self.headerContainerView.addConstraints(horizontal + vertical)
     }
@@ -151,19 +151,19 @@ public class ALAccordionController: UIViewController
     private func setupFooterView(footer: UIView)
     {
         // Remove any previous footer
-        for v in self.footerContainerView.subviews as! [UIView]
+        for v in self.footerContainerView.subviews 
         {
             v.removeFromSuperview()
         }
 
         // Add the footer view to the footer container view
         self.footerContainerView.addSubview(footer)
-        footer.setTranslatesAutoresizingMaskIntoConstraints(false)
+        footer.translatesAutoresizingMaskIntoConstraints = false
 
         // Constraints
         let views = ["footer": footer]
-        let horizontal = NSLayoutConstraint.constraintsWithVisualFormat("H:|[footer]|", options: nil, metrics: nil, views: views)
-        let vertical   = NSLayoutConstraint.constraintsWithVisualFormat("V:|[footer]|", options: nil, metrics: nil, views: views)
+        let horizontal = NSLayoutConstraint.constraintsWithVisualFormat("H:|[footer]|", options: [], metrics: nil, views: views)
+        let vertical   = NSLayoutConstraint.constraintsWithVisualFormat("V:|[footer]|", options: [], metrics: nil, views: views)
 
         self.footerContainerView.addConstraints(horizontal + vertical)
     }
@@ -185,14 +185,14 @@ public class ALAccordionController: UIViewController
         {
             // Add section to view
             self.sectionContainerView.addSubview(section.sectionView)
-            section.sectionView.setTranslatesAutoresizingMaskIntoConstraints(false)
+            section.sectionView.translatesAutoresizingMaskIntoConstraints = false
 
             // Setup constraints
             let views = ["section": section.sectionView]
 
-            let horizontal = NSLayoutConstraint.constraintsWithVisualFormat("H:|[section]|", options: nil, metrics: nil, views: views)
+            let horizontal = NSLayoutConstraint.constraintsWithVisualFormat("H:|[section]|", options: [], metrics: nil, views: views)
 
-            var top = NSLayoutConstraint(item: section.sectionView, attribute: .Top, relatedBy: .Equal, toItem: previousView, attribute: previousView == self.sectionContainerView ? .Top : .Bottom, multiplier: 1.0, constant: 0)
+            let top = NSLayoutConstraint(item: section.sectionView, attribute: .Top, relatedBy: .Equal, toItem: previousView, attribute: previousView == self.sectionContainerView ? .Top : .Bottom, multiplier: 1.0, constant: 0)
 
 
             self.sectionContainerView.addConstraints(horizontal)
@@ -215,12 +215,12 @@ public class ALAccordionController: UIViewController
     // Removes all the current sections from the view
     private func removeCurrentSections()
     {
-        for childView in self.sectionContainerView.subviews as! [UIView]
+        for childView in self.sectionContainerView.subviews 
         {
             childView.removeFromSuperview()
         }
 
-        for childVC in self.childViewControllers as! [UIViewController]
+        for childVC in self.childViewControllers 
         {
             childVC.removeFromParentViewController()
         }
@@ -230,7 +230,7 @@ public class ALAccordionController: UIViewController
     // Get the ALAccordionSection object that a given view controller is associated with
     public func sectionIndexForViewController(viewController: UIViewController) -> Int?
     {
-        for (idx, section) in enumerate(self.sections)
+        for (idx, section) in self.sections.enumerate()
         {
             if section.viewController == viewController
             {

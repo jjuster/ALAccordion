@@ -42,9 +42,9 @@ class ALSecondSectionViewController: UIViewController, ALAccordionSectionDelegat
         return header
         }()
 
-    func sectionWillOpen(#animated: Bool)
+    func sectionWillOpen(animated animated: Bool)
     {
-        println("Second Section Will Open")
+        print("Second Section Will Open")
 
         let duration = animated ? self.accordionController!.animationDuration : 0.0
         UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseInOut, animations:
@@ -55,9 +55,9 @@ class ALSecondSectionViewController: UIViewController, ALAccordionSectionDelegat
         completion: nil)
     }
 
-    func sectionWillClose(#animated: Bool)
+    func sectionWillClose(animated animated: Bool)
     {
-        println("Second Section Will Close")
+        print("Second Section Will Close")
 
         let duration = animated ? accordionController!.animationDuration : 0.0
         UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseInOut, animations:
@@ -70,12 +70,12 @@ class ALSecondSectionViewController: UIViewController, ALAccordionSectionDelegat
 
     func sectionDidOpen()
     {
-        println("Second Section Did Open")
+        print("Second Section Did Open")
     }
 
     func sectionDidClose()
     {
-        println("Second Section Did Close")
+        print("Second Section Did Close")
     }
 
     //
@@ -87,7 +87,7 @@ class ALSecondSectionViewController: UIViewController, ALAccordionSectionDelegat
         // Get the section index for this view controller
         if let sectionIndex = self.accordionController?.sectionIndexForViewController(self)
         {
-            println("Second view controller header tapped")
+            print("Second view controller header tapped")
 
             // If this section is open, close it - otherwise, open it
             if self.accordionController!.openSectionIndex == sectionIndex

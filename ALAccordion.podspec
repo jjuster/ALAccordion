@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "ALAccordion"
-  s.version          = "0.1.1"
+  s.version          = "0.2.0"
   s.summary          = "An accordion controller for iOS"
   s.description      = "An accordion style container view for iOS that manages a set of expandable/collapsable content sections."
   s.homepage         = "https://github.com/Alliants/ALAccordion"
