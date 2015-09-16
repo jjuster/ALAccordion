@@ -24,7 +24,7 @@ class ALSeparatorView: UIView
     // MARK: - Initialisers
     //
 
-    required init(coder aDecoder: NSCoder)
+    required init?(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
     }

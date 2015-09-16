@@ -20,7 +20,7 @@ class ALSingleLineHeaderView: UIView
     {
         let view = ALSeparatorView()
         view.separatorColor = UIColor.whiteColor().colorWithAlphaComponent(0.5)
-        view.setTranslatesAutoresizingMaskIntoConstraints(false)
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
@@ -28,18 +28,18 @@ class ALSingleLineHeaderView: UIView
     {
         let view = ALSeparatorView()
         view.separatorColor = UIColor.whiteColor().colorWithAlphaComponent(0.5)
-        view.setTranslatesAutoresizingMaskIntoConstraints(false)
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
     let titleLabel: UILabel =
     {
         let label = UILabel()
-        label.font = UIFont.systemFontOfSize(17.0, weight: UIFontWeightMedium)
+        label.font = UIFont.systemFontOfSize(17.0)
         label.textColor = UIColor.whiteColor()
         label.textAlignment = .Center
 
-        label.setTranslatesAutoresizingMaskIntoConstraints(false)
+        label.translatesAutoresizingMaskIntoConstraints = false
 
         return label
     }()
@@ -47,7 +47,7 @@ class ALSingleLineHeaderView: UIView
     //
     // MARK: - Initialisers
     //
-    required init(coder aDecoder: NSCoder)
+    required init?(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
     }
@@ -76,11 +76,11 @@ class ALSingleLineHeaderView: UIView
         // Setup constraints
         let views = ["topSeparator": self.topSeparator, "titleLabel": self.titleLabel, "bottomSeparator": self.bottomSeparator]
 
-        let vertical = NSLayoutConstraint.constraintsWithVisualFormat("V:|[topSeparator(1)]-(15)-[titleLabel]-(15)-[bottomSeparator(1)]|", options: nil, metrics: nil, views: views)
+        let vertical = NSLayoutConstraint.constraintsWithVisualFormat("V:|[topSeparator(1)]-(15)-[titleLabel]-(15)-[bottomSeparator(1)]|", options: [], metrics: nil, views: views)
 
-        let horizontal_topSeparator    = NSLayoutConstraint.constraintsWithVisualFormat("H:|[topSeparator]|", options: nil, metrics: nil, views: views)
-        let horizontal_titleLabel      = NSLayoutConstraint.constraintsWithVisualFormat("H:|-15-[titleLabel]-15-|", options: nil, metrics: nil, views: views)
-        let horizontal_bottomSeparator = NSLayoutConstraint.constraintsWithVisualFormat("H:|[bottomSeparator]|", options: nil, metrics: nil, views: views)
+        let horizontal_topSeparator    = NSLayoutConstraint.constraintsWithVisualFormat("H:|[topSeparator]|", options: [], metrics: nil, views: views)
+        let horizontal_titleLabel      = NSLayoutConstraint.constraintsWithVisualFormat("H:|-15-[titleLabel]-15-|", options: [], metrics: nil, views: views)
+        let horizontal_bottomSeparator = NSLayoutConstraint.constraintsWithVisualFormat("H:|[bottomSeparator]|", options: [], metrics: nil, views: views)
 
         self.addConstraints(vertical + horizontal_topSeparator + horizontal_titleLabel + horizontal_bottomSeparator)
     }

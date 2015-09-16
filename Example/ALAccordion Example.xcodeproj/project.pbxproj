@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		22295CCC1AEE2C8D006883F4 /* UIViewController+ALAccordionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22295CCB1AEE2C8D006883F4 /* UIViewController+ALAccordionSpec.swift */; };
 		22295CD11AEE33A7006883F4 /* ALTestSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22295CD01AEE33A7006883F4 /* ALTestSectionViewController.swift */; };
+		223B20981BA9A23F008FCF54 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 223B20971BA9A23F008FCF54 /* Launch.storyboard */; settings = {ASSET_TAGS = (); }; };
 		22605BB01AE2294800B716DE /* ALSingleLineHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22605BAF1AE2294800B716DE /* ALSingleLineHeaderView.swift */; };
 		22605BB21AE2420100B716DE /* ALExpandingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22605BB11AE2420100B716DE /* ALExpandingHeaderView.swift */; };
 		2283B0271ADC0D40001DC8BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2283B0261ADC0D40001DC8BD /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 		22295CC31AED7F5D006883F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22295CCB1AEE2C8D006883F4 /* UIViewController+ALAccordionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ALAccordionSpec.swift"; sourceTree = "<group>"; };
 		22295CD01AEE33A7006883F4 /* ALTestSectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALTestSectionViewController.swift; sourceTree = "<group>"; };
+		223B20971BA9A23F008FCF54 /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		22605BAF1AE2294800B716DE /* ALSingleLineHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALSingleLineHeaderView.swift; sourceTree = "<group>"; };
 		22605BB11AE2420100B716DE /* ALExpandingHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALExpandingHeaderView.swift; sourceTree = "<group>"; };
 		2283B0261ADC0D40001DC8BD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				2283B0261ADC0D40001DC8BD /* Main.storyboard */,
+				223B20971BA9A23F008FCF54 /* Launch.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 			);
 			path = Resources;
@@ -301,7 +304,9 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = AL;
-				LastUpgradeCheck = 0510;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Alliants Ltd";
 				TargetAttributes = {
 					22295CBF1AED7F5D006883F4 = {
@@ -342,6 +347,7 @@
 			files = (
 				2283B0271ADC0D40001DC8BD /* Main.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
+				223B20981BA9A23F008FCF54 /* Launch.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,10 +493,6 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -498,8 +500,9 @@
 				);
 				INFOPLIST_FILE = "ALAccordion Tests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alliants.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ALAccordion Example.app/ALAccordion Example";
@@ -516,15 +519,12 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "ALAccordion Tests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alliants.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ALAccordion Example.app/ALAccordion Example";
 			};
@@ -548,6 +548,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -615,7 +616,8 @@
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "ALAccordion Example/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alliants.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "ALAccordion Example";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
@@ -635,7 +637,8 @@
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "ALAccordion Example/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alliants.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "ALAccordion Example";
 				WRAPPER_EXTENSION = app;
 			};

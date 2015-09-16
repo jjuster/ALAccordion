@@ -20,7 +20,7 @@ class ALExpandingHeaderView: UIView
     {
         let view = ALSeparatorView()
         view.separatorColor = UIColor.whiteColor().colorWithAlphaComponent(0.5)
-        view.setTranslatesAutoresizingMaskIntoConstraints(false)
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
@@ -28,18 +28,18 @@ class ALExpandingHeaderView: UIView
     {
         let view = ALSeparatorView()
         view.separatorColor = UIColor.whiteColor().colorWithAlphaComponent(0.5)
-        view.setTranslatesAutoresizingMaskIntoConstraints(false)
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
     let titleLabel: UILabel =
     {
         let label = UILabel()
-        label.font = UIFont.systemFontOfSize(17.0, weight: UIFontWeightMedium)
+        label.font = UIFont.systemFontOfSize(17.0)
         label.textColor = UIColor.whiteColor()
         label.textAlignment = .Center
 
-        label.setTranslatesAutoresizingMaskIntoConstraints(false)
+        label.translatesAutoresizingMaskIntoConstraints = false
 
         return label
     }()
@@ -51,7 +51,7 @@ class ALExpandingHeaderView: UIView
         label.textColor = UIColor.whiteColor()
         label.textAlignment = .Center
 
-        label.setTranslatesAutoresizingMaskIntoConstraints(false)
+        label.translatesAutoresizingMaskIntoConstraints = false
 
         return label
     }()
@@ -62,7 +62,7 @@ class ALExpandingHeaderView: UIView
     // MARK: - Initialisers
     //
     
-    required init(coder aDecoder: NSCoder)
+    required init?(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
     }
@@ -110,10 +110,10 @@ class ALExpandingHeaderView: UIView
 
         let views = ["topSeparator": self.topSeparator, "titleLabel": self.titleLabel, "detailLabel": self.detailLabel, "bottomSeparator": self.bottomSeparator]
 
-        let horizontal_topSeparator    = NSLayoutConstraint.constraintsWithVisualFormat("H:|[topSeparator]|", options: nil, metrics: nil, views: views)
-        let horizontal_titleLabel      = NSLayoutConstraint.constraintsWithVisualFormat("H:|-15-[titleLabel]-15-|", options: nil, metrics: nil, views: views)
-        let horizontal_detailLabel     = NSLayoutConstraint.constraintsWithVisualFormat("H:|-15-[detailLabel]-15-|", options: nil, metrics: nil, views: views)
-        let horizontal_bottomSeparator = NSLayoutConstraint.constraintsWithVisualFormat("H:|[bottomSeparator]|", options: nil, metrics: nil, views: views)
+        let horizontal_topSeparator    = NSLayoutConstraint.constraintsWithVisualFormat("H:|[topSeparator]|", options: [], metrics: nil, views: views)
+        let horizontal_titleLabel      = NSLayoutConstraint.constraintsWithVisualFormat("H:|-15-[titleLabel]-15-|", options: [], metrics: nil, views: views)
+        let horizontal_detailLabel     = NSLayoutConstraint.constraintsWithVisualFormat("H:|-15-[detailLabel]-15-|", options: [], metrics: nil, views: views)
+        let horizontal_bottomSeparator = NSLayoutConstraint.constraintsWithVisualFormat("H:|[bottomSeparator]|", options: [], metrics: nil, views: views)
 
         self.addConstraints([topSeparator_top, topSeparator_height, titleLabel_top, titleLabel_detailLabel, titleLabel_bottom, detailLabel_bottom, bottomSeparator_bottom, bottomSeparator_height, titleLabel_centerX, detailLabel_centerX])
 
