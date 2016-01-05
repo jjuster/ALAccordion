@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		22295CCC1AEE2C8D006883F4 /* UIViewController+ALAccordionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22295CCB1AEE2C8D006883F4 /* UIViewController+ALAccordionSpec.swift */; };
 		22295CD11AEE33A7006883F4 /* ALTestSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22295CD01AEE33A7006883F4 /* ALTestSectionViewController.swift */; };
-		223B20981BA9A23F008FCF54 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 223B20971BA9A23F008FCF54 /* Launch.storyboard */; settings = {ASSET_TAGS = (); }; };
+		223B20981BA9A23F008FCF54 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 223B20971BA9A23F008FCF54 /* Launch.storyboard */; };
 		22605BB01AE2294800B716DE /* ALSingleLineHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22605BAF1AE2294800B716DE /* ALSingleLineHeaderView.swift */; };
 		22605BB21AE2420100B716DE /* ALExpandingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22605BB11AE2420100B716DE /* ALExpandingHeaderView.swift */; };
 		2283B0271ADC0D40001DC8BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2283B0261ADC0D40001DC8BD /* Main.storyboard */; };
@@ -21,12 +21,12 @@
 		22BA439E1AE6A7B400BFF762 /* ALDoubleLineHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BA439D1AE6A7B400BFF762 /* ALDoubleLineHeaderView.swift */; };
 		22DE7A7D1AE58C62002DE938 /* ALSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE7A7C1AE58C62002DE938 /* ALSeparatorView.swift */; };
 		22DE7A7F1AE59B2E002DE938 /* ALThirdSectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE7A7E1AE59B2E002DE938 /* ALThirdSectionTableViewController.swift */; };
-		23FC09847B7B2A778006D11F /* Pods_ALAccordion_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A937A4D4918C5FB5B0AB6F8 /* Pods_ALAccordion_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		23FC09847B7B2A778006D11F /* Pods_ALAccordion_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A937A4D4918C5FB5B0AB6F8 /* Pods_ALAccordion_Tests.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
-		98CFBD8439202A21E2D91406 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BB54164E05181E26A0DC86 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		98CFBD8439202A21E2D91406 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BB54164E05181E26A0DC86 /* Pods.framework */; };
 		9AA699E49595C790D71AF402 /* Pods_ALAccordion_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C9AA2A438333D8B0F82E40 /* Pods_ALAccordion_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -610,7 +610,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
@@ -631,7 +630,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";

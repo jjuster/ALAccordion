@@ -1,28 +1,20 @@
 PODS:
   - ALAccordion (0.2.0)
-  - Nimble (2.0.0-rc.3)
-  - Quick (0.6.0)
+  - Nimble (3.0.0)
+  - Quick (0.8.0)
 
 DEPENDENCIES:
   - ALAccordion (from `../`)
-  - Nimble (~> 2.0.0-rc.3)
-  - Quick (from `https://github.com/Quick/Quick`, branch `swift-2.0`)
+  - Nimble (~> 3.0.0)
+  - Quick (~> 0.8.0)
 
 EXTERNAL SOURCES:
   ALAccordion:
     :path: "../"
-  Quick:
-    :branch: swift-2.0
-    :git: https://github.com/Quick/Quick
-
-CHECKOUT OPTIONS:
-  Quick:
-    :commit: ac5eadd202dd67741628f80fb96e8c57388d954d
-    :git: https://github.com/Quick/Quick
 
 SPEC CHECKSUMS:
   ALAccordion: 90b275caa60bbf5e10c785ba167810416fc0209a
-  Nimble: 9dff98ee195ffe7351d3b2fb01d3a1420fd97948
-  Quick: aaa961333f0bec39bfefa4b759128e4eb39f0d0e
+  Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926
+  Quick: 563d0f6ec5f72e394645adb377708639b7dd38ab
 
-COCOAPODS: 0.39.0.beta.3
+COCOAPODS: 0.39.0

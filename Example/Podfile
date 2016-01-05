@@ -9,6 +9,6 @@ target 'ALAccordion Example' do
 end
 
 target 'ALAccordion Tests' do
-  pod 'Quick', :git => 'https://github.com/Quick/Quick', :branch => 'swift-2.0'
-  pod 'Nimble', '~> 2.0.0-rc.3'
+  pod 'Quick', '~> 0.8.0'
+  pod 'Nimble', '~> 3.0.0'
 end
