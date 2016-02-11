@@ -28,16 +28,16 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-### Installation with Cocoapods
+### Installation with CocoaPods
 
-ALAccordion is written in Swift, so to install with Cocoapods, you must target `iOS 8` or later.
+ALAccordion is written in Swift, so to install with CocoaPods, you must target `iOS 8` or later.
 
-Install Cocoapods 0.36.0 or newer
+Install CocoaPods 0.36.0 or newer
 ```shell
 [sudo] gem install cocoapods
 ```
 
-Add ALAccordion to your Podfile. **Note**: You must add the `use_frameworks!` line to use Swift in Cocoapods:
+Add ALAccordion to your Podfile. **Note**: You must add the `use_frameworks!` line to use Swift in CocoaPods:
 ```ruby
 # Podfile
 target 'My Target' do
