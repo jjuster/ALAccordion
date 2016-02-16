@@ -19,7 +19,7 @@ class ALAccordionSection: NSObject
         didSet
         {
             // Start off closed
-            accordion?.closeSection(self, animated: false)
+            self.activateCloseConstraints()
         }
     }
 

@@ -12,6 +12,8 @@
 		223B20981BA9A23F008FCF54 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 223B20971BA9A23F008FCF54 /* Launch.storyboard */; };
 		22605BB01AE2294800B716DE /* ALSingleLineHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22605BAF1AE2294800B716DE /* ALSingleLineHeaderView.swift */; };
 		22605BB21AE2420100B716DE /* ALExpandingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22605BB11AE2420100B716DE /* ALExpandingHeaderView.swift */; };
+		2272541C1C70F60100A6B8DD /* ALFourthDynamicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2272541B1C70F60100A6B8DD /* ALFourthDynamicViewController.swift */; };
+		2272541E1C70F65500A6B8DD /* ALRemovableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2272541D1C70F65500A6B8DD /* ALRemovableHeaderView.swift */; };
 		2283B0271ADC0D40001DC8BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2283B0261ADC0D40001DC8BD /* Main.storyboard */; };
 		22891FA71AEE9B5E00CE420B /* ALAccordionControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22891FA61AEE9B5E00CE420B /* ALAccordionControllerSpec.swift */; };
 		22B7E6711AD7F23400C6A91F /* ALFirstSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B7E6701AD7F23400C6A91F /* ALFirstSectionViewController.swift */; };
@@ -49,6 +51,8 @@
 		223B20971BA9A23F008FCF54 /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		22605BAF1AE2294800B716DE /* ALSingleLineHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALSingleLineHeaderView.swift; sourceTree = "<group>"; };
 		22605BB11AE2420100B716DE /* ALExpandingHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALExpandingHeaderView.swift; sourceTree = "<group>"; };
+		2272541B1C70F60100A6B8DD /* ALFourthDynamicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALFourthDynamicViewController.swift; sourceTree = "<group>"; };
+		2272541D1C70F65500A6B8DD /* ALRemovableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALRemovableHeaderView.swift; sourceTree = "<group>"; };
 		2283B0261ADC0D40001DC8BD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		22891FA61AEE9B5E00CE420B /* ALAccordionControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALAccordionControllerSpec.swift; sourceTree = "<group>"; };
 		22B7E6701AD7F23400C6A91F /* ALFirstSectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALFirstSectionViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +147,7 @@
 				22B7E6701AD7F23400C6A91F /* ALFirstSectionViewController.swift */,
 				22B7E6781AD7FF1600C6A91F /* ALSecondSectionViewController.swift */,
 				22DE7A7E1AE59B2E002DE938 /* ALThirdSectionTableViewController.swift */,
+				2272541B1C70F60100A6B8DD /* ALFourthDynamicViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 				22605BAF1AE2294800B716DE /* ALSingleLineHeaderView.swift */,
 				22BA439D1AE6A7B400BFF762 /* ALDoubleLineHeaderView.swift */,
 				22605BB11AE2420100B716DE /* ALExpandingHeaderView.swift */,
+				2272541D1C70F65500A6B8DD /* ALRemovableHeaderView.swift */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -463,7 +469,9 @@
 			files = (
 				22DE7A7F1AE59B2E002DE938 /* ALThirdSectionTableViewController.swift in Sources */,
 				22BA439E1AE6A7B400BFF762 /* ALDoubleLineHeaderView.swift in Sources */,
+				2272541E1C70F65500A6B8DD /* ALRemovableHeaderView.swift in Sources */,
 				22B7E6731AD7F26000C6A91F /* ALAppDelegate.swift in Sources */,
+				2272541C1C70F60100A6B8DD /* ALFourthDynamicViewController.swift in Sources */,
 				22DE7A7D1AE58C62002DE938 /* ALSeparatorView.swift in Sources */,
 				22605BB01AE2294800B716DE /* ALSingleLineHeaderView.swift in Sources */,
 				22B7E6791AD7FF1600C6A91F /* ALSecondSectionViewController.swift in Sources */,

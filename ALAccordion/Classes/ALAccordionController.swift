@@ -78,17 +78,108 @@ public class ALAccordionController: UIViewController
 
     public func setViewControllers(viewControllers: UIViewController...)
     {
+        self.setViewControllers(viewControllers, animated: false)
+    }
+
+    // Removes any previous sections, and rebuilds the accordion with the new view controllers
+    public func setViewControllers(viewControllers: [UIViewController], animated: Bool)
+    {
+        // Remove existing sections
+        self.removeAllSections()
+
         for vc in viewControllers
         {
-            assert(vc is ALAccordionSectionDelegate, "View Controller \(vc) must conform to the protocol \(_stdlib_getDemangledTypeName(ALAccordionSectionDelegate))")
+            self.addViewController(vc, animated: animated)
+        }
+    }
 
-            let section = ALAccordionSection(viewController: vc)
+    public func addViewController(viewController: UIViewController, animated: Bool)
+    {
+        // Append view controller to the end
+        let index = self.sections.count
+        self.insertViewController(viewController, atIndex: index, animated: animated)
+    }
 
-            section.accordion = self
-            self.sections.append(section)
+    public func insertViewController(viewController: UIViewController, atIndex index: Int, animated: Bool)
+    {
+        assert(viewController is ALAccordionSectionDelegate, "View Controller \(viewController) must conform to the protocol \(_stdlib_getDemangledTypeName(ALAccordionSectionDelegate))")
+
+        // Setup the section
+        let section = ALAccordionSection(viewController: viewController)
+        section.sectionView.alpha = 0
+
+        // Move the section below the last section so animation is better
+        if let lastSection = self.sections.last
+        {
+            section.sectionView.frame = lastSection.sectionView.frame
+            section.sectionView.setNeedsLayout()
+            section.sectionView.layoutIfNeeded()
         }
 
-        self.layoutSectionViews()
+        // Add section to view
+        self.sectionContainerView.addSubview(section.sectionView)
+        section.sectionView.translatesAutoresizingMaskIntoConstraints = false
+
+        self.addChildViewController(section.viewController)
+
+        section.accordion = self
+        self.sections.insert(section, atIndex: index)
+
+        self.rebuildSectionConstraints()
+
+
+        // Show / fade in the new section
+        let duration = animated ? self.animationDuration : 0
+
+        UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseInOut, animations:
+        {
+            self.view.setNeedsLayout()
+            self.view.layoutIfNeeded()
+
+            section.sectionView.alpha = 1.0
+        },
+        completion: nil)
+    }
+
+    public func removeSectionAtIndex(index: Int, animated: Bool)
+    {
+        assert(index >= 0 && index < self.sections.count, "Section index \(index) out of bounds")
+
+        let section = self.sections[index]
+
+        // Close section if it's open
+        self.closeSection(section, animated: animated)
+        {
+            let frame = section.sectionView.frame
+
+            // Remove the section from the array
+            self.sections.removeAtIndex(index)
+
+            // Rebuild the constraints between sections
+            self.rebuildSectionConstraints()
+
+            // Tell system to update the layout
+            let duration = animated ? self.animationDuration : 0
+
+            UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseInOut, animations:
+            {
+                section.sectionView.alpha = 0
+
+                self.view.setNeedsLayout()
+                self.view.layoutIfNeeded()
+
+                // Keep the section in place for animation
+                section.sectionView.frame = frame
+            },
+            completion:
+            {
+                (completed: Bool) in
+
+                // Remove the view & controller from the parent
+                section.sectionView.removeFromSuperview()
+                section.viewController.removeFromParentViewController()
+            })
+        }
     }
 
     // Layouts out the header, container and footer views
@@ -169,24 +260,22 @@ public class ALAccordionController: UIViewController
     }
 
     // Layout the sections within the container view
-    private func layoutSectionViews()
+    private var sectionConstraints = [NSLayoutConstraint]()
+    private func rebuildSectionConstraints()
     {
-        // Remove current sections
-        self.removeCurrentSections()
-
         if self.sections.count == 0
         {
             return
         }
 
+        // Remove any existing constraints
+        self.sectionContainerView.removeConstraints(self.sectionConstraints)
+        self.sectionConstraints.removeAll()
+
         // Add all the section views and setup constraints between them
         var previousView = self.sectionContainerView
         for section in self.sections
         {
-            // Add section to view
-            self.sectionContainerView.addSubview(section.sectionView)
-            section.sectionView.translatesAutoresizingMaskIntoConstraints = false
-
             // Setup constraints
             let views = ["section": section.sectionView]
 
@@ -194,11 +283,11 @@ public class ALAccordionController: UIViewController
 
             let top = NSLayoutConstraint(item: section.sectionView, attribute: .Top, relatedBy: .Equal, toItem: previousView, attribute: previousView == self.sectionContainerView ? .Top : .Bottom, multiplier: 1.0, constant: 0)
 
-
             self.sectionContainerView.addConstraints(horizontal)
             self.sectionContainerView.addConstraint(top)
 
-            self.addChildViewController(section.viewController)
+            // Keep track of constraints, so we can remove when rebuilding
+            self.sectionConstraints.append(top)
 
             previousView = section.sectionView
         }
@@ -209,11 +298,11 @@ public class ALAccordionController: UIViewController
         let bottom = NSLayoutConstraint(item: lastSection!.sectionView, attribute: .Bottom, relatedBy: .Equal, toItem: self.sectionContainerView, attribute: .Bottom, multiplier: 1.0, constant: 0)
         self.sectionContainerView.addConstraint(bottom)
 
-        self.view.setNeedsLayout()
+        self.sectionConstraints.append(bottom)
     }
 
     // Removes all the current sections from the view
-    private func removeCurrentSections()
+    private func removeAllSections()
     {
         for childView in self.sectionContainerView.subviews 
         {
@@ -224,6 +313,8 @@ public class ALAccordionController: UIViewController
         {
             childVC.removeFromParentViewController()
         }
+
+        self.sections = []
     }
 
 
@@ -261,7 +352,7 @@ public class ALAccordionController: UIViewController
         self.closeSection(section, animated: animated)
     }
 
-    public func closeAllSections(animated: Bool)
+    public func closeAllSections(animated animated: Bool)
     {
         for section in self.sections
         {
@@ -278,7 +369,7 @@ public class ALAccordionController: UIViewController
         }
 
         // Close all the sections first
-        self.closeAllSections(animated)
+        self.closeAllSections(animated: animated)
 
         let viewController = section.viewController as? ALAccordionSectionDelegate
 
@@ -337,11 +428,22 @@ public class ALAccordionController: UIViewController
 
     func closeSection(section: ALAccordionSection, animated: Bool)
     {
+        self.closeSection(section, animated: animated, completion: nil)
+    }
+
+    func closeSection(section: ALAccordionSection, animated: Bool, completion: (()->())?)
+    {
+        // Dont close again
+        if !section.open
+        {
+            completion?()
+            return
+        }
+
         let viewController = section.viewController as? ALAccordionSectionDelegate
 
         // Tell the view controller delegate that it's about to close
         viewController?.sectionWillClose?(animated: animated)
-
 
         // We need to break the top and bottom constraints (if full screen mode is enabled)
         if let top = self.sectionTopConstraint
@@ -378,6 +480,8 @@ public class ALAccordionController: UIViewController
 
             // Tell the view controller that it just closed
             viewController?.sectionDidClose?()
+
+            completion?()
         })
     }
 }
