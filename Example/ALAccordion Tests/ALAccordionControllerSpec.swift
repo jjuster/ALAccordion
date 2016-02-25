@@ -45,6 +45,90 @@ class ALAccordionControllerSpec: QuickSpec
                     expect(viewController1.headerView.isDescendantOfView(accordion.view)).to(beTrue())
                     expect(viewController2.headerView.isDescendantOfView(accordion.view)).to(beTrue())
                 }
+                it("should contain the correct number of section")
+                {
+                    expect(accordion.sections.count).to(equal(2))
+                }
+            }
+
+            describe("addViewController:")
+            {
+                var viewController3: ALTestSectionViewController!
+
+                beforeEach
+                {
+                    viewController3 = ALTestSectionViewController()
+
+                    accordion.addViewController(viewController3, animated: false)
+                }
+
+                it("should add the view controller to its view hierarchy")
+                {
+                    expect(viewController3.view.isDescendantOfView(accordion.view)).to(beTrue())
+                }
+
+                it("should add the sections header view to its view hierarchy")
+                {
+                    expect(viewController3.headerView.isDescendantOfView(accordion.view)).to(beTrue())
+                }
+
+                it("should append the section to the end off its section list")
+                {
+                    expect(accordion.sectionIndexForViewController(viewController3)).to(equal(2))
+                    expect(accordion.sections.count).to(equal(3))
+                }
+            }
+
+            describe("insertViewController:atIndex:")
+            {
+                var viewController3: ALTestSectionViewController!
+
+                beforeEach
+                {
+                    viewController3 = ALTestSectionViewController()
+
+                    accordion.insertViewController(viewController3, atIndex: 0, animated: false)
+                }
+
+                it("should add the view controller to its view hierarchy")
+                {
+                    expect(viewController3.view.isDescendantOfView(accordion.view)).to(beTrue())
+                }
+
+                it("should add the sections header view to its view hierarchy")
+                {
+                    expect(viewController3.headerView.isDescendantOfView(accordion.view)).to(beTrue())
+                }
+
+                it("should insert the section to the correct index")
+                {
+                    expect(accordion.sectionIndexForViewController(viewController3)).to(equal(0))
+                    expect(accordion.sections.count).to(equal(3))
+                }
+            }
+
+            describe("removeSectionAtIndex:")
+            {
+                beforeEach
+                {
+                    accordion.removeSectionAtIndex(0, animated: false)
+                }
+
+                it("should remove the view controller from its view hierarchy")
+                {
+                    expect(viewController1.view.isDescendantOfView(accordion.view)).toEventually(beFalse())
+                }
+
+                it("should remove the sections header view to its view hierarchy")
+                {
+                    expect(viewController1.headerView.isDescendantOfView(accordion.view)).toEventually(beFalse())
+                }
+
+                it("should remove the section its section list")
+                {
+                    expect(accordion.sectionIndexForViewController(viewController1)).to(beNil())
+                    expect(accordion.sections.count).to(equal(1))
+                }
             }
 
             describe("sectionIndexForViewController:")
@@ -107,7 +191,7 @@ class ALAccordionControllerSpec: QuickSpec
                 it("should mark all sections as closed")
                 {
                     accordion.openSectionAtIndex(1, animated: false)
-                    accordion.closeAllSections(false)
+                    accordion.closeAllSections(animated: false)
 
                     expect(accordion.openSectionIndex).to(beNil())
                 }
