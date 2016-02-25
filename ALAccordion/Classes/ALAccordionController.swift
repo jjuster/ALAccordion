@@ -20,7 +20,7 @@ public class ALAccordionController: UIViewController
     private let sectionContainerView = UIView()
     private let footerContainerView = UIView()
 
-    private var sections = [ALAccordionSection]()
+    private(set) public var sections = [ALAccordionSection]()
 
     private var sectionTopConstraint: NSLayoutConstraint?
     private var sectionBottomConstraint: NSLayoutConstraint?
