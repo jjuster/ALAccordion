@@ -45,6 +45,10 @@ class ALAccordionControllerSpec: QuickSpec
                     expect(viewController1.headerView.isDescendantOfView(accordion.view)).to(beTrue())
                     expect(viewController2.headerView.isDescendantOfView(accordion.view)).to(beTrue())
                 }
+                it("should contain the correct number of section")
+                {
+                    expect(accordion.sections.count).to(equal(2))
+                }
             }
 
             describe("addViewController:")
@@ -71,6 +75,7 @@ class ALAccordionControllerSpec: QuickSpec
                 it("should append the section to the end off its section list")
                 {
                     expect(accordion.sectionIndexForViewController(viewController3)).to(equal(2))
+                    expect(accordion.sections.count).to(equal(3))
                 }
             }
 
@@ -98,6 +103,7 @@ class ALAccordionControllerSpec: QuickSpec
                 it("should insert the section to the correct index")
                 {
                     expect(accordion.sectionIndexForViewController(viewController3)).to(equal(0))
+                    expect(accordion.sections.count).to(equal(3))
                 }
             }
 
@@ -121,6 +127,7 @@ class ALAccordionControllerSpec: QuickSpec
                 it("should remove the section its section list")
                 {
                     expect(accordion.sectionIndexForViewController(viewController1)).to(beNil())
+                    expect(accordion.sections.count).to(equal(1))
                 }
             }
 

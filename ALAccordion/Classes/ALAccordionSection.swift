@@ -10,11 +10,11 @@
 
 import UIKit
 
-class ALAccordionSection: NSObject
+public class ALAccordionSection: NSObject
 {
     // MARK: - Properties
 
-    weak var accordion: ALAccordionController?
+    internal weak var accordion: ALAccordionController?
     {
         didSet
         {
@@ -23,19 +23,19 @@ class ALAccordionSection: NSObject
         }
     }
 
-    var sectionView = UIView()
+    internal var sectionView = UIView()
 
     private let headerContainerView = UIView()
     private let bodyContainerView = UIView()
 
-    private (set) internal var viewController: UIViewController!
+    private (set) public var viewController: UIViewController!
 
-    var openConstraint: NSLayoutConstraint!
-    var closeConstraint: NSLayoutConstraint!
+    internal var openConstraint: NSLayoutConstraint!
+    internal var closeConstraint: NSLayoutConstraint!
 
     private (set) internal var open = false
 
-    init(viewController: UIViewController)
+    internal init(viewController: UIViewController)
     {
         super.init()
 
@@ -88,7 +88,7 @@ class ALAccordionSection: NSObject
         self.closeConstraint = NSLayoutConstraint(item: self.headerContainerView, attribute: .Bottom, relatedBy: .Equal, toItem: self.sectionView, attribute: .Bottom, multiplier: 1.0, constant: 0)
     }
 
-    func setupHeaderView(header: UIView)
+    internal func setupHeaderView(header: UIView)
     {
         // Add the header view to the header container view
         self.headerContainerView.addSubview(header)
@@ -107,7 +107,7 @@ class ALAccordionSection: NSObject
         self.headerContainerView.addConstraint(bottom)
     }
 
-    func setupBodyView(body: UIView)
+    internal func setupBodyView(body: UIView)
     {
         // Add the footer view to the footer container view
         self.bodyContainerView.addSubview(body)
@@ -129,7 +129,7 @@ class ALAccordionSection: NSObject
 
     // MARK: - Opening / closing the section
 
-    func activateOpenConstraints()
+    internal func activateOpenConstraints()
     {
         // Swap open / close constraints
         self.sectionView.removeConstraint(self.closeConstraint)
@@ -139,7 +139,7 @@ class ALAccordionSection: NSObject
         self.open = true
     }
 
-    func activateCloseConstraints()
+    internal func activateCloseConstraints()
     {
         // Swap open / close constraints
         self.sectionView.removeConstraint(self.openConstraint)
