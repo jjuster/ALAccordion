@@ -36,7 +36,7 @@ class ALSecondSectionViewController: UIViewController, ALAccordionSectionDelegat
         header.topSeparator.alpha = 0
 
         // Add a tap gesture recogniser to open the section
-        let tapGR = UITapGestureRecognizer(target: self, action: "headerTapped:")
+        let tapGR = UITapGestureRecognizer(target: self, action: #selector(headerTapped(_:)))
         header.addGestureRecognizer(tapGR)
 
         return header
