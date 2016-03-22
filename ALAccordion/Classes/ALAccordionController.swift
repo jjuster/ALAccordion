@@ -102,7 +102,7 @@ public class ALAccordionController: UIViewController
 
     public func insertViewController(viewController: UIViewController, atIndex index: Int, animated: Bool)
     {
-        assert(viewController is ALAccordionSectionDelegate, "View Controller \(viewController) must conform to the protocol \(_stdlib_getDemangledTypeName(ALAccordionSectionDelegate))")
+        assert(viewController is ALAccordionSectionDelegate, "View Controller \(viewController) must conform to the protocol ALAccordionSectionDelegate")
 
         // Setup the section
         let section = ALAccordionSection(viewController: viewController)

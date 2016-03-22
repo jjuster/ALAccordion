@@ -39,7 +39,7 @@ public class ALAccordionSection: NSObject
     {
         super.init()
 
-        assert(viewController is ALAccordionSectionDelegate, "View Controller \(viewController) must conform to the protocol \(_stdlib_getDemangledTypeName(ALAccordionSectionDelegate))")
+        assert(viewController is ALAccordionSectionDelegate, "View Controller \(viewController) must conform to the protocol ALAccordionSectionDelegate")
 
         self.viewController = viewController
 

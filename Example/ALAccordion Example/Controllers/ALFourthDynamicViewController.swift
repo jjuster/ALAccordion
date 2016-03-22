@@ -28,11 +28,11 @@ class ALFourthDynamicViewController: UIViewController, ALAccordionSectionDelegat
     {
         let header = ALRemovableHeaderView()
         header.titleLabel.text = "Dynamic Section Header"
-        header.closeButton.addTarget(self, action: "btnRemovePressed:", forControlEvents: .TouchUpInside)
+        header.closeButton.addTarget(self, action: #selector(btnRemovePressed(_:)), forControlEvents: .TouchUpInside)
         header.topSeparator.alpha = 0
 
         // Add a tap gesture recogniser to open the section
-        let tapGR = UITapGestureRecognizer(target: self, action: "headerTapped:")
+        let tapGR = UITapGestureRecognizer(target: self, action: #selector(headerTapped(_:)))
         header.addGestureRecognizer(tapGR)
 
         return header

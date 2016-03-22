@@ -32,7 +32,7 @@ class ALFirstSectionViewController: UIViewController, ALAccordionSectionDelegate
         header.titleLabel.text = "Section 1 Header"
 
         // Add a tap gesture recogniser to open the section
-        let tapGR = UITapGestureRecognizer(target: self, action: "headerTapped:")
+        let tapGR = UITapGestureRecognizer(target: self, action: #selector(headerTapped(_:)))
         header.addGestureRecognizer(tapGR)
 
         return header

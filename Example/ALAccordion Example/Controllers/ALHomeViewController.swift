@@ -70,7 +70,7 @@ class ALHomeViewController: ALAccordionController
         footer.topSeparator.alpha = 0
         footer.bottomSeparator.alpha = 0
 
-        let tapGR = UITapGestureRecognizer(target: self, action: "footerTapped:")
+        let tapGR = UITapGestureRecognizer(target: self, action: #selector(footerTapped(_:)))
         footer.addGestureRecognizer(tapGR)
 
         self.footerView = footer
