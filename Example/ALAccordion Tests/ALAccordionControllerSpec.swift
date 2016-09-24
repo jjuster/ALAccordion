@@ -36,14 +36,14 @@ class ALAccordionControllerSpec: QuickSpec
             {
                 it("should add the view controllers to its view hierarchy")
                 {
-                    expect(viewController1.view.isDescendantOfView(accordion.view)).to(beTrue())
-                    expect(viewController2.view.isDescendantOfView(accordion.view)).to(beTrue())
+                    expect(viewController1.view.isDescendant(of: accordion.view)).to(beTrue())
+                    expect(viewController2.view.isDescendant(of: accordion.view)).to(beTrue())
                 }
 
                 it("should add the sections header view to its view hierarchy")
                 {
-                    expect(viewController1.headerView.isDescendantOfView(accordion.view)).to(beTrue())
-                    expect(viewController2.headerView.isDescendantOfView(accordion.view)).to(beTrue())
+                    expect(viewController1.headerView.isDescendant(of: accordion.view)).to(beTrue())
+                    expect(viewController2.headerView.isDescendant(of: accordion.view)).to(beTrue())
                 }
                 it("should contain the correct number of section")
                 {
@@ -64,12 +64,12 @@ class ALAccordionControllerSpec: QuickSpec
 
                 it("should add the view controller to its view hierarchy")
                 {
-                    expect(viewController3.view.isDescendantOfView(accordion.view)).to(beTrue())
+                    expect(viewController3.view.isDescendant(of: accordion.view)).to(beTrue())
                 }
 
                 it("should add the sections header view to its view hierarchy")
                 {
-                    expect(viewController3.headerView.isDescendantOfView(accordion.view)).to(beTrue())
+                    expect(viewController3.headerView.isDescendant(of: accordion.view)).to(beTrue())
                 }
 
                 it("should append the section to the end off its section list")
@@ -92,12 +92,12 @@ class ALAccordionControllerSpec: QuickSpec
 
                 it("should add the view controller to its view hierarchy")
                 {
-                    expect(viewController3.view.isDescendantOfView(accordion.view)).to(beTrue())
+                    expect(viewController3.view.isDescendant(of: accordion.view)).to(beTrue())
                 }
 
                 it("should add the sections header view to its view hierarchy")
                 {
-                    expect(viewController3.headerView.isDescendantOfView(accordion.view)).to(beTrue())
+                    expect(viewController3.headerView.isDescendant(of: accordion.view)).to(beTrue())
                 }
 
                 it("should insert the section to the correct index")
@@ -116,12 +116,12 @@ class ALAccordionControllerSpec: QuickSpec
 
                 it("should remove the view controller from its view hierarchy")
                 {
-                    expect(viewController1.view.isDescendantOfView(accordion.view)).toEventually(beFalse())
+                    expect(viewController1.view.isDescendant(of: accordion.view)).toEventually(beFalse())
                 }
 
                 it("should remove the sections header view to its view hierarchy")
                 {
-                    expect(viewController1.headerView.isDescendantOfView(accordion.view)).toEventually(beFalse())
+                    expect(viewController1.headerView.isDescendant(of: accordion.view)).toEventually(beFalse())
                 }
 
                 it("should remove the section its section list")

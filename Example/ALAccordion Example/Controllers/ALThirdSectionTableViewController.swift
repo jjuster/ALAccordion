@@ -16,11 +16,37 @@ class ALThirdSectionTableViewController: UITableViewController, ALAccordionSecti
 {
     let names = ["Olivia", "Melissa", "Adrian", "Barbera", "Fred", "Joyce", "Annita", "Johanne", "Walt", "Danny", "Pablo", "Kala", "Albertina", "Carmelina", "Malcolm", "Alan", "Gene", "Diane", "Merlyn", "Azzie"]
 
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        headerView = ALDoubleLineHeaderView()
+        
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+        setup()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        headerView = ALDoubleLineHeaderView()
+        
+        super.init(coder: aDecoder)
+        
+        setup()
+    }
+    
+    fileprivate func setup() {
+        let header = headerView as! ALDoubleLineHeaderView
+        header.titleLabel.text = "Section 3 Header"
+        header.detailLabel.text = "UITableViewController Example"
+        header.topSeparator.alpha = 0
+        header.addGestureRecognizer(
+            UITapGestureRecognizer(target: self, action: #selector(headerTapped(_:)))
+        )
+    }
+
     override func viewDidLoad()
     {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.1)
+        self.view.backgroundColor = UIColor.white.withAlphaComponent(0.1)
 
         // Fix undesired cell animation when section first opened
         self.view.layoutIfNeeded()
@@ -31,26 +57,14 @@ class ALThirdSectionTableViewController: UITableViewController, ALAccordionSecti
     //
 
     // The header view for this section
-    lazy var headerView: UIView =
-    {
-        let header = ALDoubleLineHeaderView()
-        header.titleLabel.text = "Section 3 Header"
-        header.detailLabel.text = "UITableViewController Example"
-        header.topSeparator.alpha = 0
+    let headerView: UIView
 
-        // Add a tap gesture recogniser to open the section
-        let tapGR = UITapGestureRecognizer(target: self, action: #selector(headerTapped(_:)))
-        header.addGestureRecognizer(tapGR)
-
-        return header
-    }()
-
-    func sectionWillOpen(animated animated: Bool)
+    func sectionWillOpen(animated: Bool)
     {
         print("Third Section Will Open")
     }
 
-    func sectionWillClose(animated animated: Bool)
+    func sectionWillClose(animated: Bool)
     {
         print("Third Section Will Close")
     }
@@ -69,7 +83,7 @@ class ALThirdSectionTableViewController: UITableViewController, ALAccordionSecti
     // MARK: - Gesture Recognizer
     //
 
-    func headerTapped(recognizer: UITapGestureRecognizer)
+    func headerTapped(_ recognizer: UITapGestureRecognizer)
     {
         // Get the section for this view controller
         if let sectionIndex = self.accordionController?.sectionIndexForViewController(self)
@@ -92,25 +106,25 @@ class ALThirdSectionTableViewController: UITableViewController, ALAccordionSecti
     // MARK: - Table view data source
     //
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    override func numberOfSections(in tableView: UITableView) -> Int
     {
         // Return the number of sections.
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         // Return the number of rows in the section.
         return self.names.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) 
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) 
 
         // Configure the cell...
-        cell.backgroundColor = UIColor.clearColor()
-        cell.textLabel?.text = self.names[indexPath.row] ?? ""
+        cell.backgroundColor = UIColor.clear
+        cell.textLabel?.text = self.names[(indexPath as NSIndexPath).row]
 
         return cell
     }

@@ -14,11 +14,35 @@ import ALAccordion
 
 class ALFirstSectionViewController: UIViewController, ALAccordionSectionDelegate
 {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        headerView = ALSingleLineHeaderView()
+        
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        headerView = ALSingleLineHeaderView()
+        
+        super.init(coder: aDecoder)
+        
+        setup()
+    }
+    
+    fileprivate func setup() {
+        let header = headerView as! ALSingleLineHeaderView
+        header.titleLabel.text = "Section 1 Header"
+        header.addGestureRecognizer(
+            UITapGestureRecognizer(target: self, action: #selector(headerTapped(_:)))
+        )
+    }
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
-
-        self.view.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.1)
+        
+        self.view.backgroundColor = UIColor.white.withAlphaComponent(0.1)
     }
 
     //
@@ -26,24 +50,14 @@ class ALFirstSectionViewController: UIViewController, ALAccordionSectionDelegate
     //
 
     // The header view for this section
-    lazy var headerView: UIView =
-    {
-        let header = ALSingleLineHeaderView()
-        header.titleLabel.text = "Section 1 Header"
+    let headerView: UIView
 
-        // Add a tap gesture recogniser to open the section
-        let tapGR = UITapGestureRecognizer(target: self, action: #selector(headerTapped(_:)))
-        header.addGestureRecognizer(tapGR)
-
-        return header
-    }()
-
-    func sectionWillOpen(animated animated: Bool)
+    func sectionWillOpen(animated: Bool)
     {
         print("First Section Will Open")
 
         let duration = animated ? self.accordionController!.animationDuration : 0.0
-        UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseInOut, animations:
+        UIView.animate(withDuration: duration, delay: 0, options: .curveEaseInOut, animations:
         {
             let h = self.headerView as! ALSingleLineHeaderView
             h.topSeparator.alpha = 0
@@ -51,12 +65,12 @@ class ALFirstSectionViewController: UIViewController, ALAccordionSectionDelegate
         completion: nil)
     }
 
-    func sectionWillClose(animated animated: Bool)
+    func sectionWillClose(animated: Bool)
     {
         print("First Section Will Close")
 
         let duration = animated ? self.accordionController!.animationDuration : 0.0
-        UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseInOut, animations:
+        UIView.animate(withDuration: duration, delay: 0, options: .curveEaseInOut, animations:
         {
             let h = self.headerView as! ALSingleLineHeaderView
             h.topSeparator.alpha = 1.0
@@ -78,7 +92,7 @@ class ALFirstSectionViewController: UIViewController, ALAccordionSectionDelegate
     // MARK: - Gesture Recognizer
     //
 
-    func headerTapped(recognizer: UITapGestureRecognizer)
+    func headerTapped(_ recognizer: UITapGestureRecognizer)
     {
         // Get the section index for this view controller
         if let sectionIndex = self.accordionController?.sectionIndexForViewController(self)
@@ -101,7 +115,7 @@ class ALFirstSectionViewController: UIViewController, ALAccordionSectionDelegate
     // MARK: - Button Handlers
     //
 
-    @IBAction func btnClosePressed(sender: UIButton)
+    @IBAction func btnClosePressed(_ sender: UIButton)
     {
         // Get the section for this view controller
         if let sectionIndex = self.accordionController?.sectionIndexForViewController(self)

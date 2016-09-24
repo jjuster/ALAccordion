@@ -23,14 +23,14 @@ class ALTestSectionViewController: UIViewController, ALAccordionSectionDelegate
     // MARK: - ALAccordionControllerDelegate
     //
 
-    lazy var headerView = UIView()
+    let headerView = UIView()
 
-    func sectionWillOpen(animated animated: Bool)
+    func sectionWillOpen(animated: Bool)
     {
 
     }
 
-    func sectionWillClose(animated animated: Bool)
+    func sectionWillClose(animated: Bool)
     {
 
     }
