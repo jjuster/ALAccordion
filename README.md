@@ -10,10 +10,12 @@ ALAccordion also allows an optional header and footer view that are hidden when 
 
 ## Requirements
 
-* Xcode 7.3
-* Swift 2.2
+* Xcode 8.0
+* Swift 3.0
 * Requires iOS 7+
 * Requires AutoLayout
+
+Use version 0.3 for Swift 2.2
 
 **Note:** ALAccordion uses ARC
 
