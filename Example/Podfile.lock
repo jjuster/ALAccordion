@@ -1,5 +1,5 @@
 PODS:
-  - ALAccordion (0.3.1)
+  - ALAccordion (0.4.0)
   - Nimble (5.0.0)
   - Quick (0.10.0)
 
@@ -13,7 +13,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ALAccordion: 6f30f57d119999024293c41cf4bf01baf4e33387
+  ALAccordion: 23cb8e8761e4259bfb92638a0e0ed2ec820dc0eb
   Nimble: 56fc9f5020effa2206de22c3dd910f4fb011b92f
   Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
 
