@@ -16,7 +16,7 @@ class ALSeparatorView: UIView
     // MARK: - Properties
     //
 
-    var separatorColor: UIColor = UIColor.whiteColor() { didSet { self.setNeedsDisplay() }}
+    var separatorColor: UIColor = UIColor.white { didSet { self.setNeedsDisplay() }}
 
     @IBInspectable var lineWidth: CGFloat = 1.0 { didSet { self.setNeedsDisplay() }}
 
@@ -45,20 +45,20 @@ class ALSeparatorView: UIView
 
     func commonInit()
     {
-        self.backgroundColor = UIColor.clearColor()
+        self.backgroundColor = UIColor.clear
     }
 
-    override func drawRect(rect: CGRect)
+    override func draw(_ rect: CGRect)
     {
-        super.drawRect(rect)
+        super.draw(rect)
 
         let context = UIGraphicsGetCurrentContext()
-        CGContextSetStrokeColorWithColor(context, self.separatorColor.CGColor)
+        context?.setStrokeColor(self.separatorColor.cgColor)
 
-        CGContextSetLineWidth(context, self.lineWidth)
-        CGContextMoveToPoint(context, 0, 0)
-        CGContextAddLineToPoint(context, rect.width, 0)
+        context?.setLineWidth(self.lineWidth)
+        context?.move(to: CGPoint(x: 0, y: 0))
+        context?.addLine(to: CGPoint(x: rect.width, y: 0))
 
-        CGContextStrokePath(context)
+        context?.strokePath()
     }
 }

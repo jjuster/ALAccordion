@@ -15,7 +15,7 @@ public extension UIViewController
     // The nearest ancestor in the view controller hierarchy that is an accordion controller.
     public var accordionController: ALAccordionController?
     {
-        var parent = self.parentViewController
+        var parent = self.parent
 
         while parent != nil
         {
@@ -24,7 +24,7 @@ public extension UIViewController
                 return accordion
             }
 
-            parent = parent?.parentViewController
+            parent = parent?.parent
         }
 
         return nil

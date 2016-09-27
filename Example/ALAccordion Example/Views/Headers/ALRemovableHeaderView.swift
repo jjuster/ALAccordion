@@ -17,7 +17,7 @@ class ALRemovableHeaderView: UIView
     let topSeparator: ALSeparatorView =
     {
         let view = ALSeparatorView()
-        view.separatorColor = UIColor.whiteColor().colorWithAlphaComponent(0.5)
+        view.separatorColor = UIColor.white.withAlphaComponent(0.5)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -25,7 +25,7 @@ class ALRemovableHeaderView: UIView
     let bottomSeparator: ALSeparatorView =
     {
         let view = ALSeparatorView()
-        view.separatorColor = UIColor.whiteColor().colorWithAlphaComponent(0.5)
+        view.separatorColor = UIColor.white.withAlphaComponent(0.5)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -33,9 +33,9 @@ class ALRemovableHeaderView: UIView
     let titleLabel: UILabel =
     {
         let label = UILabel()
-        label.font = UIFont.systemFontOfSize(17.0)
-        label.textColor = UIColor.whiteColor()
-        label.textAlignment = .Center
+        label.font = UIFont.systemFont(ofSize: 17.0)
+        label.textColor = UIColor.white
+        label.textAlignment = .center
 
         label.translatesAutoresizingMaskIntoConstraints = false
 
@@ -44,9 +44,9 @@ class ALRemovableHeaderView: UIView
 
     let closeButton: UIButton =
     {
-        let button = UIButton(type: .System)
-        button.tintColor = UIColor.whiteColor()
-        button.setTitle("X", forState: .Normal)
+        let button = UIButton(type: .system)
+        button.tintColor = UIColor.white
+        button.setTitle("X", for: UIControlState())
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -84,13 +84,13 @@ class ALRemovableHeaderView: UIView
         // Setup constraints
         let views = ["topSeparator": self.topSeparator, "titleLabel": self.titleLabel, "bottomSeparator": self.bottomSeparator, "closeButton": self.closeButton]
 
-        let vertical = NSLayoutConstraint.constraintsWithVisualFormat("V:|[topSeparator(1)]-(15)-[titleLabel]-(15)-[bottomSeparator(1)]|", options: [], metrics: nil, views: views)
+        let vertical = NSLayoutConstraint.constraints(withVisualFormat: "V:|[topSeparator(1)]-(15)-[titleLabel]-(15)-[bottomSeparator(1)]|", options: [], metrics: nil, views: views)
 
-        let horizontal_topSeparator    = NSLayoutConstraint.constraintsWithVisualFormat("H:|[topSeparator]|", options: [], metrics: nil, views: views)
-        let horizontal_titleLabel      = NSLayoutConstraint.constraintsWithVisualFormat("H:|-15-[titleLabel]-15-[closeButton]-15-|", options: [], metrics: nil, views: views)
-        let horizontal_bottomSeparator = NSLayoutConstraint.constraintsWithVisualFormat("H:|[bottomSeparator]|", options: [], metrics: nil, views: views)
+        let horizontal_topSeparator    = NSLayoutConstraint.constraints(withVisualFormat: "H:|[topSeparator]|", options: [], metrics: nil, views: views)
+        let horizontal_titleLabel      = NSLayoutConstraint.constraints(withVisualFormat: "H:|-15-[titleLabel]-15-[closeButton]-15-|", options: [], metrics: nil, views: views)
+        let horizontal_bottomSeparator = NSLayoutConstraint.constraints(withVisualFormat: "H:|[bottomSeparator]|", options: [], metrics: nil, views: views)
 
-        let closeCenterY = NSLayoutConstraint(item: self.closeButton, attribute: .CenterY, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1.0, constant: 0)
+        let closeCenterY = NSLayoutConstraint(item: self.closeButton, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1.0, constant: 0)
 
         self.addConstraints(vertical + horizontal_topSeparator + horizontal_titleLabel + horizontal_bottomSeparator + [closeCenterY])
     }

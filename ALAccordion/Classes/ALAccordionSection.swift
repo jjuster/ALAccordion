@@ -10,7 +10,7 @@
 
 import UIKit
 
-public class ALAccordionSection: NSObject
+open class ALAccordionSection: NSObject
 {
     // MARK: - Properties
 
@@ -25,15 +25,15 @@ public class ALAccordionSection: NSObject
 
     internal var sectionView = UIView()
 
-    private let headerContainerView = UIView()
-    private let bodyContainerView = UIView()
+    fileprivate let headerContainerView = UIView()
+    fileprivate let bodyContainerView = UIView()
 
-    private (set) public var viewController: UIViewController!
+    fileprivate (set) open var viewController: UIViewController!
 
     internal var openConstraint: NSLayoutConstraint!
     internal var closeConstraint: NSLayoutConstraint!
 
-    private (set) internal var open = false
+    fileprivate (set) internal var open = false
 
     internal init(viewController: UIViewController)
     {
@@ -53,7 +53,7 @@ public class ALAccordionSection: NSObject
 
     // MARK: - Layout Methods
 
-    private func layoutViews()
+    fileprivate func layoutViews()
     {
         // Layout the header and body views
 
@@ -64,11 +64,11 @@ public class ALAccordionSection: NSObject
         self.bodyContainerView.translatesAutoresizingMaskIntoConstraints = false
 
         // Header should hug tightly - body loosly
-        self.headerContainerView.setContentHuggingPriority(1000, forAxis: .Vertical)
-        self.headerContainerView.setContentCompressionResistancePriority(1000, forAxis: .Vertical)
+        self.headerContainerView.setContentHuggingPriority(1000, for: .vertical)
+        self.headerContainerView.setContentCompressionResistancePriority(1000, for: .vertical)
 
-        self.bodyContainerView.setContentHuggingPriority(250, forAxis: .Vertical)
-        self.bodyContainerView.setContentCompressionResistancePriority(250, forAxis: .Vertical)
+        self.bodyContainerView.setContentHuggingPriority(250, for: .vertical)
+        self.bodyContainerView.setContentCompressionResistancePriority(250, for: .vertical)
 
         self.headerContainerView.clipsToBounds = true
         self.bodyContainerView.clipsToBounds = true
@@ -76,19 +76,19 @@ public class ALAccordionSection: NSObject
         // Constraints
         let views = ["header": self.headerContainerView, "body": self.bodyContainerView]
 
-        let headerHorizontal = NSLayoutConstraint.constraintsWithVisualFormat("H:|[header]|", options: [], metrics: nil, views: views)
-        let bodyHorizontal   = NSLayoutConstraint.constraintsWithVisualFormat("H:|[body]|", options: [], metrics: nil, views: views)
+        let headerHorizontal = NSLayoutConstraint.constraints(withVisualFormat: "H:|[header]|", options: [], metrics: nil, views: views)
+        let bodyHorizontal   = NSLayoutConstraint.constraints(withVisualFormat: "H:|[body]|", options: [], metrics: nil, views: views)
 
-        let vertical = NSLayoutConstraint.constraintsWithVisualFormat("V:|[header][body]", options: [], metrics: nil, views: views)
+        let vertical = NSLayoutConstraint.constraints(withVisualFormat: "V:|[header][body]", options: [], metrics: nil, views: views)
 
         self.sectionView.addConstraints(headerHorizontal + bodyHorizontal + vertical)
 
         // Create the constraint for opening / closing section
-        self.openConstraint = NSLayoutConstraint(item: self.sectionView, attribute: .Bottom, relatedBy: .Equal, toItem: self.bodyContainerView, attribute: .Bottom, multiplier: 1.0, constant: 0)
-        self.closeConstraint = NSLayoutConstraint(item: self.headerContainerView, attribute: .Bottom, relatedBy: .Equal, toItem: self.sectionView, attribute: .Bottom, multiplier: 1.0, constant: 0)
+        self.openConstraint = NSLayoutConstraint(item: self.sectionView, attribute: .bottom, relatedBy: .equal, toItem: self.bodyContainerView, attribute: .bottom, multiplier: 1.0, constant: 0)
+        self.closeConstraint = NSLayoutConstraint(item: self.headerContainerView, attribute: .bottom, relatedBy: .equal, toItem: self.sectionView, attribute: .bottom, multiplier: 1.0, constant: 0)
     }
 
-    internal func setupHeaderView(header: UIView)
+    internal func setupHeaderView(_ header: UIView)
     {
         // Add the header view to the header container view
         self.headerContainerView.addSubview(header)
@@ -96,18 +96,18 @@ public class ALAccordionSection: NSObject
 
         // Constraints
         let views = ["header": header]
-        let horizontal = NSLayoutConstraint.constraintsWithVisualFormat("H:|[header]|", options: [], metrics: nil, views: views)
-        let vertical   = NSLayoutConstraint.constraintsWithVisualFormat("V:|[header]", options: [], metrics: nil, views: views)
+        let horizontal = NSLayoutConstraint.constraints(withVisualFormat: "H:|[header]|", options: [], metrics: nil, views: views)
+        let vertical   = NSLayoutConstraint.constraints(withVisualFormat: "V:|[header]", options: [], metrics: nil, views: views)
 
         // Low priority bottom view that can break if needed
-        let bottom = NSLayoutConstraint(item: self.headerContainerView, attribute: .Bottom, relatedBy: .Equal, toItem: header, attribute: .Bottom, multiplier: 1.0, constant: 0)
+        let bottom = NSLayoutConstraint(item: self.headerContainerView, attribute: .bottom, relatedBy: .equal, toItem: header, attribute: .bottom, multiplier: 1.0, constant: 0)
         //bottom.priority = 250
 
         self.headerContainerView.addConstraints(horizontal + vertical)
         self.headerContainerView.addConstraint(bottom)
     }
 
-    internal func setupBodyView(body: UIView)
+    internal func setupBodyView(_ body: UIView)
     {
         // Add the footer view to the footer container view
         self.bodyContainerView.addSubview(body)
@@ -115,11 +115,11 @@ public class ALAccordionSection: NSObject
 
         // Constraints
         let views = ["body": body]
-        let horizontal = NSLayoutConstraint.constraintsWithVisualFormat("H:|[body]|", options: [], metrics: nil, views: views)
-        let vertical   = NSLayoutConstraint.constraintsWithVisualFormat("V:|[body]", options: [], metrics: nil, views: views)
+        let horizontal = NSLayoutConstraint.constraints(withVisualFormat: "H:|[body]|", options: [], metrics: nil, views: views)
+        let vertical   = NSLayoutConstraint.constraints(withVisualFormat: "V:|[body]", options: [], metrics: nil, views: views)
 
         // Low priority bottom view that can break if the containing body view is a fixed height
-        let bottom = NSLayoutConstraint(item: self.bodyContainerView, attribute: .Bottom, relatedBy: .Equal, toItem: body, attribute: .Bottom, multiplier: 1.0, constant: 0)
+        let bottom = NSLayoutConstraint(item: self.bodyContainerView, attribute: .bottom, relatedBy: .equal, toItem: body, attribute: .bottom, multiplier: 1.0, constant: 0)
         bottom.priority = 250
 
         self.bodyContainerView.addConstraints(horizontal + vertical)

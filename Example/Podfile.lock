@@ -1,12 +1,12 @@
 PODS:
   - ALAccordion (0.3.1)
-  - Nimble (3.2.0)
-  - Quick (0.9.1)
+  - Nimble (5.0.0)
+  - Quick (0.10.0)
 
 DEPENDENCIES:
   - ALAccordion (from `../`)
-  - Nimble (~> 3.2.0)
-  - Quick (~> 0.9.1)
+  - Nimble (~> 5.0)
+  - Quick (~> 0.10)
 
 EXTERNAL SOURCES:
   ALAccordion:
@@ -14,7 +14,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   ALAccordion: 6f30f57d119999024293c41cf4bf01baf4e33387
-  Nimble: 703854335d181df169bbca9c97117b5cf8c47c1d
-  Quick: a5221fc21788b6aeda934805e68b061839bc3165
+  Nimble: 56fc9f5020effa2206de22c3dd910f4fb011b92f
+  Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 39ba4a16fb9fd00b32972a7a35fb5e9655a6994d
+
+COCOAPODS: 1.0.1

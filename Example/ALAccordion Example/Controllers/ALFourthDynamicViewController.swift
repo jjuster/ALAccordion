@@ -12,11 +12,37 @@ import ALAccordion
 
 class ALFourthDynamicViewController: UIViewController, ALAccordionSectionDelegate
 {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        headerView = ALRemovableHeaderView()
+        
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        headerView = ALRemovableHeaderView()
+        
+        super.init(coder: aDecoder)
+        
+        setup()
+    }
+    
+    fileprivate func setup() {
+        let header = headerView as! ALRemovableHeaderView
+        header.titleLabel.text = "Dynamic Section Header"
+        header.topSeparator.alpha = 0
+        header.closeButton.addTarget(self, action: #selector(btnRemovePressed(_:)), for: .touchUpInside)
+        header.addGestureRecognizer(
+            UITapGestureRecognizer(target: self, action: #selector(headerTapped(_:)))
+        )
+    }
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.1)
+        self.view.backgroundColor = UIColor.white.withAlphaComponent(0.1)
     }
 
     //
@@ -24,26 +50,14 @@ class ALFourthDynamicViewController: UIViewController, ALAccordionSectionDelegat
     //
 
     // The header view for this section
-    lazy var headerView: UIView =
-    {
-        let header = ALRemovableHeaderView()
-        header.titleLabel.text = "Dynamic Section Header"
-        header.closeButton.addTarget(self, action: #selector(btnRemovePressed(_:)), forControlEvents: .TouchUpInside)
-        header.topSeparator.alpha = 0
+    let headerView: UIView
 
-        // Add a tap gesture recogniser to open the section
-        let tapGR = UITapGestureRecognizer(target: self, action: #selector(headerTapped(_:)))
-        header.addGestureRecognizer(tapGR)
-
-        return header
-    }()
-
-    func sectionWillOpen(animated animated: Bool)
+    func sectionWillOpen(animated: Bool)
     {
         print("Dynamic Section Will Open")
     }
 
-    func sectionWillClose(animated animated: Bool)
+    func sectionWillClose(animated: Bool)
     {
         print("Dynamic Section Will Close")
     }
@@ -62,7 +76,7 @@ class ALFourthDynamicViewController: UIViewController, ALAccordionSectionDelegat
     // MARK: - Gesture Recognizer
     //
 
-    func headerTapped(recognizer: UITapGestureRecognizer)
+    func headerTapped(_ recognizer: UITapGestureRecognizer)
     {
         // Get the section index for this view controller
         if let sectionIndex = self.accordionController?.sectionIndexForViewController(self)
@@ -85,7 +99,7 @@ class ALFourthDynamicViewController: UIViewController, ALAccordionSectionDelegat
     // MARK: - Button Handlers
     //
 
-    func btnRemovePressed(sender: UIButton)
+    func btnRemovePressed(_ sender: UIButton)
     {
         // Get the section for this view controller
         if let sectionIndex = self.accordionController?.sectionIndexForViewController(self)
@@ -94,11 +108,11 @@ class ALFourthDynamicViewController: UIViewController, ALAccordionSectionDelegat
         }
     }
 
-    @IBAction func btnAddSectionPressed(sender: AnyObject)
+    @IBAction func btnAddSectionPressed(_ sender: AnyObject)
     {
-        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
 
-        let sectionViewController = storyboard.instantiateViewControllerWithIdentifier("fourthVC") as! ALFourthDynamicViewController
+        let sectionViewController = storyboard.instantiateViewController(withIdentifier: "fourthVC") as! ALFourthDynamicViewController
 
         // Add a new section to the accordion, then close
         self.accordionController?.addViewController(sectionViewController, animated: true)

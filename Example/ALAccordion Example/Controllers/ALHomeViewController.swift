@@ -16,9 +16,8 @@ class ALHomeViewController: ALAccordionController
 {
     @IBOutlet var backgroundImageView: UIImageView!
 
-    override func preferredStatusBarStyle() -> UIStatusBarStyle
-    {
-        return .LightContent
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 
     override func viewDidLoad()
@@ -37,7 +36,7 @@ class ALHomeViewController: ALAccordionController
     {
         // Add a blur overlay on the background image
 
-        let blurEffect: UIBlurEffect = UIBlurEffect(style: .Dark)
+        let blurEffect: UIBlurEffect = UIBlurEffect(style: .dark)
 
         let blurView = UIVisualEffectView(effect: blurEffect)
         blurView.translatesAutoresizingMaskIntoConstraints = false
@@ -47,8 +46,8 @@ class ALHomeViewController: ALAccordionController
         // Setup contraints on blurView (edge to edge)
         let views = ["blurView": blurView]
 
-        let horizontalConstrainsts = NSLayoutConstraint.constraintsWithVisualFormat("H:|[blurView]|", options: [], metrics: nil, views: views)
-        let verticalConstrainsts   = NSLayoutConstraint.constraintsWithVisualFormat("V:|[blurView]|", options: [], metrics: nil, views: views)
+        let horizontalConstrainsts = NSLayoutConstraint.constraints(withVisualFormat: "H:|[blurView]|", options: [], metrics: nil, views: views)
+        let verticalConstrainsts   = NSLayoutConstraint.constraints(withVisualFormat: "V:|[blurView]|", options: [], metrics: nil, views: views)
         self.backgroundImageView.addConstraints(horizontalConstrainsts + verticalConstrainsts)
 
     }
@@ -80,22 +79,22 @@ class ALHomeViewController: ALAccordionController
     {
         // Create some sample sections
         
-        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
 
-        let section1ViewController = storyboard.instantiateViewControllerWithIdentifier("firstVC") as! ALFirstSectionViewController
-        let section2ViewController = storyboard.instantiateViewControllerWithIdentifier("secondVC") as! ALSecondSectionViewController
-        let section3ViewController = storyboard.instantiateViewControllerWithIdentifier("thirdVC") as! ALThirdSectionTableViewController
-        let section4ViewController = storyboard.instantiateViewControllerWithIdentifier("fourthVC") as! ALFourthDynamicViewController
+        let section1ViewController = storyboard.instantiateViewController(withIdentifier: "firstVC") as! ALFirstSectionViewController
+        let section2ViewController = storyboard.instantiateViewController(withIdentifier: "secondVC") as! ALSecondSectionViewController
+        let section3ViewController = storyboard.instantiateViewController(withIdentifier: "thirdVC") as! ALThirdSectionTableViewController
+        let section4ViewController = storyboard.instantiateViewController(withIdentifier: "fourthVC") as! ALFourthDynamicViewController
 
         self.setViewControllers(section1ViewController, section2ViewController, section3ViewController, section4ViewController)
     }
 
-    func footerTapped(sender: AnyObject)
+    func footerTapped(_ sender: AnyObject)
     {
         // Add a new section
 
-        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        let sectionViewController = storyboard.instantiateViewControllerWithIdentifier("fourthVC") as! ALFourthDynamicViewController
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let sectionViewController = storyboard.instantiateViewController(withIdentifier: "fourthVC") as! ALFourthDynamicViewController
 
         // Add a new section to the accordion, then close
         self.addViewController(sectionViewController, animated: true)
