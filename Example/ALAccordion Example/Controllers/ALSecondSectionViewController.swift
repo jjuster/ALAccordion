@@ -16,37 +16,16 @@ class ALSecondSectionViewController: UIViewController, ALAccordionSectionDelegat
 {
     var headerBottomConstraint: NSLayoutConstraint?
 
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        headerView = ALExpandingHeaderView()
-        
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        
-        setup()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        headerView = ALExpandingHeaderView()
-        
-        super.init(coder: aDecoder)
-        
-        setup()
-    }
-    
-    fileprivate func setup() {
-        let header = headerView as! ALExpandingHeaderView
-        header.titleLabel.text = "Section 2 Header"
-        header.detailLabel.text = "Dynamic Sized Header"
-        header.topSeparator.alpha = 0
-        header.addGestureRecognizer(
-            UITapGestureRecognizer(target: self, action: #selector(headerTapped(_:)))
-        )
-    }
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
 
         self.view.backgroundColor = UIColor.white.withAlphaComponent(0.1)
+
+        // Add gesture recognizer to header
+        self.headerView.addGestureRecognizer(
+            UITapGestureRecognizer(target: self, action: #selector(headerTapped(_:)))
+        )
     }
 
     //
@@ -54,7 +33,15 @@ class ALSecondSectionViewController: UIViewController, ALAccordionSectionDelegat
     //
 
     // The header view for this section
-    let headerView: UIView
+    let headerView: UIView =
+    {
+        let header = ALExpandingHeaderView()
+        header.titleLabel.text = "Section 2 Header"
+        header.detailLabel.text = "Dynamic Sized Header"
+        header.topSeparator.alpha = 0
+
+        return header
+    }()
 
     func sectionWillOpen(animated: Bool)
     {

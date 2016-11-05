@@ -16,32 +16,6 @@ class ALThirdSectionTableViewController: UITableViewController, ALAccordionSecti
 {
     let names = ["Olivia", "Melissa", "Adrian", "Barbera", "Fred", "Joyce", "Annita", "Johanne", "Walt", "Danny", "Pablo", "Kala", "Albertina", "Carmelina", "Malcolm", "Alan", "Gene", "Diane", "Merlyn", "Azzie"]
 
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        headerView = ALDoubleLineHeaderView()
-        
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        
-        setup()
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        headerView = ALDoubleLineHeaderView()
-        
-        super.init(coder: aDecoder)
-        
-        setup()
-    }
-    
-    fileprivate func setup() {
-        let header = headerView as! ALDoubleLineHeaderView
-        header.titleLabel.text = "Section 3 Header"
-        header.detailLabel.text = "UITableViewController Example"
-        header.topSeparator.alpha = 0
-        header.addGestureRecognizer(
-            UITapGestureRecognizer(target: self, action: #selector(headerTapped(_:)))
-        )
-    }
-
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -50,6 +24,11 @@ class ALThirdSectionTableViewController: UITableViewController, ALAccordionSecti
 
         // Fix undesired cell animation when section first opened
         self.view.layoutIfNeeded()
+
+        // Add gesture recognizer to header
+        self.headerView.addGestureRecognizer(
+            UITapGestureRecognizer(target: self, action: #selector(headerTapped(_:)))
+        )
     }
 
     //
@@ -57,7 +36,15 @@ class ALThirdSectionTableViewController: UITableViewController, ALAccordionSecti
     //
 
     // The header view for this section
-    let headerView: UIView
+    let headerView: UIView =
+    {
+        let header = ALDoubleLineHeaderView()
+        header.titleLabel.text = "Section 3 Header"
+        header.detailLabel.text = "UITableViewController Example"
+        header.topSeparator.alpha = 0
+
+        return header
+    }()
 
     func sectionWillOpen(animated: Bool)
     {

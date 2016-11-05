@@ -6,7 +6,7 @@ ALAccordion is an accordion style container view for iOS that manages a set of e
 
 Each section of the accordion is associated with a custom view controller that manages its own header and content views. ALAccordion relies on autolayout to provide an intrinsic content size for the header view. This makes it super easy to have custom section headers that can be modified and animated by each section.
 
-ALAccordion also allows an optional header and footer view that are hidden when a section is opened. 
+ALAccordion also allows an optional header and footer view that are hidden when a section is opened.
 
 ## Requirements
 
@@ -58,7 +58,7 @@ Below shows the basic usage of the ALAccordion. See the example project for a mo
 
 ### ALAccordionController
 
-ALAccordionController is a UIViewController subclass container view, that manages the sections. 
+ALAccordionController is a UIViewController subclass container view, that manages the sections.
 
 First of all, create a view controller that subclasses ALAccordionController.
 
@@ -75,13 +75,13 @@ class ALHomeViewController: ALAccordionController
 #### Accordion Header / Footer
 You can add an optional header and/or footer to the accordion by setting the `headerView` and `footerView` properties.
 
-**Note:** The accordion uses the intrinsic content size of the header andfooter views for layout, so ensure you setup your autolayout constraints correctly.
+**Note:** The accordion uses the intrinsic content size of the header and footer views for layout, so ensure you setup your autolayout constraints correctly.
 
 ```swift
 override func viewDidLoad()
 {
   ...
-    
+
   // Header
   let header = UILabel()
   header.text = "Accordion Header"
@@ -104,8 +104,8 @@ To create your sections, you must pass the ALAccordion a list of view controller
 override func viewDidLoad()
 {
   ...
-    
-  let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+
+  let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
 
   let section1 = storyboard.instantiateViewControllerWithIdentifier("firstVC") as! Section1ViewController
   let section2 = storyboard.instantiateViewControllerWithIdentifier("secondVC") as! Section2ViewController
@@ -117,7 +117,7 @@ override func viewDidLoad()
 
 ### Section View Controllers
 
-You should provide the ALAccordionController a new instance of a UIViewController for each section in your accordion. 
+You should provide the ALAccordionController a new instance of a UIViewController for each section in your accordion.
 
 A section view controller must conform to the `ALAccordionSectionDelegate` protocol. That is, it must provide a headerView. Again, like the ALAccordionController header and footer views, the headerView must use autolayout to provide an intrinsic content size. By changing the constraints on your header view, you can easily change the size of the header, eg when the section is opening, to show more detail.
 
@@ -130,9 +130,9 @@ class ALFirstSectionViewController: UIViewController, ALAccordionSectionDelegate
   }
 
   // MARK: - ALAccordionControllerDelegate
-  
+
   // Required
-  lazy var headerView: UIView =
+  let headerView: UIView =
   {
     let header = UILabel()
     header.text = "Section 1 Header"
@@ -143,25 +143,25 @@ class ALFirstSectionViewController: UIViewController, ALAccordionSectionDelegate
   // Optional
   func sectionWillOpen(#animated: Bool)
   {
-      
+
   }
 
   // Optional
   func sectionWillClose(#animated: Bool)
   {
-      
+
   }
 
   // Optional
   func sectionDidOpen()
   {
-      
+
   }
 
   // Optional
   func sectionDidClose()
   {
-      
+
   }
 }
 ```
@@ -169,19 +169,24 @@ class ALFirstSectionViewController: UIViewController, ALAccordionSectionDelegate
 **Note:** You must manually specify how each section should open. The example below shows how to open the section with a tap gesture on the headerView.
 
 ```swift
-lazy var headerView: UIView =
+let headerView: UIView =
 {
   let header = UILabel()
   header.text = "Section 1 Header"
-
-  // Add a tap gesture recogniser to open the section
-  let tapGR = UITapGestureRecognizer(target: self, action: "headerTapped:")
-  header.addGestureRecognizer(tapGR)
-
   return header
 }()
 
-func headerTapped(recognizer: UITapGestureRecognizer)
+override func viewDidLoad()
+{
+  super.viewDidLoad()
+
+  // Add gesture recognizer to header
+  self.headerView.addGestureRecognizer(
+    UITapGestureRecognizer(target: self, action: #selector(headerTapped(_:)))
+  )
+}
+
+func headerTapped(_ recognizer: UITapGestureRecognizer)
 {
   // Get the section for this view controller
   if let sectionIndex = self.accordionController?.sectionIndexForViewController(self)

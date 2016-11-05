@@ -12,37 +12,21 @@ import ALAccordion
 
 class ALFourthDynamicViewController: UIViewController, ALAccordionSectionDelegate
 {
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        headerView = ALRemovableHeaderView()
-        
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        
-        setup()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        headerView = ALRemovableHeaderView()
-        
-        super.init(coder: aDecoder)
-        
-        setup()
-    }
-    
-    fileprivate func setup() {
-        let header = headerView as! ALRemovableHeaderView
-        header.titleLabel.text = "Dynamic Section Header"
-        header.topSeparator.alpha = 0
-        header.closeButton.addTarget(self, action: #selector(btnRemovePressed(_:)), for: .touchUpInside)
-        header.addGestureRecognizer(
-            UITapGestureRecognizer(target: self, action: #selector(headerTapped(_:)))
-        )
-    }
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
 
         self.view.backgroundColor = UIColor.white.withAlphaComponent(0.1)
+
+        // Add gesture recognizer to header
+        self.headerView.addGestureRecognizer(
+            UITapGestureRecognizer(target: self, action: #selector(headerTapped(_:)))
+        )
+
+        if let removableHeaderView = self.headerView as? ALRemovableHeaderView
+        {
+            removableHeaderView.closeButton.addTarget(self, action: #selector(btnRemovePressed(_:)), for: .touchUpInside)
+        }
     }
 
     //
@@ -50,7 +34,14 @@ class ALFourthDynamicViewController: UIViewController, ALAccordionSectionDelegat
     //
 
     // The header view for this section
-    let headerView: UIView
+    let headerView: UIView =
+    {
+        let header = ALRemovableHeaderView()
+        header.titleLabel.text = "Dynamic Section Header"
+        header.topSeparator.alpha = 0
+
+        return header
+    }()
 
     func sectionWillOpen(animated: Bool)
     {
