@@ -14,35 +14,16 @@ import ALAccordion
 
 class ALFirstSectionViewController: UIViewController, ALAccordionSectionDelegate
 {
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        headerView = ALSingleLineHeaderView()
-        
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        
-        setup()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        headerView = ALSingleLineHeaderView()
-        
-        super.init(coder: aDecoder)
-        
-        setup()
-    }
-    
-    fileprivate func setup() {
-        let header = headerView as! ALSingleLineHeaderView
-        header.titleLabel.text = "Section 1 Header"
-        header.addGestureRecognizer(
-            UITapGestureRecognizer(target: self, action: #selector(headerTapped(_:)))
-        )
-    }
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor.white.withAlphaComponent(0.1)
+
+        // Add gesture recognizer to header
+        self.headerView.addGestureRecognizer(
+            UITapGestureRecognizer(target: self, action: #selector(headerTapped(_:)))
+        )
     }
 
     //
@@ -50,7 +31,13 @@ class ALFirstSectionViewController: UIViewController, ALAccordionSectionDelegate
     //
 
     // The header view for this section
-    let headerView: UIView
+    let headerView: UIView =
+    {
+        let header = ALSingleLineHeaderView()
+        header.titleLabel.text = "Section 1 Header"
+
+        return header
+    }()
 
     func sectionWillOpen(animated: Bool)
     {
