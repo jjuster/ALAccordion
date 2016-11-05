@@ -10,5 +10,5 @@ end
 
 target 'ALAccordion Tests' do
   pod 'Quick', '~> 0.10'
-  pod 'Nimble', '~> 5.0'
+  pod 'Nimble', '~> 5.1'
 end
