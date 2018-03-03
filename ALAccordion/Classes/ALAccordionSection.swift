@@ -64,11 +64,11 @@ open class ALAccordionSection: NSObject
         self.bodyContainerView.translatesAutoresizingMaskIntoConstraints = false
 
         // Header should hug tightly - body loosly
-        self.headerContainerView.setContentHuggingPriority(1000, for: .vertical)
-        self.headerContainerView.setContentCompressionResistancePriority(1000, for: .vertical)
+        self.headerContainerView.setContentHuggingPriority(UILayoutPriority(rawValue: 1000), for: .vertical)
+        self.headerContainerView.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 1000), for: .vertical)
 
-        self.bodyContainerView.setContentHuggingPriority(250, for: .vertical)
-        self.bodyContainerView.setContentCompressionResistancePriority(250, for: .vertical)
+        self.bodyContainerView.setContentHuggingPriority(.defaultLow, for: .vertical)
+        self.bodyContainerView.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 250), for: .vertical)
 
         self.headerContainerView.clipsToBounds = true
         self.bodyContainerView.clipsToBounds = true
@@ -120,7 +120,7 @@ open class ALAccordionSection: NSObject
 
         // Low priority bottom view that can break if the containing body view is a fixed height
         let bottom = NSLayoutConstraint(item: self.bodyContainerView, attribute: .bottom, relatedBy: .equal, toItem: body, attribute: .bottom, multiplier: 1.0, constant: 0)
-        bottom.priority = 250
+        bottom.priority = UILayoutPriority(rawValue: 250)
 
         self.bodyContainerView.addConstraints(horizontal + vertical)
         self.bodyContainerView.addConstraint(bottom)
