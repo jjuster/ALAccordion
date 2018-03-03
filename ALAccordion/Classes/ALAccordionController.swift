@@ -197,10 +197,10 @@ open class ALAccordionController: UIViewController
         self.footerContainerView.translatesAutoresizingMaskIntoConstraints = false
 
         let headerTop = NSLayoutConstraint(item: self.headerContainerView, attribute: .top, relatedBy: .equal, toItem: self.topLayoutGuide, attribute: .bottom, multiplier: 1.0, constant: 0)
-        headerTop.priority = 250
+        headerTop.priority = UILayoutPriority(rawValue: 250)
 
         let footerBottom = NSLayoutConstraint(item: self.bottomLayoutGuide, attribute: .bottom, relatedBy: .equal, toItem: self.footerContainerView, attribute: .bottom, multiplier: 1.0, constant: 0)
-        footerBottom.priority = 250
+        footerBottom.priority = UILayoutPriority(rawValue: 250)
 
 
         let views = ["header": self.headerContainerView, "container": self.sectionContainerView, "footer": self.footerContainerView]
@@ -210,7 +210,7 @@ open class ALAccordionController: UIViewController
         let footerHorizontal    = NSLayoutConstraint.constraints(withVisualFormat: "H:|[footer]|", options: [], metrics: nil, views: views)
 
         let centerYContainer = NSLayoutConstraint(item: self.sectionContainerView, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1.0, constant: 0)
-        centerYContainer.priority = 250
+        centerYContainer.priority = UILayoutPriority(rawValue: 250)
 
         let topContainer = NSLayoutConstraint(item: self.sectionContainerView, attribute: .top, relatedBy: .greaterThanOrEqual, toItem: self.headerContainerView, attribute: .bottom, multiplier: 1.0, constant: 0)
         let bottomContainer = NSLayoutConstraint(item: self.footerContainerView, attribute: .top, relatedBy: .greaterThanOrEqual, toItem: self.sectionContainerView, attribute: .bottom, multiplier: 1.0, constant: 0)
